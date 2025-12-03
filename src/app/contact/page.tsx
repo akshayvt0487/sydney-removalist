@@ -4,7 +4,6 @@ import ContactForm from '@/components/ContactForm';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import Footer from '@/components/Footer';
 import { CONTACT_INFO } from '@/data/contact';
-import { SEO_CONFIG } from '@/lib/seo';
 
 export default function Contact() {
   return (

@@ -12,13 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isAdmin } = useAuth();
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  
 
   return (
     <header className="bg-primary shadow-md sticky top-0 z-50">

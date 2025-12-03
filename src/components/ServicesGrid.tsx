@@ -31,7 +31,7 @@ const ServicesGrid = ({ limit }: { limit?: number }) => {
               title={service.title}
               description={service.shortDescription}
               icon={service.icon}
-              image={service.image}
+              image={typeof service.image === 'string' ? service.image : service.image?.src}
               slug={service.slug}
               badge={service.badge}
             />

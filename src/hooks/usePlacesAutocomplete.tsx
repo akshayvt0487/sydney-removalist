@@ -7,13 +7,6 @@ interface UsePlacesAutocompleteProps {
   onPlaceSelected: (place: string) => void;
 }
 
-// Extend Window interface to include google
-declare global {
-  interface Window {
-    google: any;
-  }
-}
-
 export const usePlacesAutocomplete = ({ inputRef, onPlaceSelected }: UsePlacesAutocompleteProps) => {
   const autocompleteRef = useRef<any>(null);
   const listenerRef = useRef<any>(null);

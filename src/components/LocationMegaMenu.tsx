@@ -1,11 +1,11 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { regionCategories } from '@/data/suburbs';
+import * as SUBURB_DATA from '@/data/suburbs.js';
 
 const LocationMegaMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeRegion, setActiveRegion] = useState(regionCategories[0].id);
+  const [activeRegion, setActiveRegion] = useState((SUBURB_DATA as any).regionCategories[0].id);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const LocationMegaMenu = () => {
     };
   }, [isOpen]);
 
-  const activeRegionData = regionCategories.find(r => r.id === activeRegion);
+  const activeRegionData = (SUBURB_DATA as any).regionCategories.find((r: any) => r.id === activeRegion);
 
   return (
     <div className="relative" ref={menuRef}>
@@ -58,7 +58,7 @@ const LocationMegaMenu = () => {
             <div className="col-span-1 bg-charcoal text-white p-4">
               <h3 className="text-sm font-bold mb-4 text-accent uppercase tracking-wide">Regions</h3>
               <ul className="space-y-1">
-                {regionCategories.map((region) => (
+                {(SUBURB_DATA as any).regionCategories.map((region: any) => (
                   <li key={region.id}>
                     <button
                       onClick={() => setActiveRegion(region.id)}
@@ -92,7 +92,7 @@ const LocationMegaMenu = () => {
                 {activeRegionData?.name} Suburbs
               </h3>
               <div className="grid grid-cols-3 gap-3">
-                {activeRegionData?.suburbs.map((suburb) => (
+                {activeRegionData?.suburbs.map((suburb: any) => (
                   <Link
                     key={suburb.slug}
                     href={`/locations/${activeRegionData?.slug ?? ''}/${suburb.slug}`}

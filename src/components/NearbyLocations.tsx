@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
-import { regionCategories } from '@/data/suburbs';
+import * as SUBURB_DATA from '@/data/suburbs.js';
 
 interface NearbyLocationsProps {
   currentSuburbSlug: string;
@@ -9,13 +9,13 @@ interface NearbyLocationsProps {
 
 const NearbyLocations = ({ currentSuburbSlug, regionSlug }: NearbyLocationsProps) => {
   // Find the current region
-  const region = regionCategories.find(r => r.slug === regionSlug);
+  const region = (SUBURB_DATA as any).regionCategories.find((r: any) => r.slug === regionSlug);
   
   if (!region) return null;
 
   // Get nearby suburbs (same region, excluding current suburb)
   const nearbySuburbs = region.suburbs
-    .filter(suburb => suburb.slug !== currentSuburbSlug)
+    .filter((suburb: any) => suburb.slug !== currentSuburbSlug)
     .slice(0, 10); // Show up to 10 nearby locations
 
   if (nearbySuburbs.length === 0) return null;
@@ -35,7 +35,7 @@ const NearbyLocations = ({ currentSuburbSlug, regionSlug }: NearbyLocationsProps
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
-            {nearbySuburbs.map((suburb) => (
+            {nearbySuburbs.map((suburb: any) => (
               <Link
                 key={suburb.slug}
                 href={`/locations/${regionSlug}/${suburb.slug}`}

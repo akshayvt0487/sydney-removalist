@@ -6,7 +6,7 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import LocationMap from '@/components/LocationMap';
 import interstateMoving from '@/assets/interstate-moving.jpg';
-import * as SUBURB_DATA from '@/data/suburbs.js';
+ 
 import { createMetadata, SEO_CONFIG } from '@/lib/seo';
 
 export const metadata = createMetadata({
@@ -30,6 +30,7 @@ export const metadata = createMetadata({
 export default async function Locations() {
   const dataModule = await import('@/data/suburbs.js');
   const interstateList = (dataModule as any).interstateDestinations ?? [];
+  const regionCategories = (dataModule as any).regionCategories ?? [];
 
   return (
     <>
@@ -82,7 +83,7 @@ export default async function Locations() {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl font-bold mb-12 text-center text-foreground">Sydney Regions We Serve</h2>
               <div className="space-y-8">
-                {SUBURB_DATA.regionCategories.map((region: any) => (
+                {regionCategories.map((region: any) => (
                   <div key={region.id} className="bg-background p-6 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
                       <svg className="w-6 h-6 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

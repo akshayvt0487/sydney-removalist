@@ -13,7 +13,6 @@ import Image from 'next/image';
 import removalistHero from '@/assets/removalist-hero.jpg';
 import movingBoxes from '@/assets/moving-boxes.jpg';
 import movingTruckLoading from '@/assets/moving-truck-loading.jpg';
-import familyMoving from '@/assets/family-moving.jpg';
 
 import { createMetadata, SEO_CONFIG } from '@/lib/seo';
 import { suburbs } from '@/data/suburbs';
@@ -24,7 +23,7 @@ interface Params {
 }
 
 function getSuburb(regionSlug: string, suburbSlug: string) {
-  return suburbs.find(s => s.slug === suburbSlug && s.regionSlug === regionSlug) || null;
+  return suburbs.find((s: any) => s.slug === suburbSlug && s.regionSlug === regionSlug) || null;
 }
 
 export async function generateMetadata({ params }: Params) {
@@ -71,7 +70,7 @@ export default async function SuburbPage({ params }: Params) {
         <HeroSection
           title={`Removalist ${suburbDetails.name}`}
           subtitle={`Professional moving services in ${suburbDetails.name}, ${suburbDetails.region}`}
-          backgroundImage={removalistHero}
+          backgroundImage={removalistHero.src}
           showCTA={false}
           breadcrumbs={[
             { label: 'Locations', path: '/locations' },
@@ -325,5 +324,3 @@ export default async function SuburbPage({ params }: Params) {
     </>
   );
 }
-
-export default SuburbPage;

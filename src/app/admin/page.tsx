@@ -26,8 +26,8 @@ interface FormSubmission {
   email: string;
   subject: string | null;
   additional_details: string | null;
-  status: string;
-  created_at: string;
+  status: string | null;
+  created_at: string | null;
 }
 
 const AdminDashboard = () => {
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
 
       toast({
         title: "Status Updated",
-        description: Status changed to ,
+        description: `Status changed to ${newStatus}`,
       });
     } catch (error: any) {
       toast({
@@ -149,7 +149,7 @@ const AdminDashboard = () => {
     const csvRows = [
       headers.join(','),
       ...dataToExport.map(sub => [
-        format(new Date(sub.created_at), 'yyyy-MM-dd HH:mm:ss'),
+        sub.created_at ? format(new Date(sub.created_at), 'yyyy-MM-dd HH:mm:ss') : '',
         sub.form_type || 'quote',
         "",
         sub.email,
@@ -171,7 +171,7 @@ const AdminDashboard = () => {
     const url = URL.createObjectURL(blob);
     
     link.setAttribute('href', url);
-    link.setAttribute('download', orm-submissions-.csv);
+    link.setAttribute('download', 'form-submissions.csv');
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -179,11 +179,11 @@ const AdminDashboard = () => {
 
     toast({
       title: "Success",
-      description: Exported  submissions,
+      description: `${dataToExport.length} submissions exported`,
     });
   };
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: string | null) => {
     switch (status) {
       case 'new': return 'bg-blue-500';
       case 'contacted': return 'bg-yellow-500';
@@ -240,7 +240,7 @@ const AdminDashboard = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <Button onClick={fetchSubmissions} variant="outline" size="sm" disabled={loading}>
-                    <RefreshCw className={w-4 h-4 mr-2 } />
+                    <RefreshCw className="w-4 h-4 mr-2" />
                     Refresh
                   </Button>
                   <Button onClick={handleExportCSV} variant="outline" size="sm" disabled={filteredSubmissions.length === 0}>
@@ -290,7 +290,7 @@ const AdminDashboard = () => {
                   <FileText className="w-16 h-16 text-muted-foreground/50 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-muted-foreground">No submissions yet</h3>
                   <p className="text-sm text-muted-foreground/70 mt-2">
-                    {filterType === 'all' ? 'Form submissions will appear here' : No  submissions found}
+                    {filterType === 'all' ? 'Form submissions will appear here' : 'No submissions found'}
                   </p>
                 </div>
               ) : (
@@ -310,24 +310,24 @@ const AdminDashboard = () => {
                           <div className="flex items-center gap-4 flex-1 min-w-0">
                             <div className="hidden sm:flex flex-col items-center justify-center bg-muted rounded-lg p-2 min-w-[60px]">
                               <span className="text-xs text-muted-foreground">
-                                {format(new Date(submission.created_at), 'MMM')}
+                                {submission.created_at ? format(new Date(submission.created_at), 'MMM') : ''}
                               </span>
                               <span className="text-xl font-bold">
-                                {format(new Date(submission.created_at), 'dd')}
+                                {submission.created_at ? format(new Date(submission.created_at), 'dd') : ''}
                               </span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <h3 className="font-semibold text-lg truncate">{submission.full_name}</h3>
                                 {getFormTypeBadge(submission.form_type || 'quote')}
-                                <Badge className={${getStatusColor(submission.status)} text-white}>
-                                  {submission.status}
+                                <Badge className={`${getStatusColor(submission.status)} text-white`}>
+                                  {submission.status || 'unknown'}
                                 </Badge>
                               </div>
                               <div className="text-sm text-muted-foreground mt-1 truncate">
-                                {isContactForm 
-                                  ? Subject: 
-                                  : ${submission.moving_from || 'N/A'}  
+                                {isContactForm
+                                  ? `Subject: ${submission.subject || 'N/A'}`
+                                  : (submission.moving_from || 'N/A')
                                 }
                               </div>
                             </div>
@@ -375,8 +375,8 @@ const AdminDashboard = () => {
                                     <Phone className="w-5 h-5 text-primary" />
                                     <div>
                                       <p className="text-xs text-muted-foreground">Phone Number</p>
-                                      <a 
-                                        href={	el:} 
+                                      <a
+                                        href={`tel:${submission.phone_number}`}
                                         className="font-medium text-primary hover:underline"
                                       >
                                         {submission.phone_number}
@@ -387,8 +387,8 @@ const AdminDashboard = () => {
                                     <Mail className="w-5 h-5 text-primary" />
                                     <div>
                                       <p className="text-xs text-muted-foreground">Email Address</p>
-                                      <a 
-                                        href={mailto:} 
+                                      <a
+                                        href={`mailto:${submission.email}`}
                                         className="font-medium text-primary hover:underline break-all"
                                       >
                                         {submission.email}
@@ -470,7 +470,7 @@ const AdminDashboard = () => {
                                   <div className="p-3 bg-background rounded-lg">
                                     <p className="text-xs text-muted-foreground mb-2">Update Status</p>
                                     <select
-                                      value={submission.status}
+                                      value={submission.status ?? ''}
                                       onChange={(e) => handleStatusChange(submission.id, e.target.value)}
                                       className="w-full px-3 py-2 border rounded-md bg-background text-sm"
                                       onClick={(e) => e.stopPropagation()}
@@ -499,9 +499,9 @@ const AdminDashboard = () => {
                               </div>
                             )}
 
-                            <div className="mt-4 pt-4 border-t text-xs text-muted-foreground">
-                              Submitted on {format(new Date(submission.created_at), 'EEEE, MMMM dd, yyyy \'at\' h:mm a')}
-                            </div>
+                              <div className="mt-4 pt-4 border-t text-xs text-muted-foreground">
+                                Submitted on {submission.created_at ? format(new Date(submission.created_at), "EEEE, MMMM dd, yyyy 'at' h:mm a") : ''}
+                              </div>
                           </div>
                         )}
                       </div>

@@ -1,9 +1,7 @@
-import { regionCategories } from './suburbs.js';
+import * as SUBURB_DATA from './suburbs.js';
 
-export { regionCategories };
-
-export const suburbs = regionCategories.flatMap(region =>
-  region.suburbs.map(suburb => ({
+export const suburbs = (SUBURB_DATA as any).regionCategories.flatMap((region: any) =>
+  region.suburbs.map((suburb: any) => ({
     ...suburb,
     region: region.name,
     regionSlug: region.slug,
