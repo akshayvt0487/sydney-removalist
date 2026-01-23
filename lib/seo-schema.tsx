@@ -404,17 +404,9 @@ export function generateEnhancedMetadata({
 }
 
 /**
- * Render JSON-LD Schema
+ * Convert schema to JSON string for rendering
  */
-export function renderSchema(schema: object | object[]) {
+export function schemaToJson(schema: object | object[]): string {
   const schemaArray = Array.isArray(schema) ? schema : [schema];
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schemaArray, null, 0)
-      }}
-    />
-  );
+  return JSON.stringify(schemaArray, null, 0);
 }

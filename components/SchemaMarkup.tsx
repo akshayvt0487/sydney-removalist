@@ -1,4 +1,4 @@
-import { renderSchema } from '@/lib/seo-schema';
+import { schemaToJson } from '@/lib/seo-schema';
 
 interface SchemaMarkupProps {
   schema: object | object[];
@@ -9,5 +9,12 @@ interface SchemaMarkupProps {
  * Usage: <SchemaMarkup schema={generateOrganizationSchema()} />
  */
 export default function SchemaMarkup({ schema }: SchemaMarkupProps) {
-  return renderSchema(schema);
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: schemaToJson(schema)
+      }}
+    />
+  );
 }
