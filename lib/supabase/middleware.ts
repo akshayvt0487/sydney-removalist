@@ -7,9 +7,13 @@ export async function updateSession(request: NextRequest) {
     request,
   })
 
+  // Get environment variables with fallbacks for build time
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key'
+
   const supabase = createServerClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         getAll() {
@@ -34,11 +38,14 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // This will refresh the session if expired
-  const { error } = await supabase.auth.getUser()
+  // Only try to refresh session if we have valid environment variables
+  if (supabaseUrl !== 'https://placeholder.supabase.co') {
+    // This will refresh the session if expired
+    const { error } = await supabase.auth.getUser()
 
-  if (error) {
-    console.error('Error refreshing session:', error)
+    if (error) {
+      console.error('Error refreshing session:', error)
+    }
   }
 
   return supabaseResponse
