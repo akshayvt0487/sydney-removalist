@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import { services } from '@/data/services';
-import { suburbs } from '@/data/suburbs';
-import { interstateDestinations } from '@/data/suburbs';
+import { regionCategories, interstateDestinations } from '@/data/suburbs';
 import { blogPosts } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -68,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Location pages (suburbs)
-  const locationPages = suburbs.flatMap((region) =>
+  const locationPages = regionCategories.flatMap((region) =>
     region.suburbs.map((suburb) => ({
       url: `${baseUrl}/locations/${region.slug}/${suburb.slug}`,
       lastModified: new Date(),
