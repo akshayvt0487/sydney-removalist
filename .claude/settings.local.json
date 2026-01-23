@@ -4,7 +4,11 @@
       "Bash(test:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix all Supabase integration issues and improve security\n\nMajor fixes:\n- Consolidated Supabase client instances with TypeScript types\n- Implemented Next.js middleware for session management\n- Added server-side authentication for admin routes\n- Fixed race condition in admin role checking\n- Added email retry logic with exponential backoff\n- Made email recipient configurable via environment variables\n- Created comprehensive RLS policies documentation\n\nSecurity improvements:\n- Server-side route protection via middleware\n- Admin page now uses server component with auth checks\n- All clients use proper SSR pattern\n- Error logging throughout the application\n\nDocumentation:\n- Added SUPABASE_RLS_POLICIES.md with complete security guide\n- Added SUPABASE_FIXES_SUMMARY.md with all changes\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git fetch:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }
