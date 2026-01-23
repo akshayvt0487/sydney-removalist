@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 100% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 43 100% 54%;
+    --accent-foreground: 0 0% 15%;
+    --highlight: 210 100% 25%;
+    --highlight-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 43 100% 54%;
+    --radius: 0.5rem;
+    
+    /* Custom Brand Colors */
+    --navy: 210 100% 25%;
+    --charcoal: 0 0% 15%;
+    --yellow: 43 100% 54%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 15%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 15%;
+    --secondary: 210 100% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 43 100% 54%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 43 100% 54%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* --- FIX 1: RESTORE BOLD HEADINGS --- */
+  /* Tailwind removes bold by default. This forces it back. */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  html {
+    scroll-behavior: auto;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    /* --- FIX 2: MAKE TEXT CRISP --- */
+    /* This makes fonts look cleaner and matches non-Tailwind rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Google Places Autocomplete dropdown - Custom Styling */
+.pac-container {
+  z-index: 10000 !important;
+  background-color: hsl(var(--background));
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: 1px solid hsl(var(--border));
+  font-family: inherit;
+  pointer-events: auto !important;
+}
+
+.pac-container:after {
+  display: none !important;
+}
+
+.pac-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.pac-item:hover {
+  background-color: hsl(var(--muted));
+}
+
+.pac-item-query {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.pac-matched {
+  color: hsl(var(--secondary));
+  font-weight: 600;
+}
