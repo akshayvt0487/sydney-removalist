@@ -25,7 +25,7 @@ export default function AuthClient() {
   const supabase = createClient();
 
   // Get redirect URL from query params
-  const redirectTo = searchParams.get('redirectTo') || '/admin';
+  const redirectTo = searchParams.get('redirectTo') || '/dashboard';
 
   // Redirect if already logged in
   useEffect(() => {

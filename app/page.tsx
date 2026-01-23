@@ -14,53 +14,74 @@ import StatsSection from '@/components/StatsSection';
 import MovingMadeEasy from '@/components/MovingMadeEasy';
 import WhyPickUs from '@/components/WhyPickUs';
 
+// SEO Components
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateLocalBusinessSchema, generateFAQSchema, generateEnhancedMetadata } from '@/lib/seo-schema';
+
 // Assets - Next.js handles these as static objects
 import heroImage from '@/assets/hero-main.jpg';
 
 /**
- * SEO Metadata
- * Next.js 15 uses the metadataBase from layout.tsx to resolve the OpenGraph images.
+ * Enhanced SEO Metadata
  */
-export const metadata: Metadata = {
+export const metadata: Metadata = generateEnhancedMetadata({
   title: "Removalists Sydney | Professional Moving Services | 5-Star Rated",
-  description: 
-    "Sydney's most trusted removalists. Professional moving services across Sydney with 15+ years experience, 10,000+ happy moves, and 5-star reviews. Get your free quote today!",
+  description: "Sydney's most trusted removalists. Professional moving services across Sydney with 15+ years experience, 10,000+ happy moves, and 5-star reviews. Get your free quote today!",
   keywords: [
-    "removalists sydney", 
-    "sydney removalist", 
-    "moving services sydney", 
+    "removalists sydney",
+    "sydney removalist",
+    "moving services sydney",
     "professional movers sydney",
-    "house movers sydney"
+    "house movers sydney",
+    "furniture removalists",
+    "cheap removalists sydney",
+    "best removalists sydney",
+    "local removalists",
+    "sydney moving company"
   ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Removalists Sydney | Professional Moving Services",
-    description: "Sydney's most trusted removalists with 15+ years experience. Reliable, affordable, and professional.",
-    type: "website",
-    url: "https://sydneyremovalistpro.com.au", // Replace with your live domain
-    images: [
-      {
-        url: '/og-home.jpg', // Ensure this file exists in your /public folder
-        width: 1200,
-        height: 630,
-        alt: "Sydney Removalist Pro - Professional Moving Services",
-      }
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Removalists Sydney | Professional Moving Services",
-    description: "Sydney's most trusted removalists with 15+ years experience.",
-    images: ['/og-home.jpg'],
-  }
-};
+  canonical: "/",
+  ogImage: "/og-home.jpg",
+  ogType: "website"
+});
 
 export default function Home() {
+  // FAQs for schema markup
+  const faqs = [
+    {
+      question: "How much do removalists cost in Sydney?",
+      answer: "Removalist costs in Sydney typically range from $100-150 per hour for a 2-person team. Prices vary based on home size, distance, and additional services. Get a free, no-obligation quote from us today."
+    },
+    {
+      question: "Are you insured?",
+      answer: "Yes, we're fully insured. All our moves include comprehensive transit insurance to protect your belongings during the entire moving process."
+    },
+    {
+      question: "How much notice do I need to give?",
+      answer: "We recommend booking at least 1-2 weeks in advance, especially during peak moving season (summer and end of month). However, we often accommodate last-minute moves subject to availability."
+    },
+    {
+      question: "Do you move interstate?",
+      answer: "Yes! We provide professional interstate removalist services to Melbourne, Brisbane, Canberra, Adelaide, Gold Coast, and other major Australian cities."
+    },
+    {
+      question: "What areas of Sydney do you service?",
+      answer: "We service all Sydney suburbs including Eastern Suburbs, North Shore, Inner West, Western Sydney, Northern Beaches, Hills District, and Sutherland Shire."
+    },
+    {
+      question: "Do you provide packing services?",
+      answer: "Yes, we offer professional packing services. Our team can pack your entire home with quality materials, or we can provide packing materials for DIY packing."
+    }
+  ];
+
   return (
     <>
-      {/* HeroSection is the most important for LCP (Largest Contentful Paint). 
+      {/* JSON-LD Schema Markup for SEO */}
+      <SchemaMarkup schema={[
+        generateLocalBusinessSchema(),
+        generateFAQSchema(faqs)
+      ]} />
+
+      {/* HeroSection is the most important for LCP (Largest Contentful Paint).
         Passing backgroundImage={heroImage.src} is correct for CSS backgrounds.
       */}
       <HeroSection
