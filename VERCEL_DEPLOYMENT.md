@@ -12,16 +12,22 @@ The build will now succeed on Vercel, but you **must** set environment variables
 
 Go to your Vercel project settings:
 1. Navigate to: **Settings** → **Environment Variables**
-2. Add the following variables:
+2. Add the following variables (replace with your actual values):
 
 ```bash
 # Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://zbqzjtbjdepgwmnbskbu.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpicXpqdGJqZGVwZ3dtbmJza2J1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxNTk0NDcsImV4cCI6MjA3OTczNTQ0N30.Zb_HDHhgx6R-n3njltUr_lxZnGB0bg2yoN82ztJ8v4g
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 # Google Maps API Key
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSyBDx371ql7wimWZ2wsRfc2-NQ7fd9pvxpk
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 ```
+
+**⚠️ SECURITY WARNING**: Never commit actual API keys to Git! Use placeholders in documentation.
+
+**Where to find these values:**
+- **Supabase URL & Anon Key**: Supabase Dashboard → Project Settings → API
+- **Google Maps API Key**: Google Cloud Console → APIs & Services → Credentials
 
 3. Set these for all environments:
    - ✅ **Production**

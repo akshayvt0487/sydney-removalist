@@ -190,9 +190,11 @@ RESEND_API_KEY=your_resend_api_key_here
      - `FROM_EMAIL`
      - `RESEND_API_KEY`
 
-3. **Create Admin User**
-   - Sign up through the app
-   - Add to `user_roles` table manually via SQL
+3. **Create Admin User** - Follow [ADMIN_SETUP_GUIDE.md](ADMIN_SETUP_GUIDE.md)
+   - Sign up through the app at `/auth`
+   - Run the SQL script in `supabase/sql/add_admin_user.sql` to grant admin access
+   - Or manually add to `user_roles` table via Supabase Dashboard
+   - **Important**: You'll get "Access Denied" until you complete this step!
 
 4. **Test All Functionality**
    - Test form submissions (quote and contact)

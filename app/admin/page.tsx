@@ -20,9 +20,15 @@ export default async function AdminPage() {
     .eq('role', 'admin')
     .maybeSingle();
 
-  if (roleError || !roleData) {
-    // User is not an admin, redirect to home
-    redirect('/?error=unauthorized');
+  // Log the role check for debugging
+  if (roleError) {
+    console.error('Error checking user role:', roleError);
+  }
+
+  if (!roleData) {
+    console.warn(`User ${user.email} (${user.id}) attempted to access admin without admin role`);
+    // User is not an admin, redirect to access denied page
+    redirect('/auth/access-denied?email=' + encodeURIComponent(user.email || ''));
   }
 
   // User is authenticated and is an admin, render the client component

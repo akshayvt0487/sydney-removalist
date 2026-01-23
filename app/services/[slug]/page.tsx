@@ -26,6 +26,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${service.title} Sydney | Professional ${service.title} Services`,
     description: service.shortDescription,
     keywords: [service.title.toLowerCase(), `${service.title.toLowerCase()} sydney`, "removalist services"],
+    openGraph: {
+      title: `${service.title} Sydney | Professional Services`,
+      description: service.shortDescription,
+      type: "website",
+      url: `/services/${slug}`,
+      images: [{
+        url: '/og-services.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${service.title} Services in Sydney`
+      }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} Sydney`,
+      description: service.shortDescription
+    }
   };
 }
 

@@ -24,18 +24,22 @@ The app is using placeholder values (`https://placeholder.supabase.co`) instead 
 
 ### Step 2: Add Environment Variables
 1. Click **Environment Variables** in the left sidebar
-2. Add these **THREE** variables:
+2. Add these **THREE** variables (get actual values from your services):
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL
-Value: https://zbqzjtbjdepgwmnbskbu.supabase.co
+Value: [Get from Supabase Dashboard → Settings → API]
 
 NEXT_PUBLIC_SUPABASE_ANON_KEY
-Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpicXpqdGJqZGVwZ3dtbmJza2J1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxNTk0NDcsImV4cCI6MjA3OTczNTQ0N30.Zb_HDHhgx6R-n3njltUr_lxZnGB0bg2yoN82ztJ8v4g
+Value: [Get from Supabase Dashboard → Settings → API]
 
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-Value: AIzaSyBDx371ql7wimWZ2wsRfc2-NQ7fd9pvxpk
+Value: [Get from Google Cloud Console → Credentials]
 ```
+
+**⚠️ Where to find these values:**
+- **Supabase**: Dashboard → Project Settings → API → Project URL and anon/public key
+- **Google Maps**: Google Cloud Console → APIs & Services → Credentials
 
 ### Step 3: Select Environments
 For **each variable**, select ALL three environments:

@@ -5,6 +5,23 @@ export const metadata: Metadata = {
   title: "Terms and Conditions | Sydney Removalist",
   description: "Read the terms and conditions for using Sydney Removalist services. Understand your rights and obligations when booking our professional moving services.",
   keywords: ["terms and conditions", "service agreement", "Sydney removalist", "moving services"],
+  openGraph: {
+    title: "Terms and Conditions | Sydney Removalist",
+    description: "Read the terms and conditions for using Sydney Removalist services.",
+    type: "website",
+    url: "/terms-and-conditions",
+    images: [{
+      url: '/og-default.jpg',
+      width: 1200,
+      height: 630,
+      alt: "Sydney Removalist Terms and Conditions"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions | Sydney Removalist",
+    description: "Read the terms and conditions for using Sydney Removalist services."
+  }
 };
 
 export default function TermsAndConditions() {

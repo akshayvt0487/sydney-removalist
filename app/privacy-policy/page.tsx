@@ -5,6 +5,23 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Sydney Removalist",
   description: "Read our privacy policy to understand how Sydney Removalist collects, uses, and protects your personal information when you use our moving services.",
   keywords: ["privacy policy", "data protection", "Sydney removalist", "personal information"],
+  openGraph: {
+    title: "Privacy Policy | Sydney Removalist",
+    description: "Read our privacy policy to understand how we protect your personal information.",
+    type: "website",
+    url: "/privacy-policy",
+    images: [{
+      url: '/og-default.jpg',
+      width: 1200,
+      height: 630,
+      alt: "Sydney Removalist Privacy Policy"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Sydney Removalist",
+    description: "Read our privacy policy to understand how we protect your personal information."
+  }
 };
 
 export default function PrivacyPolicy() {
