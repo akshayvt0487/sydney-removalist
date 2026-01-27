@@ -8,12 +8,17 @@ export async function middleware(request: NextRequest) {
   // Protected routes that require authentication
   const protectedRoutes = ['/admin', '/dashboard']
   const authRoutes = ['/auth']
+  const publicAuthRoutes = ['/auth/access-denied'] // Auth routes that should be accessible even with a session
 
   const { pathname } = request.nextUrl
 
   // Get the supabase session from cookies
   const sessionCookie = request.cookies.get('sb-zbqzjtbjdepgwmnbskbu-auth-token')
   const hasSession = !!sessionCookie
+
+  // Debug logging
+  const isPublicAuthRoute = publicAuthRoutes.some(route => pathname.startsWith(route))
+  console.log('=== MIDDLEWARE ===', pathname, 'Session:', hasSession, 'PublicAuth:', isPublicAuthRoute);
 
   // Redirect to auth if accessing protected route without session
   if (protectedRoutes.some(route => pathname.startsWith(route)) && !hasSession) {
@@ -23,7 +28,9 @@ export async function middleware(request: NextRequest) {
   }
 
   // Redirect to dashboard if accessing auth route with active session
-  if (authRoutes.some(route => pathname.startsWith(route)) && hasSession) {
+  // BUT exclude public auth routes like access-denied
+  if (authRoutes.some(route => pathname.startsWith(route)) && hasSession && !isPublicAuthRoute) {
+    console.log('REDIRECTING TO DASHBOARD FROM:', pathname);
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 

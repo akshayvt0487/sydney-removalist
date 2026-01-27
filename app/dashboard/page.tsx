@@ -26,6 +26,13 @@ export default async function DashboardPage() {
     .maybeSingle();
 
   // Log the role check for debugging
+  console.log('=== ADMIN CHECK DEBUG ===');
+  console.log('User ID:', user.id);
+  console.log('User Email:', user.email);
+  console.log('Role Data:', roleData);
+  console.log('Role Error:', roleError);
+  console.log('========================');
+
   if (roleError) {
     console.error('Error checking user role:', roleError);
   }

@@ -123,15 +123,17 @@ const handler = async (req: Request): Promise<Response> => {
       `;
     }
 
-    // Get recipient email from environment variable, fallback to hardcoded value
-    const recipientEmail = Deno.env.get("NOTIFICATION_EMAIL") || "akshay@dsigns.com.au";
+    // Get recipient emails from environment variable (comma-separated list)
+    // Example: "email1@example.com,email2@example.com,email3@example.com"
+    const notificationEmailsEnv = Deno.env.get("NOTIFICATION_EMAILS") || Deno.env.get("NOTIFICATION_EMAIL") || "akshay@dsigns.com.au";
+    const recipientEmails = notificationEmailsEnv.split(',').map(email => email.trim()).filter(email => email.length > 0);
     const fromEmail = Deno.env.get("FROM_EMAIL") || "Sydney Removalist <onboarding@resend.dev>";
 
-    console.log(`Sending email to: ${recipientEmail}`);
+    console.log(`Sending email to: ${recipientEmails.join(', ')}`);
 
     const emailResponse = await resend.emails.send({
       from: fromEmail,
-      to: [recipientEmail],
+      to: recipientEmails,
       subject: emailSubject,
       html: emailHtml,
     });

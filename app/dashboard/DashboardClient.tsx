@@ -11,7 +11,7 @@ import {
   Download, RefreshCw, Trash2, MapPin, Calendar, Clock,
   Phone, Mail, FileText, ChevronDown, ChevronUp, Package,
   MessageSquare, Loader2, LogOut, TrendingUp, Users,
-  ClipboardCheck, BarChart3, Activity
+  ClipboardCheck, BarChart3, Activity, ArrowUpDown, ArrowUp, ArrowDown
 } from 'lucide-react';
 import { format, subDays, isAfter } from 'date-fns';
 import { Database } from '@/integrations/supabase/types';
@@ -30,6 +30,8 @@ export default function DashboardClient({ initialSubmissions, user }: DashboardC
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<'all' | 'quote' | 'contact'>('all');
+  const [sortBy, setSortBy] = useState<'date' | 'name' | 'status'>('date');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   const router = useRouter();
   const { toast } = useToast();
@@ -249,10 +251,28 @@ export default function DashboardClient({ initialSubmissions, user }: DashboardC
     setExpandedId(expandedId === id ? null : id);
   };
 
-  const filteredSubmissions = submissions.filter(sub => {
-    if (filterType === 'all') return true;
-    return (sub.form_type || 'quote') === filterType;
-  });
+  const filteredSubmissions = submissions
+    .filter(sub => {
+      if (filterType === 'all') return true;
+      return (sub.form_type || 'quote') === filterType;
+    })
+    .sort((a, b) => {
+      let comparison = 0;
+
+      switch (sortBy) {
+        case 'date':
+          comparison = new Date(a.created_at!).getTime() - new Date(b.created_at!).getTime();
+          break;
+        case 'name':
+          comparison = a.full_name.localeCompare(b.full_name);
+          break;
+        case 'status':
+          comparison = (a.status || 'new').localeCompare(b.status || 'new');
+          break;
+      }
+
+      return sortOrder === 'asc' ? comparison : -comparison;
+    });
 
   // Calculate statistics
   const stats = {
@@ -379,6 +399,52 @@ export default function DashboardClient({ initialSubmissions, user }: DashboardC
           </div>
         </div>
 
+        {/* Sort Bar */}
+        <div className="flex items-center gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
+          <span className="text-sm font-medium">Sort by:</span>
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              variant={sortBy === 'date' ? 'default' : 'outline'}
+              onClick={() => setSortBy('date')}
+            >
+              Date
+            </Button>
+            <Button
+              size="sm"
+              variant={sortBy === 'name' ? 'default' : 'outline'}
+              onClick={() => setSortBy('name')}
+            >
+              Name
+            </Button>
+            <Button
+              size="sm"
+              variant={sortBy === 'status' ? 'default' : 'outline'}
+              onClick={() => setSortBy('status')}
+            >
+              Status
+            </Button>
+          </div>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+            className="gap-2 ml-auto"
+          >
+            {sortOrder === 'asc' ? (
+              <>
+                <ArrowUp className="w-4 h-4" />
+                Ascending
+              </>
+            ) : (
+              <>
+                <ArrowDown className="w-4 h-4" />
+                Descending
+              </>
+            )}
+          </Button>
+        </div>
+
         {/* Submissions List */}
         {filteredSubmissions.length === 0 ? (
           <Card>
@@ -408,6 +474,19 @@ export default function DashboardClient({ initialSubmissions, user }: DashboardC
                       </CardDescription>
                     </div>
                     <div className="flex gap-2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleDelete(submission.id)}
+                        disabled={deletingId === submission.id}
+                        className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                      >
+                        {deletingId === submission.id ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Trash2 className="w-4 h-4" />
+                        )}
+                      </Button>
                       <Button
                         variant="ghost"
                         size="sm"
@@ -506,33 +585,21 @@ export default function DashboardClient({ initialSubmissions, user }: DashboardC
                       )}
 
                       <div className="flex flex-wrap gap-2 pt-4">
-                        <select
-                          value={submission.status || 'new'}
-                          onChange={(e) => handleStatusChange(submission.id, e.target.value)}
-                          className="px-3 py-1 rounded-md border bg-background text-sm"
-                        >
-                          <option value="new">New</option>
-                          <option value="contacted">Contacted</option>
-                          <option value="quoted">Quoted</option>
-                          <option value="confirmed">Confirmed</option>
-                          <option value="completed">Completed</option>
-                          <option value="cancelled">Cancelled</option>
-                        </select>
-
-                        <Button
-                          variant="destructive"
-                          size="sm"
-                          onClick={() => handleDelete(submission.id)}
-                          disabled={deletingId === submission.id}
-                          className="gap-2"
-                        >
-                          {deletingId === submission.id ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                          ) : (
-                            <Trash2 className="w-4 h-4" />
-                          )}
-                          Delete
-                        </Button>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-semibold">Update Status:</span>
+                          <select
+                            value={submission.status || 'new'}
+                            onChange={(e) => handleStatusChange(submission.id, e.target.value)}
+                            className="px-3 py-1.5 rounded-md border bg-background text-sm"
+                          >
+                            <option value="new">New</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="quoted">Quoted</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   )}
