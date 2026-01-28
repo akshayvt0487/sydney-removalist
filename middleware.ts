@@ -16,10 +16,6 @@ export async function middleware(request: NextRequest) {
   const sessionCookie = request.cookies.get('sb-zbqzjtbjdepgwmnbskbu-auth-token')
   const hasSession = !!sessionCookie
 
-  // Debug logging
-  const isPublicAuthRoute = publicAuthRoutes.some(route => pathname.startsWith(route))
-  console.log('=== MIDDLEWARE ===', pathname, 'Session:', hasSession, 'PublicAuth:', isPublicAuthRoute);
-
   // Redirect to auth if accessing protected route without session
   if (protectedRoutes.some(route => pathname.startsWith(route)) && !hasSession) {
     const redirectUrl = new URL('/auth', request.url)
@@ -29,8 +25,8 @@ export async function middleware(request: NextRequest) {
 
   // Redirect to dashboard if accessing auth route with active session
   // BUT exclude public auth routes like access-denied
+  const isPublicAuthRoute = publicAuthRoutes.some(route => pathname.startsWith(route))
   if (authRoutes.some(route => pathname.startsWith(route)) && hasSession && !isPublicAuthRoute) {
-    console.log('REDIRECTING TO DASHBOARD FROM:', pathname);
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 

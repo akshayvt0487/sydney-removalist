@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/contact",
     images: [{
-      url: '/og-contact.jpg',
+      url: '/og-default.jpg',
       width: 1200,
       height: 630,
       alt: "Contact Sydney Removalist"

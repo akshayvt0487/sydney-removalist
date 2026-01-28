@@ -25,20 +25,11 @@ export default async function DashboardPage() {
     .eq('role', 'admin')
     .maybeSingle();
 
-  // Log the role check for debugging
-  console.log('=== ADMIN CHECK DEBUG ===');
-  console.log('User ID:', user.id);
-  console.log('User Email:', user.email);
-  console.log('Role Data:', roleData);
-  console.log('Role Error:', roleError);
-  console.log('========================');
-
   if (roleError) {
     console.error('Error checking user role:', roleError);
   }
 
   if (!roleData) {
-    console.warn(`User ${user.email} (${user.id}) attempted to access dashboard without admin role`);
     // User is not an admin, redirect to access denied page
     redirect('/auth/access-denied?email=' + encodeURIComponent(user.email || ''));
   }

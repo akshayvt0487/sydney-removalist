@@ -51,8 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: destination.description,
       type: "website",
       images: [{
-        // Fallback safely if SEO_CONFIG is missing
-        url: `${SEO_CONFIG?.baseUrl || ''}/og-interstate.jpg`,
+        url: '/og-default.jpg',
         width: 1200,
         height: 630,
         alt: `Interstate Moving: Sydney to ${destination.to}`

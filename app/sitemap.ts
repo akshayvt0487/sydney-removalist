@@ -4,7 +4,7 @@ import { regionCategories, interstateDestinations } from '@/data/suburbs';
 import { blogPosts } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sydneyremovalistpro.com.au';
+  const baseUrl = 'https://sydneyremovalist.com.au';
 
   // Static pages
   const staticPages = [

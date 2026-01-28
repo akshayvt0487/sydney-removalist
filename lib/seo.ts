@@ -4,7 +4,7 @@ export const SEO_CONFIG = {
   siteName: "Sydney Removalist",
   baseUrl: "https://sydneyremovalist.com.au",
   twitterHandle: "@sydneyremovalist",
-  defaultOgImage: "/og-image.jpg",
+  defaultOgImage: "/og-default.jpg",
   defaultAuthor: "Sydney Removalist"
 };
 

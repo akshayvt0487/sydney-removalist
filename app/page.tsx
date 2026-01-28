@@ -40,7 +40,7 @@ export const metadata: Metadata = generateEnhancedMetadata({
     "sydney moving company"
   ],
   canonical: "/",
-  ogImage: "/og-home.jpg",
+  ogImage: "/og-default.jpg",
   ogType: "website"
 });
 

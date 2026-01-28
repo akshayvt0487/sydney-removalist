@@ -71,7 +71,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 12px;">
             <p>This contact form was submitted via the Sydney Removalist website.</p>
-            <p>View all submissions in the <a href="https://sydneyremovalist.com.au/admin">Admin Dashboard</a></p>
+            <p>View all submissions in the <a href="https://sydneyremovalist.com.au/dashboard">Admin Dashboard</a></p>
           </div>
         </div>
       `;
@@ -117,7 +117,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 12px;">
             <p>This quote request was submitted via the Sydney Removalist website.</p>
-            <p>View all submissions in the <a href="https://sydneyremovalist.com.au/admin">Admin Dashboard</a></p>
+            <p>View all submissions in the <a href="https://sydneyremovalist.com.au/dashboard">Admin Dashboard</a></p>
           </div>
         </div>
       `;

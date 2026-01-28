@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/services",
     images: [{
-      url: '/og-services.jpg', // Make sure this image is in your public folder
+      url: '/og-default.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist Professional Moving Services"

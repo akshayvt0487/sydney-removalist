@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 
 // Company Information
 export const COMPANY_INFO = {
-  name: 'Sydney Removalist Pro',
-  legalName: 'Sydney Removalist Pro Pty Ltd',
-  url: 'https://sydneyremovalistpro.com.au',
-  logo: 'https://sydneyremovalistpro.com.au/logo.png',
+  name: 'Sydney Removalist',
+  legalName: 'Sydney Removalist Pty Ltd',
+  url: 'https://sydneyremovalist.com.au',
+  logo: 'https://sydneyremovalist.com.au/logo.png',
   description: 'Professional removalist services in Sydney. Trusted moving company with 15+ years experience, serving all Sydney suburbs and interstate moves.',
   phone: '+61 2 1234 5678',
-  email: 'info@sydneyremovalistpro.com.au',
+  email: 'info@sydneyremovalist.com.au',
   address: {
-    streetAddress: '123 Main Street',
+    streetAddress: 'Sydney',
     addressLocality: 'Sydney',
     addressRegion: 'NSW',
     postalCode: '2000',

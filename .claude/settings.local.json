@@ -12,7 +12,8 @@
       "Bash(npm run build:*)",
       "Bash(git commit:*)",
       "Bash(ls:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(find:*)"
     ]
   }
 }

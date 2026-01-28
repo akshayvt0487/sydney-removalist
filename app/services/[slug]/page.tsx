@@ -10,7 +10,9 @@ import ServiceCoverage from '@/components/ServiceCoverage';
 import ServicePricing from '@/components/ServicePricing';
 import ServiceExpectations from '@/components/ServiceExpectations';
 import TrustBadges from '@/components/TrustBadges';
+import SchemaMarkup from '@/components/SchemaMarkup';
 import { services } from '@/data/services';
+import { generateServiceSchema } from '@/lib/seo-schema';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       url: `/services/${slug}`,
       images: [{
-        url: '/og-services.jpg',
+        url: '/og-default.jpg',
         width: 1200,
         height: 630,
         alt: `${service.title} Services in Sydney`
@@ -63,8 +65,16 @@ export default async function ServiceDetailPage({ params }: Props) {
   // Handle image src whether it's a string URL or Next.js static import object
   const heroImageSrc = typeof service.image === 'string' ? service.image : service.image.src;
 
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: service.title,
+    description: service.description,
+    url: `/services/${service.slug}`,
+  });
+
   return (
     <>
+      <SchemaMarkup schema={serviceSchema} />
       <main>
         <HeroSection
           title={service.title}

@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
       type: "website",
       images: [{
-        url: `${SEO_CONFIG.baseUrl || ''}/og-locations.jpg`,
+        url: '/og-default.jpg',
         width: 1200,
         height: 630,
         alt: `Removalist Services in ${suburbDetails.name}`

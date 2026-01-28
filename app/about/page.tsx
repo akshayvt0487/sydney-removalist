@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     type: "website",
     url: "/about",
     images: [{
-      url: '/og-about.jpg', // Ensure this exists in public/
+      url: '/og-default.jpg',
       width: 1200,
       height: 630,
-      alt: "Sydney Removalist Team - Professional Movers"
+      alt: "Sydney Removalist - Professional Moving Services"
     }]
   },
   twitter: {

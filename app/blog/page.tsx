@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/blog",
     images: [{
-      url: '/og-blog.jpg',
+      url: '/og-default.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist Blog"
