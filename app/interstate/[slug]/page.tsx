@@ -46,6 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "interstate movers",
       "long distance removalists"
     ],
+    alternates: {
+      canonical: `/interstate/${slug}`,
+    },
     openGraph: {
       title: `Interstate Removalists: ${destination.from} to ${destination.to}`,
       description: destination.description,

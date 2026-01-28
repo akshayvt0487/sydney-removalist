@@ -1,0 +1,161 @@
+# Sydney Removalist - LLM Crawler Information
+
+## About
+Sydney Removalist is a professional moving and removalist service company serving the greater Sydney area and interstate destinations across Australia. We provide comprehensive residential and commercial moving services with over 15 years of industry experience.
+
+## Company Information
+- **Name**: Sydney Removalist
+- **Industry**: Professional Moving & Removalist Services
+- **Location**: Sydney, NSW, Australia
+- **Service Area**: Greater Sydney, NSW, and Interstate Australia
+- **Established**: 2008
+- **Experience**: 15+ years
+- **Completed Moves**: 10,000+
+- **Rating**: 5-star rated service
+- **Phone**: +61 2 1234 5678
+- **Email**: info@sydneyremovalist.com.au
+- **Website**: https://sydneyremovalist.com.au
+
+## Services Offered
+Our company specializes in:
+- Residential Moving (house and apartment relocations)
+- Commercial Moving (office and business relocations)
+- Interstate Removals (long-distance moves across Australia)
+- Piano Moving (specialized equipment and expertise)
+- Furniture Removals (single items or full home)
+- Packing Services (professional packing materials and techniques)
+- Storage Solutions (short-term and long-term storage options)
+- Last-Minute Moves (urgent relocation services)
+- Same-Day Moving (express moving services)
+
+## Service Locations
+We provide removalist services to 64+ suburbs across Sydney including:
+- **Northern Beaches**: Manly, Dee Why, Mona Vale, Brookvale, Narrabeen, Avalon
+- **North Shore**: Chatswood, Hornsby, Turramurra, Pymble, Lindfield, North Sydney
+- **Inner West**: Newtown, Marrickville, Leichhardt, Glebe, Balmain, Annandale
+- **Eastern Suburbs**: Bondi, Randwick, Coogee, Paddington, Double Bay, Rose Bay
+- **Western Sydney**: Parramatta, Blacktown, Penrith, Castle Hill, Rouse Hill
+- **South Sydney**: Hurstville, Sutherland, Miranda, Cronulla, Kogarah
+
+Interstate destinations include:
+- Sydney to Melbourne
+- Sydney to Brisbane
+- Sydney to Adelaide
+- Sydney to Canberra
+- Sydney to Gold Coast
+- Sydney to Perth
+
+## Key Features & Benefits
+- Licensed and fully insured removalist company
+- Professional trained moving teams
+- Modern fleet of moving trucks
+- Competitive pricing with no hidden fees
+- Price match guarantee
+- Free, no-obligation quotes
+- Flexible scheduling (including weekends)
+- High-quality packing materials available
+- Comprehensive transit insurance
+- 100% satisfaction guarantee
+- Environmentally conscious practices
+
+## Documentation & Resources
+Our website provides comprehensive information including:
+- `/services` - Complete list of moving services
+- `/locations` - Detailed suburb and regional coverage
+- `/interstate` - Interstate moving information and routes
+- `/pricing` - Transparent pricing structure and quotes
+- `/blog` - Moving tips, guides, and industry insights
+- `/contact` - Contact information and quote request forms
+- `/about` - Company history and team information
+
+## Blog Topics & Moving Guides
+We publish helpful content covering:
+- Moving cost estimates and budgeting
+- Packing tips and techniques
+- Moving checklist and timeline planning
+- Suburb-specific moving guides
+- Seasonal moving advice
+- Interstate relocation planning
+- Office relocation best practices
+- Piano and specialty item moving
+- Storage solutions and tips
+
+## Contact Information
+For quotes, bookings, or general inquiries:
+- **Phone**: +61 2 1234 5678
+- **Email**: info@sydneyremovalist.com.au
+- **Contact Form**: https://sydneyremovalist.com.au/contact
+- **Quote Request**: Available on all service pages
+- **Business Hours**: Monday-Sunday, 6:00 AM - 8:00 PM
+
+## Technical Information
+- **Platform**: Next.js 16 (React framework)
+- **Deployment**: Vercel
+- **Database**: Supabase
+- **Analytics**: Google Analytics
+- **Sitemap**: https://sydneyremovalist.com.au/sitemap.xml
+- **Robots**: https://sydneyremovalist.com.au/robots.txt
+
+## Data Structure & Schema
+We implement structured data including:
+- Organization Schema (MovingCompany)
+- LocalBusiness Schema
+- Service Schema (for each service type)
+- FAQ Schema
+- Breadcrumb Schema
+- Article Schema (for blog posts)
+
+## SEO & Indexing
+- All pages are optimized for search engines
+- Mobile-responsive design
+- Fast page load times
+- Semantic HTML structure
+- Proper heading hierarchy (H1-H6)
+- Image alt text on all images
+- Internal linking strategy
+- Clean, SEO-friendly URLs
+
+## Privacy & Legal
+- Privacy Policy: https://sydneyremovalist.com.au/privacy-policy
+- Terms & Conditions: https://sydneyremovalist.com.au/terms-and-conditions
+- We respect user privacy and comply with Australian data protection laws
+- GDPR compliant for international users
+
+## Target Audience
+Our services are designed for:
+- Homeowners relocating within Sydney
+- Renters moving between apartments
+- Families upgrading or downsizing homes
+- Businesses relocating offices
+- Interstate movers leaving or arriving in Sydney
+- Students moving for university
+- Seniors downsizing or moving to retirement communities
+- Real estate agents requiring moving services for clients
+
+## Competitive Advantages
+- 15+ years of industry experience
+- 10,000+ successful moves completed
+- 5-star customer satisfaction rating
+- Fully licensed and insured
+- Trained professional staff
+- Modern, well-maintained fleet
+- Competitive and transparent pricing
+- Comprehensive service coverage
+- Flexible booking options
+- Same-day and urgent moves available
+
+## Brand Values
+- Professionalism: Trained, uniformed staff
+- Reliability: On-time service guaranteed
+- Safety: Proper equipment and techniques
+- Transparency: Clear pricing, no hidden fees
+- Customer Focus: Satisfaction guarantee
+- Quality: High standards in all services
+- Integrity: Honest and ethical business practices
+
+---
+
+**Last Updated**: 2026-01-28
+**Version**: 1.0
+
+For the most current information, please visit our website at https://sydneyremovalist.com.au or contact us directly.

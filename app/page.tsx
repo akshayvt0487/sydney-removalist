@@ -25,8 +25,8 @@ import heroImage from '@/assets/hero-main.jpg';
  * Enhanced SEO Metadata
  */
 export const metadata: Metadata = generateEnhancedMetadata({
-  title: "Removalists Sydney | Professional Moving Services | 5-Star Rated",
-  description: "Sydney's most trusted removalists. Professional moving services across Sydney with 15+ years experience, 10,000+ happy moves, and 5-star reviews. Get your free quote today!",
+  title: "Removalists Sydney | 5-Star Moving Services",
+  description: "Sydney's most trusted removalists with 15+ years experience, 10,000+ happy moves, and 5-star reviews. Professional moving services. Free quote!",
   keywords: [
     "removalists sydney",
     "sydney removalist",
@@ -108,7 +108,6 @@ export default function Home() {
       
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Core Moving Services</h2>
           <ServicesGrid limit={6} />
         </div>
       </section>
@@ -121,7 +120,6 @@ export default function Home() {
       
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
           <FAQAccordion limit={6} />
         </div>
       </section>

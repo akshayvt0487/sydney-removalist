@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Moving Services Sydney | Residential & Commercial Removalists",
   description: "Complete moving services in Sydney: residential moving, office relocation, packing services, furniture assembly, storage solutions & interstate moves. 100% satisfaction guarantee.",
   keywords: ["moving services sydney", "residential moving", "office relocation", "packing services", "furniture assembly", "storage solutions", "interstate moves"],
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
     title: "Professional Moving Services Sydney",
     description: "Complete moving solutions for homes and businesses. 100% satisfaction guarantee.",

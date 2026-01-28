@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Moving Tips & Guides | Sydney Removalist Blog",
   description: "Expert moving tips, pricing guides, and advice from Sydney's trusted removalists. Learn how to plan your move, save money, and reduce stress.",
   keywords: ["moving tips", "removalist blog", "sydney moving guide", "packing tips", "moving cost guide"],
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "Sydney Removalist Blog | Moving Tips & Guides",
     description: "Expert moving tips and guides from Sydney's trusted removalists.",

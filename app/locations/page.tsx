@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Service Areas | Removalists Across Sydney & Interstate",
   description: "Sydney Removalist serves 64+ suburbs across Greater Sydney and interstate routes to Melbourne, Brisbane, Canberra, Adelaide & Gold Coast. Find your local removalist today.",
   keywords: ["sydney removalist locations", "removalists near me", "interstate removalists", "sydney suburbs moving", "greater sydney movers"],
+  alternates: {
+    canonical: "/locations",
+  },
   openGraph: {
     title: "Sydney Removalist Service Areas",
     description: "Professional removalist services across 64+ Sydney suburbs and interstate destinations.",

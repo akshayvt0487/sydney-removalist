@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Contact Us | Get Your Free Moving Quote",
   description: "Contact Sydney Removalist for a free moving quote. Call us 7 days a week, email us, or fill out our contact form. Fast response within 2 hours guaranteed.",
   keywords: ["contact removalists", "free moving quote", "sydney removalist contact", "moving enquiry", "book removalists"],
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact Sydney Removalist",
     description: "Get your free moving quote today. Fast response within 2 hours.",

@@ -47,6 +47,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `moving services ${suburbDetails.region.toLowerCase()}`,
       "local removalists"
     ],
+    alternates: {
+      canonical: `/locations/${suburbDetails.regionSlug}/${suburb}`,
+    },
     openGraph: {
       title: `Removalist ${suburbDetails.name} | Sydney Removalist`,
       description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,

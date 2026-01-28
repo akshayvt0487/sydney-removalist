@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "About Us | Sydney's Trusted Removalists Since 2008",
   description: "Learn about Sydney Removalist - 15+ years experience, 10,000+ successful moves, and 98% customer satisfaction. Fully licensed, insured, and dedicated to stress-free moving.",
   keywords: ["about sydney removalist", "sydney movers", "trusted removalists", "professional moving company", "licensed removalists sydney"],
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About Sydney Removalist | 15+ Years Experience",
     description: "Your trusted moving partner since 2008. 10,000+ successful moves and 98% satisfaction rate.",

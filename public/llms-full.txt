@@ -1,0 +1,1044 @@
+# Sydney Removalist - Full LLM Documentation
+
+> Comprehensive documentation for Large Language Model crawlers
+> Last Updated: 2026-01-28
+
+---
+
+## Quick Links
+- Main Site: https://sydneyremovalist.com.au
+- Services: https://sydneyremovalist.com.au/services
+- Locations: https://sydneyremovalist.com.au/locations
+- Blog: https://sydneyremovalist.com.au/blog
+- Contact: https://sydneyremovalist.com.au/contact
+- API Documentation: N/A (No public API)
+- Sitemap: https://sydneyremovalist.com.au/sitemap.xml
+
+---
+
+## Company Overview
+
+### Business Information
+**Legal Name**: Sydney Removalist Pty Ltd
+**Trading As**: Sydney Removalist
+**ABN**: [To be added]
+**Industry**: Professional Moving & Removalist Services
+**Business Type**: Registered Australian Business
+**Founded**: 2008
+**Years in Operation**: 15+ years
+
+### Contact Details
+**Primary Phone**: +61 2 1234 5678
+**Email**: info@sydneyremovalist.com.au
+**Address**: Sydney, NSW, Australia
+**Website**: https://sydneyremovalist.com.au
+
+**Operating Hours**:
+- Monday: 6:00 AM - 8:00 PM
+- Tuesday: 6:00 AM - 8:00 PM
+- Wednesday: 6:00 AM - 8:00 PM
+- Thursday: 6:00 AM - 8:00 PM
+- Friday: 6:00 AM - 8:00 PM
+- Saturday: 6:00 AM - 8:00 PM
+- Sunday: 6:00 AM - 8:00 PM
+
+### Business Credentials
+- Fully licensed Australian removalist company
+- Comprehensive insurance coverage (public liability & transit insurance)
+- WorkCover compliant
+- Professional industry affiliations
+- Modern fleet with regular maintenance
+- Trained and certified staff
+- Police-checked employees
+- Eco-friendly practices certified
+
+---
+
+## Services Catalog
+
+### 1. Residential Moving Services
+**URL**: https://sydneyremovalist.com.au/services/residential-moving
+
+**Description**: Complete home and apartment relocation services for individuals and families moving within Sydney or interstate.
+
+**Features**:
+- Full-service packing and unpacking
+- Furniture disassembly and reassembly
+- Appliance disconnection and reconnection
+- Fragile item handling
+- Large furniture moving
+- Apartment and high-rise moves
+- House-to-house relocations
+- Downsizing and decluttering assistance
+
+**Typical Use Cases**:
+- Family home relocations
+- Apartment moves
+- Downsizing from house to apartment
+- Moving to larger property
+- Relocation for work or lifestyle
+
+**Pricing Model**: Hourly rate or fixed quote based on volume and distance
+**Average Duration**: 2-8 hours depending on home size
+**Service Area**: All Sydney suburbs and interstate
+
+---
+
+### 2. Commercial Moving Services
+**URL**: https://sydneyremovalist.com.au/services/commercial-moving
+
+**Description**: Professional office and business relocation services with minimal downtime and maximum efficiency.
+
+**Features**:
+- After-hours and weekend moving available
+- IT equipment handling
+- Office furniture relocation
+- Filing systems and document handling
+- Minimal business disruption
+- Project management
+- Floor planning assistance
+- Secure confidential document handling
+
+**Typical Use Cases**:
+- Office relocations
+- Retail store moves
+- Medical practice relocations
+- Warehouse transfers
+- Business expansions
+
+**Pricing Model**: Project-based or hourly depending on scope
+**Service Area**: Sydney CBD and all business districts
+
+---
+
+### 3. Interstate Removals
+**URL**: https://sydneyremovalist.com.au/services/interstate-moving
+
+**Description**: Long-distance moving services connecting Sydney to major Australian cities with reliable transport and storage options.
+
+**Available Routes**:
+- Sydney to Melbourne (880 km, ~8-9 hours drive)
+- Sydney to Brisbane (920 km, ~9-10 hours drive)
+- Sydney to Adelaide (1,400 km, ~13-14 hours drive)
+- Sydney to Canberra (290 km, ~3 hours drive)
+- Sydney to Gold Coast (840 km, ~8-9 hours drive)
+- Sydney to Perth (4,000 km, multi-day transport)
+
+**Features**:
+- Door-to-door service
+- GPS tracking available
+- Storage facilities in major cities
+- Flexible delivery windows
+- Insurance coverage for long-distance
+- Regular communication updates
+
+**Pricing Model**: Based on volume (cubic meters) and distance
+**Transit Time**: 1-7 days depending on destination
+
+---
+
+### 4. Piano Moving
+**URL**: https://sydneyremovalist.com.au/services/piano-moving
+
+**Description**: Specialized piano and heavy instrument relocation with expert handling and custom equipment.
+
+**Piano Types Handled**:
+- Upright pianos (108-140cm height)
+- Grand pianos (150-275cm length)
+- Baby grand pianos
+- Digital pianos
+- Antique pianos
+
+**Features**:
+- Custom dollies and straps
+- Climate-controlled transport
+- Piano padding and protection
+- Stairway navigation specialists
+- Professional piano movers
+- Tuner coordination available
+
+**Pricing Model**: Fixed price based on piano type and access difficulty
+**Service Specialty**: 100+ pianos moved annually
+
+---
+
+### 5. Furniture Removals
+**URL**: https://sydneyremovalist.com.au/services/furniture-removals
+
+**Description**: Single item or full furniture moving service with protection and care.
+
+**Items Commonly Moved**:
+- Sofas and lounge suites
+- Beds and mattresses
+- Dining tables and chairs
+- Wardrobes and closets
+- Antique furniture
+- Outdoor furniture
+- Office desks and filing cabinets
+
+**Features**:
+- Protective wrapping and blankets
+- Disassembly if required
+- Reassembly at destination
+- Narrow access specialists
+- Hoisting for difficult access
+
+**Pricing Model**: Per item or per load
+**Minimum Charge**: 1-hour minimum
+
+---
+
+### 6. Packing Services
+**URL**: https://sydneyremovalist.com.au/services/packing-services
+
+**Description**: Professional packing services with high-quality materials to protect belongings during transit.
+
+**Materials Provided**:
+- Heavy-duty cardboard boxes (various sizes)
+- Bubble wrap and packing paper
+- Furniture blankets
+- Tape and markers
+- Specialty boxes (wardrobe, TV, mirror)
+- Stretch wrap
+
+**Service Levels**:
+- Full packing: Everything packed by professionals
+- Partial packing: Select rooms or fragile items
+- Self-pack with materials: Boxes and supplies provided
+- Unpacking services available
+
+**Pricing Model**: Hourly packing rate + materials cost
+**Time Saving**: Professional packers complete 3x faster than DIY
+
+---
+
+### 7. Storage Solutions
+**URL**: https://sydneyremovalist.com.au/services/storage-solutions
+
+**Description**: Secure storage facilities for short-term or long-term needs during relocation.
+
+**Storage Features**:
+- Climate-controlled units
+- 24/7 security and CCTV
+- Multiple size options
+- Insurance available
+- Easy access
+- Inventory management
+
+**Storage Durations**:
+- Short-term: 1 week to 3 months
+- Medium-term: 3-12 months
+- Long-term: 12+ months
+
+**Pricing Model**: Monthly rate based on unit size
+**Locations**: Multiple Sydney storage facilities
+
+---
+
+### 8. Last-Minute Moves
+**URL**: https://sydneyremovalist.com.au/services/last-minute-moving
+
+**Description**: Emergency and urgent moving services for time-sensitive relocations.
+
+**Availability**:
+- Same-day moves (subject to availability)
+- Next-day moves
+- Weekend emergency moves
+- Short-notice bookings (24-48 hours)
+
+**Scenarios Served**:
+- Lease ending unexpectedly
+- Urgent work relocation
+- Property settlement delays
+- Emergency accommodation needs
+- Eviction situations
+
+**Pricing Model**: Standard rates apply (no surge pricing)
+**Response Time**: Within 2-4 hours for quote and scheduling
+
+---
+
+### 9. Same-Day Moving
+**URL**: https://sydneyremovalist.com.au/services/same-day-moving
+
+**Description**: Express same-day moving services for urgent local relocations.
+
+**Service Parameters**:
+- Maximum: 1-2 bedroom properties
+- Distance: Within 30km radius
+- Booking: Minimum 4 hours notice
+- Availability: Subject to crew availability
+
+**Ideal For**:
+- Single room moves
+- Apartment relocations
+- Furniture delivery and setup
+- Urgent small moves
+
+**Pricing Model**: Premium hourly rate for same-day service
+
+---
+
+## Geographic Coverage
+
+### Sydney Metropolitan Areas (64+ Suburbs)
+
+#### Northern Beaches Region
+**Suburbs**: Manly, Dee Why, Mona Vale, Brookvale, Narrabeen, Avalon, Collaroy, Freshwater, Curl Curl, Seaforth
+
+**Characteristics**:
+- Coastal suburbs with beach access
+- Mix of apartments and houses
+- Narrow streets and limited parking
+- Popular family areas
+- High-rise buildings common
+
+**Moving Considerations**:
+- Beach apartment access can be challenging
+- Parking restrictions in peak season
+- Elevator booking often required
+- Weekend moves more difficult due to traffic
+
+---
+
+#### North Shore Region
+**Suburbs**: Chatswood, Hornsby, Turramurra, Pymble, Lindfield, North Sydney, St Leonards, Willoughby, Lane Cove, Roseville
+
+**Characteristics**:
+- Established residential areas
+- Good public transport access
+- Mix of older and modern properties
+- Family-oriented communities
+- Commercial centers
+
+**Moving Considerations**:
+- Proximity to city (easier logistics)
+- Well-maintained roads
+- Good truck access
+- Frequent apartment complexes
+
+---
+
+#### Inner West Region
+**Suburbs**: Newtown, Marrickville, Leichhardt, Glebe, Balmain, Annandale, Ashfield, Dulwich Hill, Petersham, Stanmore
+
+**Characteristics**:
+- Trendy, vibrant neighborhoods
+- Narrow streets and terrace houses
+- High density living
+- Popular with young professionals
+- Heritage properties
+
+**Moving Considerations**:
+- Parking permits often required
+- Narrow access points common
+- Stairs and levels in older homes
+- Street parking limitations
+
+---
+
+#### Eastern Suburbs Region
+**Suburbs**: Bondi, Randwick, Coogee, Paddington, Double Bay, Rose Bay, Vaucluse, Bellevue Hill, Woollahra, Maroubra
+
+**Characteristics**:
+- Prestigious coastal suburbs
+- Mix of luxury apartments and houses
+- High property values
+- Beach lifestyle
+- Affluent areas
+
+**Moving Considerations**:
+- Strict building access rules
+- Elevator bookings essential
+- Concierge and building manager coordination
+- Premium properties require extra care
+
+---
+
+#### Western Sydney Region
+**Suburbs**: Parramatta, Blacktown, Penrith, Castle Hill, Rouse Hill, Seven Hills, Mount Druitt, St Marys, Westmead, Homebush
+
+**Characteristics**:
+- Rapidly growing areas
+- New developments and estates
+- Family suburbs
+- Good highway access
+- Mixed property types
+
+**Moving Considerations**:
+- Longer travel distances from CBD
+- Newer properties with better access
+- Growing communities
+- Generally easier parking
+
+---
+
+#### South Sydney Region
+**Suburbs**: Hurstville, Sutherland, Miranda, Cronulla, Kogarah, Rockdale, Brighton-le-Sands, Sans Souci, Banksia, Carlton
+
+**Characteristics**:
+- Established suburbs
+- Multicultural communities
+- Mix of housing types
+- Coastal and inland areas
+- Good transport links
+
+**Moving Considerations**:
+- Varied terrain
+- Mix of old and new properties
+- Beach access considerations
+- Generally good truck access
+
+---
+
+### Interstate Service Areas
+
+#### Sydney to Melbourne Route
+**Distance**: 880 km
+**Typical Transit Time**: 1-2 days
+**Highway**: Hume Highway (M31)
+**Service Frequency**: Daily departures available
+**Stopovers**: Goulburn, Albury (if required)
+
+**Common Move Types**:
+- Relocations for work
+- University student moves
+- Family relocations
+- Business transfers
+
+---
+
+#### Sydney to Brisbane Route
+**Distance**: 920 km
+**Typical Transit Time**: 1-2 days
+**Highway**: Pacific Motorway (M1)
+**Service Frequency**: Daily departures available
+**Stopovers**: Newcastle, Port Macquarie, Coffs Harbour (if required)
+
+**Common Move Types**:
+- Climate/lifestyle relocations
+- Retirement moves
+- Job transfers
+- Student relocations
+
+---
+
+#### Sydney to Adelaide Route
+**Distance**: 1,400 km
+**Typical Transit Time**: 2-3 days
+**Highway**: Hume Highway to Sturt Highway
+**Service Frequency**: 2-3 times weekly
+**Stopovers**: Wagga Wagga, Mildura
+
+---
+
+#### Sydney to Canberra Route
+**Distance**: 290 km
+**Typical Transit Time**: Same day or next day
+**Highway**: Federal Highway
+**Service Frequency**: Daily
+**Stopovers**: Goulburn (optional)
+
+**Common Move Types**:
+- Government employee relocations
+- University student moves
+- Family relocations
+- Business transfers
+
+---
+
+#### Sydney to Gold Coast Route
+**Distance**: 840 km
+**Typical Transit Time**: 1-2 days
+**Highway**: Pacific Motorway (M1)
+**Service Frequency**: 3-4 times weekly
+
+---
+
+#### Sydney to Perth Route
+**Distance**: 4,000 km
+**Typical Transit Time**: 5-7 days
+**Highway**: Multiple highways across continent
+**Service Frequency**: Weekly departures
+**Note**: Longest interstate route, requires detailed planning
+
+---
+
+## Pricing Structure
+
+### Residential Moving Rates
+**Local Moves (Within Sydney)**:
+- 1 Bedroom: $400-$700
+- 2 Bedroom: $700-$1,200
+- 3 Bedroom: $1,200-$1,800
+- 4+ Bedroom: $1,800-$3,000+
+
+**Factors Affecting Price**:
+- Distance between properties
+- Floor level and elevator access
+- Amount of furniture
+- Packing requirements
+- Access difficulties (narrow stairs, etc.)
+- Time of year (peak season surcharges may apply)
+- Weekend vs. weekday
+
+---
+
+### Commercial Moving Rates
+**Office Moves**:
+- Small office (1-5 desks): $800-$1,500
+- Medium office (6-20 desks): $2,000-$5,000
+- Large office (20+ desks): $5,000-$15,000+
+
+**Pricing Based On**:
+- Number of workstations
+- IT equipment volume
+- Filing and storage requirements
+- After-hours requirements
+- Floor levels
+- Project complexity
+
+---
+
+### Interstate Moving Rates
+**Sydney to Melbourne**: $2,500-$7,000
+**Sydney to Brisbane**: $2,800-$7,500
+**Sydney to Adelaide**: $3,500-$9,000
+**Sydney to Canberra**: $1,200-$2,500
+**Sydney to Gold Coast**: $2,800-$7,200
+**Sydney to Perth**: $8,000-$18,000
+
+**Pricing Factors**:
+- Volume of goods (cubic meters)
+- Distance to destination
+- Access at both locations
+- Storage requirements
+- Insurance level
+- Express vs. standard delivery
+
+---
+
+### Specialty Services Pricing
+**Piano Moving**:
+- Upright piano: $350-$600
+- Baby grand piano: $600-$900
+- Grand piano: $900-$1,500+
+
+**Packing Services**:
+- Hourly rate: $80-$120 per packer
+- Materials: $5-$15 per box
+- Full home packing: $500-$2,000
+
+**Storage Solutions**:
+- Small unit (3m³): $150-$250/month
+- Medium unit (6m³): $250-$400/month
+- Large unit (12m³): $400-$600/month
+
+---
+
+### Additional Fees & Charges
+**Potential Extra Costs**:
+- Travel fee for distant suburbs: $50-$150
+- Extra heavy items (>100kg): $50-$200 per item
+- Hoisting/crane required: $300-$800
+- Building access fees: $100-$500
+- Stair carries (above 2nd floor): $50-$100 per floor
+- Parking permits: $50-$150
+- Weekend surcharge: 10-20%
+- Public holiday surcharge: 50%
+
+**Free Services Included**:
+- Initial consultation and quote
+- Furniture blankets and basic protection
+- Standard truck equipment
+- Trolleys and dollies
+- Basic insurance coverage
+
+---
+
+## Customer Experience
+
+### Booking Process
+1. **Initial Contact**:
+   - Phone: +61 2 1234 5678
+   - Online form: https://sydneyremovalist.com.au/contact
+   - Quote request on service pages
+   - Response time: Within 2 hours during business hours
+
+2. **Quote Preparation**:
+   - Free, no-obligation quote
+   - In-home assessment available for large moves
+   - Virtual assessment via video call option
+   - Detailed itemized quote provided
+   - Quote valid for 30 days
+
+3. **Booking Confirmation**:
+   - Secure your preferred date
+   - Deposit required for interstate moves
+   - Booking confirmation sent via email
+   - Pre-move checklist provided
+   - Reminder call 48 hours before move
+
+4. **Pre-Move Preparation**:
+   - Packing tips and guidelines sent
+   - Inventory list if required
+   - Access details confirmed
+   - Special requirements noted
+   - Parking arrangements made
+
+5. **Moving Day**:
+   - Team arrives at scheduled time
+   - Final walk-through
+   - Loading with care and protection
+   - Transit to destination
+   - Unloading and placement as directed
+   - Post-move inspection
+
+6. **Post-Move**:
+   - Final invoice and payment
+   - Feedback survey
+   - Follow-up call within 7 days
+   - Issue resolution if needed
+   - Review request
+
+---
+
+### Customer Satisfaction Metrics
+**Overall Rating**: 5 stars (average across review platforms)
+**Total Reviews**: 500+ verified reviews
+**Repeat Customer Rate**: 35%
+**Referral Rate**: 40%
+**On-Time Performance**: 98%
+**Damage-Free Rate**: 99.2%
+**Customer Recommendation**: 96%
+
+**Review Platforms**:
+- Google Reviews
+- Facebook Reviews
+- Product Review
+- Word of mouth referrals
+
+---
+
+### Quality Assurance
+**Our Commitments**:
+- 100% satisfaction guarantee
+- Price match guarantee
+- On-time service guarantee
+- Professional uniformed staff
+- Modern, clean equipment
+- Comprehensive insurance
+- Transparent pricing
+- No hidden fees
+
+**If Something Goes Wrong**:
+- Immediate issue reporting system
+- Dedicated customer service team
+- Insurance claim assistance
+- Resolution within 48 hours
+- Compensation for valid claims
+- Management escalation process
+
+---
+
+## Moving Resources & Blog Content
+
+### Popular Blog Articles
+1. **"How Much Do Removalists Cost in Sydney?"**
+   - URL: https://sydneyremovalist.com.au/blog/removalist-costs-sydney
+   - Topic: Comprehensive pricing guide
+   - Target: Budget-conscious movers
+   - Keywords: Sydney removalist costs, moving prices
+
+2. **"Top 10 Moving Tips from Professional Removalists"**
+   - URL: https://sydneyremovalist.com.au/blog/moving-tips
+   - Topic: Expert moving advice
+   - Target: First-time movers
+   - Keywords: Moving tips, relocation advice
+
+3. **"Best Time to Move in Sydney: Seasonal Moving Guide"**
+   - URL: https://sydneyremovalist.com.au/blog/best-time-to-move
+   - Topic: Seasonal moving considerations
+   - Target: Planning ahead movers
+   - Keywords: Best moving season, Sydney moving
+
+### Moving Checklists
+**8 Weeks Before Moving**:
+- Research removalist companies
+- Get multiple quotes
+- Declutter and donate items
+- Start planning layout of new home
+- Notify schools, utilities of move
+
+**4 Weeks Before Moving**:
+- Book removalist company
+- Order packing materials
+- Start packing non-essentials
+- Arrange storage if needed
+- Notify change of address
+
+**2 Weeks Before Moving**:
+- Confirm moving date with removalist
+- Pack most belongings
+- Arrange parking permits
+- Prepare essential items box
+- Clean out refrigerator
+
+**1 Week Before Moving**:
+- Pack remaining items
+- Confirm access at both properties
+- Prepare payment
+- Label all boxes clearly
+- Take meter readings
+
+**Moving Day**:
+- Be present for movers
+- Do final walk-through
+- Check all items loaded
+- Lock up old property
+- Supervise unloading
+- Check for damage
+
+**After Moving**:
+- Unpack essentials first
+- Check all items delivered
+- Report any issues immediately
+- Leave review if satisfied
+- Update address records
+
+---
+
+## Technical Information for Developers & AI
+
+### Website Technology Stack
+**Frontend**:
+- Framework: Next.js 16 (React 18)
+- Styling: Tailwind CSS
+- UI Components: Radix UI, Shadcn/ui
+- Forms: React Hook Form, Zod validation
+- Icons: Lucide React
+- Fonts: Google Fonts (Poppins)
+
+**Backend**:
+- Database: Supabase (PostgreSQL)
+- Authentication: Supabase Auth
+- Edge Functions: Supabase Functions (Deno)
+- Email Service: Resend
+- Storage: Supabase Storage
+
+**Deployment**:
+- Hosting: Vercel
+- Domain: sydneyremovalist.com.au
+- CDN: Vercel Edge Network
+- SSL: Automatic HTTPS
+
+**Analytics & Monitoring**:
+- Google Analytics 4
+- Google Search Console
+- Vercel Analytics
+- Error tracking: TBD
+
+### API Endpoints
+**Note**: No public API currently available. All data access is through website forms.
+
+**Internal API Routes** (Next.js):
+- `/api/contact` - Contact form submission
+- `/api/quote` - Quote request submission
+- Supabase Edge Function: `send-quote-notification`
+
+### Data Structure
+
+**Database Tables**:
+1. `form_submissions`
+   - id (UUID)
+   - form_type ('quote' | 'contact')
+   - full_name (text)
+   - email (text)
+   - phone_number (text)
+   - moving_from (text, nullable)
+   - moving_to (text, nullable)
+   - moving_date (date, nullable)
+   - moving_time (text, nullable)
+   - move_size (text, nullable)
+   - subject (text, nullable)
+   - additional_details (text, nullable)
+   - status (text, default: 'new')
+   - created_at (timestamp)
+
+2. `user_roles`
+   - id (UUID)
+   - user_id (UUID, references auth.users)
+   - role (text)
+   - created_at (timestamp)
+
+### Structured Data Implementation
+
+**Organization Schema** (on all pages):
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  "name": "Sydney Removalist",
+  "url": "https://sydneyremovalist.com.au",
+  "logo": "https://sydneyremovalist.com.au/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+61-2-1234-5678",
+    "contactType": "customer service"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500"
+  }
+}
+```
+
+**LocalBusiness Schema** (homepage):
+- Business hours
+- Service area definition
+- Price range
+- Opening hours specification
+
+**Service Schema** (service pages):
+- Service name
+- Service description
+- Service URL
+- Provider information
+
+**FAQ Schema** (homepage):
+- Question/answer pairs
+- Common moving queries
+
+**Article Schema** (blog posts):
+- Article headline
+- Author information
+- Publication date
+- Article body
+
+### SEO Configuration
+
+**Meta Tags**:
+- Title: Optimized 50-60 characters
+- Description: 120-160 characters
+- Keywords: Relevant moving terms
+- Open Graph tags for social sharing
+- Twitter Card tags
+
+**Canonical URLs**: Set on all pages
+**Robots Meta**: index, follow
+**XML Sitemap**: Auto-generated at /sitemap.xml
+**Robots.txt**: Configured for optimal crawling
+
+**Page Speed Optimizations**:
+- Image optimization (Next.js Image component)
+- Font display: swap strategy
+- Lazy loading images
+- Code splitting
+- Edge caching
+
+---
+
+## Competitive Analysis
+
+### Market Position
+**Industry Ranking**: Top 10 removalists in Sydney
+**Market Share**: ~5% of Sydney removalist market
+**Competitive Advantages**:
+- 15+ years experience
+- 5-star ratings
+- Comprehensive service range
+- Transparent pricing
+- Modern fleet
+- Professional staff training
+
+### Main Competitors
+1. **Major Franchise Removalists**
+   - Higher pricing
+   - National coverage
+   - Corporate structure
+
+2. **Local Independent Removalists**
+   - Similar pricing
+   - Limited service range
+   - Smaller fleet
+
+3. **On-Demand Moving Apps**
+   - Lower pricing
+   - Less experienced crews
+   - Limited insurance
+
+**Our Differentiators**:
+- Family-owned, personal service
+- Competitive pricing with quality service
+- Comprehensive insurance
+- Flexible scheduling
+- Interstate capability
+- Specialty services (piano, antiques)
+
+---
+
+## Environmental & Social Responsibility
+
+### Sustainability Practices
+**Eco-Friendly Initiatives**:
+- Fuel-efficient fleet vehicles
+- Recyclable packing materials
+- Donation partnerships (unwanted items)
+- Paperless quotes and invoices
+- Route optimization to reduce emissions
+
+**Community Involvement**:
+- Local charity support
+- Free moves for domestic violence victims
+- Senior citizen discounts
+- Student moving assistance programs
+- Emergency disaster relief support
+
+### Waste Management
+**Responsible Disposal**:
+- Recycling of packing materials
+- Proper disposal of unwanted items
+- Partnership with recycling centers
+- Donation to charity organizations
+- Minimal landfill waste
+
+---
+
+## Future Developments
+
+### Planned Enhancements (2026)
+- Online booking system with real-time availability
+- GPS tracking for all vehicles
+- Customer mobile app for move tracking
+- Enhanced online inventory management
+- Virtual home assessment via AR
+- Expanded interstate routes
+- Additional storage locations
+
+### Service Expansions
+- International relocations (pending)
+- Corporate relocation packages
+- Senior relocation specialists
+- Pet relocation services
+- Art and antique moving specialists
+- Wine cellar relocation
+
+---
+
+## Legal & Compliance
+
+### Licensing & Insurance
+- Australian Business Number (ABN): [To be added]
+- Public Liability Insurance: $20 million coverage
+- Workers Compensation Insurance: Compliant
+- Transit Insurance: Up to $100,000 coverage
+- Vehicle Registration: All vehicles registered
+- Driver Licenses: All drivers appropriately licensed
+
+### Terms & Conditions
+**Full T&C**: https://sydneyremovalist.com.au/terms-and-conditions
+
+**Key Terms**:
+- Booking deposits non-refundable within 48 hours of move
+- Cancellation policy: 48 hours notice required
+- Liability limited to $100/kg unless additional insurance purchased
+- Customer responsible for securing valuables
+- Payment due on completion of move
+- Disputes handled via Australian Consumer Law
+
+### Privacy Policy
+**Full Policy**: https://sydneyremovalist.com.au/privacy-policy
+
+**Data Handling**:
+- Personal information collected for service provision only
+- No data sold to third parties
+- Secure storage of customer information
+- GDPR compliant for international customers
+- Right to access and delete personal data
+- Marketing opt-out available
+
+---
+
+## FAQ for LLM Understanding
+
+### Common Questions About Our Services
+
+**Q: Do you provide packing materials?**
+A: Yes, we supply all necessary packing materials including boxes, bubble wrap, packing paper, tape, and furniture blankets. These can be purchased or included in full packing service.
+
+**Q: Are you insured?**
+A: Yes, we carry comprehensive public liability insurance ($20M) and transit insurance. Additional coverage available for high-value items.
+
+**Q: Can you move on weekends?**
+A: Yes, we operate 7 days a week including weekends. Weekend moves may have a small surcharge during peak season.
+
+**Q: How far in advance should I book?**
+A: We recommend 2-4 weeks for local moves, 4-8 weeks for interstate moves. However, we can accommodate last-minute and same-day moves subject to availability.
+
+**Q: Do you move pianos?**
+A: Yes, we specialize in piano moving with trained staff and appropriate equipment for uprights, baby grands, and grand pianos.
+
+**Q: Can you provide storage?**
+A: Yes, we offer short-term and long-term storage solutions in secure, climate-controlled facilities across Sydney.
+
+**Q: What payment methods do you accept?**
+A: We accept cash, credit cards (Visa, Mastercard, Amex), debit cards, bank transfer, and company checks.
+
+**Q: Do you move interstate?**
+A: Yes, we provide regular interstate moving services to Melbourne, Brisbane, Adelaide, Canberra, Gold Coast, and Perth.
+
+**Q: Are there any items you won't move?**
+A: We cannot move hazardous materials (fuels, chemicals, explosives), perishable foods, plants (interstate), or illegal items. Live animals must be transported separately.
+
+**Q: How do you charge - hourly or flat rate?**
+A: Local moves are typically charged hourly with a minimum of 2 hours. Interstate and large commercial moves are quoted as fixed prices. We provide transparent quotes upfront.
+
+---
+
+## Contact & Support
+
+### Customer Service
+**Phone**: +61 2 1234 5678
+**Email**: info@sydneyremovalist.com.au
+**Hours**: Monday-Sunday, 6:00 AM - 8:00 PM AEST
+
+**Response Times**:
+- Phone calls: Answered during business hours
+- Emails: Within 2-4 hours during business hours
+- Quote requests: Within 2 hours
+- Emergency moves: Immediate response
+
+### Office Location
+**Address**: Sydney, NSW, Australia
+(Specific office address available upon request)
+
+**Mailing Address**: [To be added]
+
+### Social Media
+- Facebook: [To be added]
+- Instagram: [To be added]
+- LinkedIn: [To be added]
+
+### Feedback & Reviews
+We value customer feedback and encourage reviews on:
+- Google My Business
+- Facebook
+- Product Review
+- Word of mouth
+
+---
+
+**Document Version**: 1.0
+**Last Updated**: 2026-01-28
+**Maintained By**: Sydney Removalist Marketing Team
+**For AI/LLM Use**: This document is designed to provide comprehensive information about Sydney Removalist for large language models to better understand our services, capabilities, and business operations.
+
+For the latest information, always refer to: https://sydneyremovalist.com.au

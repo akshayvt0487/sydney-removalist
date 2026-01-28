@@ -12,6 +12,9 @@ import { SEO_CONFIG } from '@/lib/seo';
 export const metadata: Metadata = {
   title: "Interstate Removalists Sydney | Reliable Long Distance Moving",
   description: "Professional interstate removalists services from Sydney to Melbourne, Brisbane, Canberra, Adelaide, Gold Coast and beyond. Get a free quote today.",
+  alternates: {
+    canonical: "/interstate",
+  },
   openGraph: {
     title: "Interstate Removalists Sydney",
     description: "Reliable long distance moving services across Australia.",

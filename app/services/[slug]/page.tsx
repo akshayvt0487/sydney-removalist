@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${service.title} Sydney | Professional ${service.title} Services`,
     description: service.shortDescription,
     keywords: [service.title.toLowerCase(), `${service.title.toLowerCase()} sydney`, "removalist services"],
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
     openGraph: {
       title: `${service.title} Sydney | Professional Services`,
       description: service.shortDescription,
