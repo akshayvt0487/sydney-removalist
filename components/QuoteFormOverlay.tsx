@@ -118,7 +118,48 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
 
       if (error) throw error;
 
-      // 2. Success Feedback
+      // 2. Send email notification with retry logic
+      let emailSent = false;
+      let retryCount = 0;
+      const maxRetries = 3;
+
+      while (!emailSent && retryCount < maxRetries) {
+        try {
+          const { error: emailError } = await supabase.functions.invoke('send-quote-notification', {
+            body: {
+              formType: 'quote',
+              fullName: formData.fullName.trim(),
+              email: formData.email.trim(),
+              phoneNumber: formData.phone.trim(),
+              movingFrom: formData.movingFrom.trim(),
+              movingTo: formData.movingTo.trim(),
+              movingDate: formData.moveDate,
+              movingTime: formData.moveTime,
+              moveSize: formData.moveSize,
+              additionalDetails: formData.details.trim() || null
+            }
+          });
+
+          if (!emailError) {
+            emailSent = true;
+          } else {
+            throw emailError;
+          }
+        } catch (emailError) {
+          retryCount++;
+          console.error(`Email notification attempt ${retryCount} failed:`, emailError);
+
+          if (retryCount >= maxRetries) {
+            console.error('Email notification failed after 3 attempts:', emailError);
+            // Log to a monitoring service in production
+          } else {
+            // Wait before retry (exponential backoff)
+            await new Promise(resolve => setTimeout(resolve, 1000 * retryCount));
+          }
+        }
+      }
+
+      // 3. Success Feedback
       toast({
         title: "Quote Requested!",
         description: "We'll be in touch shortly with your price.",
