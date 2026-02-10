@@ -87,7 +87,7 @@ export default async function BlogSinglePage({ params }: Props) {
     url: `${COMPANY_INFO.url}/blog/${slug}`,
     image: post.featuredImage,
     datePublished: post.publishDate,
-    dateModified: post.lastModified || post.publishDate,
+    dateModified: post.publishDate,
     author: post.author,
     keywords: post.keywords
   });

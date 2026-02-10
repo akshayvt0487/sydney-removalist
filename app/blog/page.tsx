@@ -99,7 +99,7 @@ export default function Blog() {
 
       {/* Rest of the page */}
 
-    <>
+    
       <main>
         <HeroSection
           title="Moving Tips & Guides"
