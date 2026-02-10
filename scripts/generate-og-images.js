@@ -141,8 +141,8 @@ async function generateAllOGImages() {
     {
       sourceImage: '02.webp',
       outputName: 'og-home.jpg',
-      title: 'Professional Sydney Removalists',
-      subtitle: '15+ Years | 10,000+ Moves | 5-Star Service',
+      title: 'Sydney Removalists',
+      subtitle: 'Professional Moving Services | 15+ Years Experience',
       badge: 'Most Trusted'
     },
     {
