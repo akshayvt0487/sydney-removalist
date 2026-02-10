@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Reliable long distance moving services across Australia.",
     type: "website",
     images: [{
-      url: '/og-default.jpg',
+      url: '/og-interstate.jpg',
       width: 1200,
       height: 630,
       alt: "Interstate Removalists Sydney"

@@ -19,7 +19,10 @@
       "Bash(dir:*)",
       "Bash(node scripts/generate-og-image.js:*)",
       "Bash(node scripts/generate-og-images.js:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(while read img)",
+      "Bash(do echo \"$img\")",
+      "Bash(done)"
     ]
   }
 }

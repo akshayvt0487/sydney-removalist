@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/terms-and-conditions",
     images: [{
-      url: '/og-default.jpg',
+      url: '/og-home.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist Terms and Conditions"

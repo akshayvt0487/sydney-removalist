@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
       type: "website",
       images: [{
-        url: '/og-default.jpg',
+        url: '/og-locations.jpg',
         width: 1200,
         height: 630,
         alt: `Removalist Services in ${suburbDetails.name}`
@@ -101,7 +101,7 @@ export default async function SuburbPage({ params }: Props) {
     '@type': 'LocalBusiness',
     '@id': `${COMPANY_INFO.url}/locations/${region}/${suburb}#localbusiness`,
     name: `Sydney Removalist - ${suburbDetails.name}`,
-    image: `${COMPANY_INFO.url}/og-default.jpg`,
+    image: `${COMPANY_INFO.url}/og-locations.jpg`,
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
     address: {

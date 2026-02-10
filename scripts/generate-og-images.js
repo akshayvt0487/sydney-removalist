@@ -32,18 +32,18 @@ async function generateOGImage(options) {
   console.log(`Generating ${outputName}...`);
 
   try {
-    // Create SVG overlay with text
+    // Create SVG overlay with text (lighter overlay to show image)
     const svg = `
       <svg width="${OG_WIDTH}" height="${OG_HEIGHT}">
         <defs>
-          <!-- Gradient for overlay -->
+          <!-- Gradient for overlay (lighter to show image better) -->
           <linearGradient id="overlayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:rgba(0,31,63,0.5);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:rgba(0,31,63,0.95);stop-opacity:1" />
+            <stop offset="0%" style="stop-color:rgba(0,31,63,0.3);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgba(0,31,63,0.75);stop-opacity:1" />
           </linearGradient>
         </defs>
 
-        <!-- Dark overlay for better text contrast -->
+        <!-- Semi-transparent overlay to show background image -->
         <rect width="${OG_WIDTH}" height="${OG_HEIGHT}" fill="url(#overlayGrad)"/>
 
         ${badge ? `

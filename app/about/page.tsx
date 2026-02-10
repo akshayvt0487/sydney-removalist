@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/about",
     images: [{
-      url: '/og-default.jpg',
+      url: '/og-about.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist - Professional Moving Services"

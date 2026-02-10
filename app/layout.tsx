@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     description: COMPANY_INFO.description,
     images: [
       {
-        url: '/og-default.jpg',
+        url: '/og-home.jpg',
         width: 1200,
         height: 630,
         alt: COMPANY_INFO.name
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: `${COMPANY_INFO.name} | Professional Moving Services`,
     description: COMPANY_INFO.description,
     creator: '@sydneyremovalist',
-    images: ['/og-default.jpg']
+    images: ['/og-home.jpg']
   },
   robots: {
     index: true,

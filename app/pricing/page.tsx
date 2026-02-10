@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/pricing",
     images: [{
-      url: '/og-default.jpg',
+      url: '/og-pricing.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist Free Quote"

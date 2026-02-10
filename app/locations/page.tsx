@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/locations",
     images: [{
-      url: '/og-default.jpg',
+      url: '/og-locations.jpg',
       width: 1200,
       height: 630,
       alt: "Sydney Removalist Service Areas Map"
