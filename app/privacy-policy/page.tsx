@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Sydney Removalist",
   description: "Read our privacy policy to understand how Sydney Removalist collects, uses, and protects your personal information when you use our moving services.",
   keywords: ["privacy policy", "data protection", "Sydney removalist", "personal information"],
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   openGraph: {
     title: "Privacy Policy | Sydney Removalist",
     description: "Read our privacy policy to understand how we protect your personal information.",

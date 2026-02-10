@@ -13,10 +13,12 @@ import ServiceExpectations from '@/components/ServiceExpectations';
 import FAQAccordion from '@/components/FAQAccordion';
 import LocationMap from '@/components/LocationMap';
 import TrustindexReviews from '@/components/TrustindexReviews';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 // Data & SEO
 import { interstateDestinations } from '@/data/suburbs';
 import { SEO_CONFIG } from '@/lib/seo';
+import { generateBreadcrumbSchema, generateServiceSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Images
 import interstateMoving from '@/assets/removalist/024.webp';
@@ -72,6 +74,21 @@ export default async function InterstateCityPage({ params }: Props) {
   if (!destination) {
     return notFound();
   }
+
+  // Generate breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Interstate', url: `${COMPANY_INFO.url}/interstate` },
+    { name: destination.to, url: `${COMPANY_INFO.url}/interstate/${slug}` }
+  ]);
+
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: `Interstate Removalists: ${destination.from} to ${destination.to}`,
+    description: destination.description,
+    url: `/interstate/${slug}`,
+    areaServed: `${destination.from} to ${destination.to}`
+  });
 
   // --- Content Arrays (Copied exactly from your old code) ---
   const reasons = [
@@ -135,6 +152,9 @@ export default async function InterstateCityPage({ params }: Props) {
 
   return (
     <main>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, serviceSchema]} />
+      
       <HeroSection
         title={destination.name}
         subtitle={destination.description}
