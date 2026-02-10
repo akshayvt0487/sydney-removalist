@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import removalistHero from '@/assets/removalist-hero.jpg';
+import removalistHero from '@/assets/removalist/03.webp';
 
 const StatsSection = () => {
   return (
@@ -34,7 +34,7 @@ const StatsSection = () => {
                     </svg>
                   ))}
                 </div>
-                <div className="text-xs text-primary mt-1">Ave. Star Rating</div>
+                <div className="text-xs text-primary mt-1">Avg. Star Rating</div>
               </div>
             </div>
           </div>
@@ -42,8 +42,8 @@ const StatsSection = () => {
           {/* Stats side */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="bg-accent rounded-2xl p-8 text-center">
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2">207</div>
-              <div className="text-lg text-primary font-medium">of reviews on Google</div>
+              <div className="text-5xl md:text-6xl font-bold text-primary mb-2">224</div>
+              <div className="text-lg text-primary font-medium">reviews on Google</div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

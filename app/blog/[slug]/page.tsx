@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from 'next/image';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
 import Link from 'next/link';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateArticleSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Import the Client Component we created in Step 1
 import BlogPostContent from '@/components/BlogPostContent';
@@ -70,16 +73,37 @@ const formatDate = (dateString: string) => {
 export default async function BlogSinglePage({ params }: Props) {
   const { slug } = await params;
   const post = getBlogBySlug(slug);
-  
+
   if (!post) {
     notFound();
   }
 
   const relatedPosts = getRelatedBlogs(slug, 2);
 
+  // Generate Article schema for blog post
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.metaDescription,
+    url: `${COMPANY_INFO.url}/blog/${slug}`,
+    image: post.featuredImage,
+    datePublished: post.publishDate,
+    dateModified: post.lastModified || post.publishDate,
+    author: post.author,
+    keywords: post.keywords
+  });
+
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Blog', url: `${COMPANY_INFO.url}/blog` },
+    { name: post.title, url: `${COMPANY_INFO.url}/blog/${slug}` }
+  ]);
+
   return (
     <>
-      
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[articleSchema, breadcrumbSchema]} />
+
       {/* Client Component handles the charts and main content rendering */}
       <BlogPostContent post={post} />
 
@@ -96,10 +120,12 @@ export default async function BlogSinglePage({ params }: Props) {
                   className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
                 >
                   <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={relatedPost.featuredImage} 
+                    <Image
+                      src={relatedPost.featuredImage}
                       alt={relatedPost.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                   <div className="p-6">

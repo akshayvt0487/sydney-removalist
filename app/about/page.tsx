@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateOrganizationSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Assets
-import teamMovers from '@/assets/team-movers.jpg';
+import teamMovers from '@/assets/removalist/03.webp';
 
 // 1. Static Metadata for SEO
 export const metadata: Metadata = {
@@ -34,8 +36,35 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  // Schema markup for About page
+  const organizationSchema = generateOrganizationSchema();
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'About Us', url: `${COMPANY_INFO.url}/about` }
+  ]);
+
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${COMPANY_INFO.url}/about#aboutpage`,
+    url: `${COMPANY_INFO.url}/about`,
+    name: 'About Sydney Removalist',
+    description: 'Learn about Sydney Removalist - 15+ years experience, 10,000+ successful moves, and 98% customer satisfaction. Fully licensed, insured, and dedicated to stress-free moving.',
+    mainEntity: {
+      '@id': `${COMPANY_INFO.url}/#organization`
+    },
+    inLanguage: 'en-AU',
+    isPartOf: {
+      '@id': `${COMPANY_INFO.url}/#website`
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[organizationSchema, breadcrumbSchema, aboutPageSchema]} />
+
       <main>
         <HeroSection
           title="About Sydney Removalist"

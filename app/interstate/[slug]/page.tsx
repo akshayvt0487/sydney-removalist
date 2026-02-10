@@ -19,8 +19,8 @@ import { interstateDestinations } from '@/data/suburbs';
 import { SEO_CONFIG } from '@/lib/seo';
 
 // Images
-import interstateMoving from '@/assets/interstate-moving.jpg';
-import movingTruckLoading from '@/assets/moving-truck-loading.jpg';
+import interstateMoving from '@/assets/removalist/024.webp';
+import movingTruckLoading from '@/assets/removalist/08.webp';
 
 // 1. Define Props for Next.js 15
 type Props = {

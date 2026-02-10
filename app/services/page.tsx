@@ -4,9 +4,12 @@ import ServicesGrid from '@/components/ServicesGrid';
 import ServicesQuickAccess from '@/components/ServicesQuickAccess';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
+import { services } from '@/data/services';
 
 // Assets
-import residentialMoving from '@/assets/residential-moving.jpg';
+import residentialMoving from '@/assets/removalist/08.webp';
 
 // 1. Static SEO Metadata
 export const metadata: Metadata = {
@@ -36,8 +39,54 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Services', url: `${COMPANY_INFO.url}/services` }
+  ]);
+
+  // CollectionPage schema with all services
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${COMPANY_INFO.url}/services#collectionpage`,
+    url: `${COMPANY_INFO.url}/services`,
+    name: 'Professional Moving Services Sydney',
+    description: 'Complete moving services in Sydney: residential moving, office relocation, packing services, furniture assembly, storage solutions & interstate moves.',
+    inLanguage: 'en-AU',
+    isPartOf: {
+      '@id': `${COMPANY_INFO.url}/#website`
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: services.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Service',
+          '@id': `${COMPANY_INFO.url}/services/${service.slug}#service`,
+          name: service.title,
+          description: service.shortDescription,
+          url: `${COMPANY_INFO.url}/services/${service.slug}`,
+          provider: {
+            '@id': `${COMPANY_INFO.url}/#organization`
+          },
+          serviceType: 'Moving and Relocation',
+          areaServed: {
+            '@type': 'City',
+            name: 'Sydney',
+            '@id': 'https://www.wikidata.org/wiki/Q3130'
+          }
+        }
+      }))
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, collectionPageSchema]} />
+
       <main>
         <HeroSection
           title="Professional Moving Services"

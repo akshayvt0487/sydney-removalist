@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import teamMovers from '@/assets/team-movers.jpg';
+import teamMovers from '@/assets/removalist/015 copy.webp';
 
 const WhyPickUs = () => {
   const reasons = [
@@ -19,11 +19,12 @@ const WhyPickUs = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="relative animate-scale-in">
-            <div className="rounded-2xl shadow-2xl overflow-hidden h-[400px] w-full relative">
+            <div className="rounded-2xl shadow-2xl overflow-hidden h-[500px] w-full relative">
               <Image 
                 src={teamMovers} 
                 alt="Professional Sydney removalist team loading moving truck with boxes" 
                 fill
+                
                 className="object-cover"
                 placeholder="blur"
               />
@@ -31,7 +32,7 @@ const WhyPickUs = () => {
           </div>
 
           <div className="animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6 leading-5">
               Why pick Sydney Removalist?
             </h2>
             <p className="text-charcoal/80 mb-8 text-lg">

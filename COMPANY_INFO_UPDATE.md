@@ -19,7 +19,7 @@ export const COMPANY_INFO = {
   url: 'https://sydneyremovalistpro.com.au',  // ← Your website URL
   logo: 'https://sydneyremovalistpro.com.au/logo.png',  // ← Logo URL
   description: 'Professional removalist services...',  // ← Business description
-  phone: '+61 2 1234 5678',  // ← Phone number
+  phone: '+61 1300 237 808',  // ← Phone number
   email: 'info@sydneyremovalistpro.com.au',  // ← Email address
   address: {
     streetAddress: '123 Main Street',  // ← Street address
@@ -79,7 +79,7 @@ export const COMPANY_INFO = {
 
 6. **Phone Number** (`phone`)
    - Include country code
-   - Format: "+61 2 1234 5678"
+   - Format: "+61 1300 237 808"
 
 7. **Email** (`email`)
    - Main contact email

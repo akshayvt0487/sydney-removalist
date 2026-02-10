@@ -4,9 +4,11 @@ import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
 import LocationMap from '@/components/LocationMap';
-import interstateMoving from '@/assets/interstate-moving.jpg';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import interstateMoving from '@/assets/removalist/024.webp';
 import { interstateDestinations } from '@/data/suburbs';
 import { SEO_CONFIG } from '@/lib/seo';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // 1. Generate Metadata
 export const metadata: Metadata = {
@@ -30,8 +32,62 @@ export const metadata: Metadata = {
 
 // 2. The Page Component
 export default function InterstateIndexPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Services', url: `${COMPANY_INFO.url}/services` },
+    { name: 'Interstate', url: `${COMPANY_INFO.url}/interstate` }
+  ]);
+
+  // CollectionPage schema for interstate routes
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${COMPANY_INFO.url}/interstate#collectionpage`,
+    url: `${COMPANY_INFO.url}/interstate`,
+    name: 'Interstate Removalists Sydney',
+    description: 'Professional interstate removalists services from Sydney to Melbourne, Brisbane, Canberra, Adelaide, Gold Coast and beyond.',
+    inLanguage: 'en-AU',
+    isPartOf: {
+      '@id': `${COMPANY_INFO.url}/#website`
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: interstateDestinations.map((dest, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Service',
+          '@id': `${COMPANY_INFO.url}/interstate/${dest.slug}#service`,
+          name: `Sydney to ${dest.name} Removalists`,
+          description: `Professional interstate moving from Sydney to ${dest.name}. ${dest.distance} journey with experienced team.`,
+          url: `${COMPANY_INFO.url}/interstate/${dest.slug}`,
+          provider: {
+            '@id': `${COMPANY_INFO.url}/#organization`
+          },
+          serviceType: 'Interstate Moving',
+          areaServed: [
+            {
+              '@type': 'City',
+              name: 'Sydney',
+              '@id': 'https://www.wikidata.org/wiki/Q3130'
+            },
+            {
+              '@type': 'City',
+              name: dest.name
+            }
+          ]
+        }
+      }))
+    }
+  };
+
   return (
-    <main>
+    <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, collectionPageSchema]} />
+
+      <main>
       <HeroSection
         title="Interstate Moving Services"
         subtitle="Moving beyond Sydney? We provide professional interstate removalist services to all major Australian cities."

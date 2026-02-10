@@ -4,12 +4,14 @@ import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
 import LocationMap from '@/components/LocationMap';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Data
 import { regionCategories, interstateDestinations } from '@/data/suburbs';
 
 // Assets
-import interstateMoving from '@/assets/interstate-moving.jpg';
+import interstateMoving from '@/assets/removalist/024.webp';
 
 // 1. Static Metadata for SEO
 export const metadata: Metadata = {
@@ -39,8 +41,67 @@ export const metadata: Metadata = {
 };
 
 export default function LocationsPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Locations', url: `${COMPANY_INFO.url}/locations` }
+  ]);
+
+  // Service Area schema
+  const serviceAreaSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${COMPANY_INFO.url}/locations#service`,
+    name: 'Professional Removalist Services Across Sydney',
+    description: 'Sydney Removalist serves 64+ suburbs across Greater Sydney and interstate routes.',
+    provider: {
+      '@id': `${COMPANY_INFO.url}/#organization`
+    },
+    serviceType: 'Moving and Relocation',
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Sydney',
+        '@id': 'https://www.wikidata.org/wiki/Q3130'
+      },
+      {
+        '@type': 'State',
+        name: 'New South Wales',
+        '@id': 'https://www.wikidata.org/wiki/Q3224'
+      }
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Service Locations',
+      itemListElement: regionCategories.map((region, index) => ({
+        '@type': 'OfferCatalog',
+        name: region.name,
+        itemListElement: region.suburbs.map((suburb, subIndex) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: `Removalist Services in ${suburb.name}`,
+            areaServed: {
+              '@type': 'Place',
+              name: suburb.name,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: suburb.name,
+                addressRegion: 'NSW',
+                addressCountry: 'AU'
+              }
+            }
+          }
+        }))
+      }))
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, serviceAreaSchema]} />
+
       <main>
         <HeroSection
           title="Areas We Serve"

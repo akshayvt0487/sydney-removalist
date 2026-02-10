@@ -4,9 +4,11 @@ import PricingTable from '@/components/PricingTable';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
 import QuoteModal from '@/components/QuoteModal';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Assets
-import officeMoving from '@/assets/office-moving.jpg';
+import officeMoving from '@/assets/removalist/010.webp';
 
 // Data (We need to create this file next!)
 import { additionalServices } from '@/data/pricing';
@@ -38,8 +40,54 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Pricing', url: `${COMPANY_INFO.url}/pricing` }
+  ]);
+
+  // Offer schema for pricing services
+  const offerSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${COMPANY_INFO.url}/pricing#service`,
+    name: 'Professional Moving Services',
+    description: 'Competitive removalist pricing with no hidden fees and price match guarantee.',
+    provider: {
+      '@id': `${COMPANY_INFO.url}/#organization`
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Sydney',
+      '@id': 'https://www.wikidata.org/wiki/Q3130'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'AUD',
+      lowPrice: '120',
+      highPrice: '180',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '150',
+        priceCurrency: 'AUD',
+        unitText: 'per hour (2 movers + truck)',
+        referenceQuantity: {
+          '@type': 'QuantitativeValue',
+          value: '1',
+          unitCode: 'HUR'
+        }
+      },
+      availability: 'https://schema.org/InStock',
+      validFrom: '2024-01-01',
+      priceValidUntil: '2027-12-31'
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, offerSchema]} />
+
       <main>
         <HeroSection
           title="Competitive Pricing"

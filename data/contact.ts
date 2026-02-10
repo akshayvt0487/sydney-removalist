@@ -1,7 +1,7 @@
 // Centralized contact information
 export const CONTACT_INFO = {
-  phone: '1300 000 000',
-  phoneHref: 'tel:1300000000',
+  phone: '1300 237 808',
+  phoneHref: 'tel:1300237808',
   email: 'info@sydneyremovalist.com.au',
   emailHref: 'mailto:info@sydneyremovalist.com.au',
   address: '123 Example Street, Sydney NSW 2000',

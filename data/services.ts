@@ -1,9 +1,9 @@
-import residentialImg from '@/assets/residential-moving.jpg';
-import officeImg from '@/assets/office-moving.jpg';
-import packingImg from '@/assets/packing-service.jpg';
+import residentialImg from '@/assets/removalist/015 copy.webp';
+import officeImg from '@/assets/removalist/010.webp';
+import packingImg from '@/assets/removalist/05.webp';
 import storageImg from '@/assets/storage-solutions.jpg';
-import furnitureImg from '@/assets/furniture-removal.jpg';
-import interstateImg from '@/assets/interstate-moving.jpg';
+import furnitureImg from '@/assets/removalist/010.webp';
+import interstateImg from '@/assets/removalist/024.webp';
 
 export interface Service {
   id: number;

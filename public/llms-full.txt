@@ -28,7 +28,7 @@
 **Years in Operation**: 15+ years
 
 ### Contact Details
-**Primary Phone**: +61 2 1234 5678
+**Primary Phone**: +61 1300 237 808
 **Email**: info@sydneyremovalist.com.au
 **Address**: Sydney, NSW, Australia
 **Website**: https://sydneyremovalist.com.au
@@ -560,7 +560,7 @@
 
 ### Booking Process
 1. **Initial Contact**:
-   - Phone: +61 2 1234 5678
+   - Phone: +61 1300 237 808
    - Online form: https://sydneyremovalist.com.au/contact
    - Quote request on service pages
    - Response time: Within 2 hours during business hours
@@ -783,7 +783,7 @@
   "logo": "https://sydneyremovalist.com.au/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+61-2-1234-5678",
+    "telephone": "+61-1300-237-808",
     "contactType": "customer service"
   },
   "address": {
@@ -1006,7 +1006,7 @@ A: Local moves are typically charged hourly with a minimum of 2 hours. Interstat
 ## Contact & Support
 
 ### Customer Service
-**Phone**: +61 2 1234 5678
+**Phone**: +61 1300 237 808
 **Email**: info@sydneyremovalist.com.au
 **Hours**: Monday-Sunday, 6:00 AM - 8:00 PM AEST
 

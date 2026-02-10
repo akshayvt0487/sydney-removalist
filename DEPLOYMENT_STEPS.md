@@ -159,7 +159,7 @@ npx supabase functions list
 3. **Fill out the form** with test data:
    - Name: Test User
    - Email: test@example.com
-   - Phone: 0412345678
+   - Phone: 1300237808
    - Moving From: Sydney CBD
    - Moving To: Bondi
    - Date: Tomorrow's date
@@ -174,7 +174,7 @@ npx supabase functions list
 2. **Fill out the contact form**:
    - Name: Test Contact
    - Email: test@example.com
-   - Phone: 0412345678
+   - Phone: 1300237808
    - Subject: Test Subject
    - Message: This is a test message
 3. **Submit the form**
@@ -309,4 +309,3 @@ Before going live on https://sydneyremovalist.com.au:
 ---
 
 **Last Updated:** 2026-01-28
-**Created By:** Claude AI Assistant

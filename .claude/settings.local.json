@@ -15,7 +15,11 @@
       "Bash(findstr:*)",
       "Bash(find:*)",
       "Bash(supabase --version:*)",
-      "Bash(npx supabase:*)"
+      "Bash(npx supabase:*)",
+      "Bash(dir:*)",
+      "Bash(node scripts/generate-og-image.js:*)",
+      "Bash(node scripts/generate-og-images.js:*)",
+      "Bash(node:*)"
     ]
   }
 }

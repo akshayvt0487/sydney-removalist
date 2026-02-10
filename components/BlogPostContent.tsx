@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import QuoteModal from '@/components/QuoteModal';
 import { BlogContent, BlogPost } from '@/data/blogs';
 // Recharts requires "use client", which is why we isolated this component
@@ -122,7 +123,14 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={post.featuredImage} alt={post.title} className="w-full h-full object-cover" />
+          <Image
+            src={post.featuredImage}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/80"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">

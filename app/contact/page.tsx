@@ -3,8 +3,10 @@ import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import ContactForm from '@/components/ContactForm';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import SchemaMarkup from '@/components/SchemaMarkup';
 import { CONTACT_INFO } from '@/data/contact';
-import packingService from '@/assets/packing-service.jpg';
+import { generateLocalBusinessSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
+import packingService from '@/assets/removalist/05.webp';
 
 export const metadata: Metadata = {
   title: "Contact Us | Get Your Free Moving Quote",
@@ -24,12 +26,57 @@ export const metadata: Metadata = {
       height: 630,
       alt: "Contact Sydney Removalist"
     }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Sydney Removalist",
+    description: "Get your free moving quote today. Fast response within 2 hours."
   }
 };
 
 export default function ContactPage() {
+  // Local Business schema with contact information
+  const localBusinessSchema = generateLocalBusinessSchema();
+
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Contact', url: `${COMPANY_INFO.url}/contact` }
+  ]);
+
+  // ContactPage schema with ContactPoint
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${COMPANY_INFO.url}/contact#contactpage`,
+    url: `${COMPANY_INFO.url}/contact`,
+    name: 'Contact Sydney Removalist',
+    description: 'Contact Sydney Removalist for a free moving quote. Call us 7 days a week, email us, or fill out our contact form.',
+    inLanguage: 'en-AU',
+    isPartOf: {
+      '@id': `${COMPANY_INFO.url}/#website`
+    },
+    mainEntity: {
+      '@type': 'ContactPoint',
+      telephone: COMPANY_INFO.phone,
+      email: COMPANY_INFO.email,
+      contactType: 'Customer Service',
+      areaServed: 'AU-NSW',
+      availableLanguage: 'English',
+      hoursAvailable: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '06:00',
+        closes: '20:00'
+      }
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[localBusinessSchema, breadcrumbSchema, contactPageSchema]} />
+
       <main>
         <HeroSection
           title="Contact Us"

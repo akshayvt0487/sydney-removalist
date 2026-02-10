@@ -4,12 +4,14 @@ import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Data (I will ask for this file next!)
 import { blogPosts } from '@/data/blogs';
 
 // Assets
-import movingBoxes from '@/assets/moving-boxes.jpg';
+import movingBoxes from '@/assets/removalist/05.webp';
 
 // 1. Static Metadata
 export const metadata: Metadata = {
@@ -47,7 +49,56 @@ export default function Blog() {
     });
   };
 
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Blog', url: `${COMPANY_INFO.url}/blog` }
+  ]);
+
+  // CollectionPage schema with blog posts
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${COMPANY_INFO.url}/blog#collectionpage`,
+    url: `${COMPANY_INFO.url}/blog`,
+    name: 'Sydney Removalist Blog | Moving Tips & Guides',
+    description: 'Expert moving tips, pricing guides, and advice from Sydney\'s trusted removalists.',
+    inLanguage: 'en-AU',
+    isPartOf: {
+      '@id': `${COMPANY_INFO.url}/#website`
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: blogPosts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'BlogPosting',
+          '@id': `${COMPANY_INFO.url}/blog/${post.slug}#blogposting`,
+          headline: post.title,
+          description: post.excerpt,
+          url: `${COMPANY_INFO.url}/blog/${post.slug}`,
+          image: post.featuredImage,
+          datePublished: post.publishDate,
+          author: {
+            '@type': 'Person',
+            name: post.author
+          },
+          publisher: {
+            '@id': `${COMPANY_INFO.url}/#organization`
+          }
+        }
+      }))
+    }
+  };
+
   return (
+    <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, collectionPageSchema]} />
+
+      {/* Rest of the page */}
+
     <>
       <main>
         <HeroSection

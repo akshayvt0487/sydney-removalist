@@ -19,7 +19,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateLocalBusinessSchema, generateFAQSchema, generateEnhancedMetadata } from '@/lib/seo-schema';
 
 // Assets - Next.js handles these as static objects
-import heroImage from '@/assets/hero-main.jpg';
+import heroImage from '@/assets/removalist/018.webp';
 
 /**
  * Enhanced SEO Metadata

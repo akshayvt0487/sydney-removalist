@@ -9,13 +9,15 @@ import QuoteModal from '@/components/QuoteModal';
 import LocationMap from '@/components/LocationMap';
 import NearbyLocations from '@/components/NearbyLocations';
 import TrustindexReviews from '@/components/TrustindexReviews';
+import SchemaMarkup from '@/components/SchemaMarkup';
 import { getSuburbDetails } from '@/data/suburbs';
+import { CONTACT_INFO } from '@/data/contact';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Images - Next.js handles imports automatically
-import removalistHero from '@/assets/removalist-hero.jpg';
-import movingBoxes from '@/assets/moving-boxes.jpg';
-import movingTruckLoading from '@/assets/moving-truck-loading.jpg';
-import { SEO_CONFIG } from '@/lib/seo';
+import removalistHero from '@/assets/removalist/02.webp';
+import movingBoxes from '@/assets/removalist/05.webp';
+import movingTruckLoading from '@/assets/removalist/08.webp';
 
 // 1. Define the Params Type (Next.js 15 requires params to be a Promise)
 type Props = {
@@ -85,15 +87,71 @@ export default async function SuburbPage({ params }: Props) {
     redirect('/locations'); // Server-side redirect
   }
 
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: COMPANY_INFO.url },
+    { name: 'Locations', url: `${COMPANY_INFO.url}/locations` },
+    { name: suburbDetails.region, url: `${COMPANY_INFO.url}/locations#${suburbDetails.regionSlug}` },
+    { name: suburbDetails.name, url: `${COMPANY_INFO.url}/locations/${region}/${suburb}` }
+  ]);
+
+  // LocalBusiness schema for specific suburb
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${COMPANY_INFO.url}/locations/${region}/${suburb}#localbusiness`,
+    name: `Sydney Removalist - ${suburbDetails.name}`,
+    image: `${COMPANY_INFO.url}/og-default.jpg`,
+    telephone: COMPANY_INFO.phone,
+    email: COMPANY_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: suburbDetails.name,
+      addressRegion: 'NSW',
+      addressCountry: 'AU'
+    },
+    url: `${COMPANY_INFO.url}/locations/${region}/${suburb}`,
+    priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '207'
+    },
+    areaServed: {
+      '@type': 'City',
+      name: suburbDetails.name
+    }
+  };
+
+  // Service schema for the suburb
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${COMPANY_INFO.url}/locations/${region}/${suburb}#service`,
+    name: `Removalist Services in ${suburbDetails.name}`,
+    description: `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance.`,
+    provider: {
+      '@id': `${COMPANY_INFO.url}/#organization`
+    },
+    serviceType: 'Moving and Relocation',
+    areaServed: {
+      '@type': 'Place',
+      name: suburbDetails.name
+    }
+  };
+
   // NOTE: Navbar and Footer are removed from here because they should
   // exist in your app/layout.tsx file. If they aren't there, add them back.
 
   return (
-    <main>
+    <>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={[breadcrumbSchema, localBusinessSchema, serviceSchema]} />
+
+      <main>
       <HeroSection
         title={`Removalist ${suburbDetails.name}`}
         subtitle={`Professional moving services in ${suburbDetails.name}, ${suburbDetails.region}`}
-        // Pass the imported image object directly
         backgroundImage={removalistHero.src} 
         showCTA={false}
         breadcrumbs={[
@@ -137,7 +195,7 @@ export default async function SuburbPage({ params }: Props) {
                       </svg>
                     </button>
                   </QuoteModal>
-                  <a href="tel:1300000000" className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-lg">
+                  <a href={CONTACT_INFO.phoneHref} className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-lg">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -190,7 +248,7 @@ export default async function SuburbPage({ params }: Props) {
                       </svg>
                     </button>
                   </QuoteModal>
-                  <a href="tel:1300000000" className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all hover:scale-105 shadow-lg">
+                  <a href={CONTACT_INFO.phoneHref} className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all hover:scale-105 shadow-lg">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -291,16 +349,16 @@ export default async function SuburbPage({ params }: Props) {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div className="order-2 md:order-1">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12 ">
+              <div className="order-2 md:order-1 relative h-full min-h-[300px]">
                 {/* NEXT.JS OPTIMIZED IMAGE */}
-                <Image 
-                  src={movingTruckLoading} 
-                  alt="Professional moving truck and team" 
-                  className="rounded-xl shadow-2xl animate-fade-in object-cover"
-                  width={600}
-                  height={400}
+                <Image
+                  src={movingTruckLoading}
+                  alt="Professional moving truck and team"
+                  className="rounded-xl shadow-2xl animate-fade-in object-cover "
+                  fill
                   placeholder="blur"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="order-1 md:order-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -387,5 +445,6 @@ export default async function SuburbPage({ params }: Props) {
 
       <CTASection />
     </main>
+  </>
   );
-};
+}

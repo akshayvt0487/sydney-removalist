@@ -101,7 +101,7 @@ FROM_EMAIL=Sydney Removalist <onboarding@resend.dev>
 Contact Information
 Name: John Smith
 Email: john@example.com
-Phone: 0412 345 678
+Phone: 1300 237 808
 
 Move Details
 Moving From: Sydney CBD
@@ -138,7 +138,7 @@ View all submissions in the Admin Dashboard
 Contact Information
 Name: Jane Doe
 Email: jane@example.com
-Phone: 0411 222 333
+Phone: 1300 237 808
 
 Enquiry Details
 Subject: General Enquiry
