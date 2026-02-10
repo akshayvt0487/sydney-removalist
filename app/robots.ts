@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://sydneyremovalistpro.com.au';
+  const baseUrl = 'https://www.sydneyremovalist.com.au';
 
   return {
     rules: [

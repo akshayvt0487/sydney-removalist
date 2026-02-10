@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 export const COMPANY_INFO = {
   name: 'Sydney Removalist',
   legalName: 'Sydney Removalist Pty Ltd',
-  url: 'https://sydneyremovalist.com.au',
-  logo: 'https://sydneyremovalist.com.au/logo.png',
+  url: 'https://www.sydneyremovalist.com.au',
+  logo: 'https://www.sydneyremovalist.com.au/logo.png',
   description: 'Professional removalist services in Sydney. Trusted moving company with 15+ years experience, serving all Sydney suburbs and interstate moves.',
   phone: '+61 1300 237 808',
   email: 'info@sydneyremovalist.com.au',

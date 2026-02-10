@@ -1,5 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /auth
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
 User-agent: Googlebot
 Allow: /
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /auth
+Disallow: /api/
 
 User-agent: Bingbot
 Allow: /
@@ -10,7 +23,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
-
-Sitemap: https://sydneyremovalist.com.au/sitemap.xml
+Sitemap: https://www.sydneyremovalist.com.au/sitemap.xml
+Host: https://www.sydneyremovalist.com.au
