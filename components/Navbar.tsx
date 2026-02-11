@@ -110,31 +110,35 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-1">
-            <Link href="/" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="pb-4 space-y-1">
+            <Link href="/" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Home
             </Link>
-            <Link href="/about" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/about" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               About
             </Link>
-            <Link href="/services" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/services" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Services
             </Link>
-            <Link href="/locations" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/locations" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Locations
             </Link>
-            <Link href="/pricing" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/pricing" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Pricing
             </Link>
-            <Link href="/contact" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/contact" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Contact
             </Link>
-            <Link href="/blog" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+            <Link href="/blog" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
               Blog
             </Link>
             {isAdmin && (
-              <Link href="/admin" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
+              <Link href="/admin" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-all duration-200 touch-manipulation active:scale-95" onClick={() => setIsOpen(false)}>
                 Admin
               </Link>
             )}
@@ -142,21 +146,21 @@ const Navbar = () => {
             <div className="pt-4 space-y-2">
               <a
                 href={CONTACT_INFO.phoneHref}
-                className="block w-full bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-secondary/90 transition-colors touch-manipulation"
+                className="block w-full bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-secondary/90 transition-all duration-200 touch-manipulation active:scale-95"
               >
                 Call Now
               </a>
               <QuoteModal>
                 <button
                   type="button"
-                  className="block w-full bg-accent text-accent-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-accent/90 transition-colors touch-manipulation"
+                  className="block w-full bg-accent text-accent-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-accent/90 transition-all duration-200 touch-manipulation active:scale-95"
                 >
                   Get Free Quote
                 </button>
               </QuoteModal>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

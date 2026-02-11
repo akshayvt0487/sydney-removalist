@@ -106,11 +106,11 @@ export default function Home() {
       {/* TrustindexReviews usually fetches external data, ensure it has a loading skeleton inside */}
       <TrustindexReviews />
       
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+     
+        
           <ServicesGrid limit={6} />
-        </div>
-      </section>
+        
+      
       
       <AreasWeService />
       

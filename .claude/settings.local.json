@@ -22,7 +22,8 @@
       "Bash(node:*)",
       "Bash(while read img)",
       "Bash(do echo \"$img\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

@@ -194,8 +194,8 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
 
   return (
     // Outer Wrapper: Navy Background + Yellow Border (Matches Old App)
-    <div className="bg-navy rounded-2xl p-4 md:p-6 shadow-2xl border-4 border-yellow animate-scale-in text-white">
-      <div className="mb-4">
+    <div className="bg-navy rounded-2xl p-4 md:p-6 shadow-2xl border-4 border-yellow animate-scale-in text-white w-full">
+      <div className="mb-4 pt-6 sm:pt-0">
         <h3 className="text-xl md:text-2xl font-bold mb-1">Get Your Free Quote!</h3>
         <p className="text-xs md:text-sm text-white/80">
           Fill in the details below and we&apos;ll send the best quote to you!
