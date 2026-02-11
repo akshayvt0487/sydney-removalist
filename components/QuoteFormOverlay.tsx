@@ -194,17 +194,17 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
 
   return (
     // Outer Wrapper: Navy Background + Yellow Border (Matches Old App)
-    <div className="bg-navy rounded-2xl p-6 shadow-2xl border-4 border-yellow animate-scale-in text-white">
+    <div className="bg-navy rounded-2xl p-4 md:p-6 shadow-2xl border-4 border-yellow animate-scale-in text-white">
       <div className="mb-4">
-        <h3 className="text-2xl font-bold mb-1">Get Your Free Quote!</h3>
-        <p className="text-sm text-white/80">
+        <h3 className="text-xl md:text-2xl font-bold mb-1">Get Your Free Quote!</h3>
+        <p className="text-xs md:text-sm text-white/80">
           Fill in the details below and we&apos;ll send the best quote to you!
         </p>
       </div>
-      
+
       <form onSubmit={handleSubmit} className="space-y-3" noValidate>
         {/* Row 1: Addresses (Using Google Autocomplete) */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           <div>
             <Label htmlFor="movingFrom" className="text-sm font-medium text-white">
               Moving From <span className="text-red-400">*</span>
@@ -244,7 +244,7 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
         </div>
 
         {/* Row 2: Date & Time */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           <div>
             <Label htmlFor="moveDate" className="text-sm font-medium text-white">
               Date <span className="text-red-400">*</span>
@@ -310,7 +310,7 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
           <ErrorMessage message={errors.fullName} />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           <div>
             <Label htmlFor="phone" className="text-sm font-medium text-white">
               Phone <span className="text-red-400">*</span>
@@ -321,7 +321,7 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
               placeholder="04XX XXX XXX"
               value={formData.phone}
               onChange={handleInputChange('phone')}
-              className={`mt-1 bg-white text-charcoal border-none h-10 ${errors.phone ? 'ring-2 ring-red-400' : ''}`}
+              className={`mt-1 bg-white text-charcoal border-none h-10 touch-manipulation ${errors.phone ? 'ring-2 ring-red-400' : ''}`}
             />
             <ErrorMessage message={errors.phone} />
           </div>
@@ -335,7 +335,7 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
               placeholder="you@email.com"
               value={formData.email}
               onChange={handleInputChange('email')}
-              className={`mt-1 bg-white text-charcoal border-none h-10 ${errors.email ? 'ring-2 ring-red-400' : ''}`}
+              className={`mt-1 bg-white text-charcoal border-none h-10 touch-manipulation ${errors.email ? 'ring-2 ring-red-400' : ''}`}
             />
             <ErrorMessage message={errors.email} />
           </div>
@@ -357,10 +357,10 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
         </div>
 
         {/* Submit Button */}
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           disabled={isLoading}
-          className="w-full bg-yellow hover:bg-yellow/90 text-charcoal font-bold py-6 text-lg transition-all duration-300 hover:scale-[1.02] shadow-xl"
+          className="w-full bg-yellow hover:bg-yellow/90 text-charcoal font-bold py-4 md:py-6 text-base md:text-lg transition-all duration-300 active:scale-95 md:hover:scale-[1.02] shadow-xl touch-manipulation"
         >
           {isLoading ? (
             <span className="flex items-center gap-2">

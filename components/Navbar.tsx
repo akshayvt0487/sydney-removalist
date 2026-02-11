@@ -26,17 +26,17 @@ const Navbar = () => {
 
   return (
     <header className="bg-primary shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image 
-              src={logo} 
-              alt="Sydney Removalist Logo" 
-              width={250} 
-              height={75} 
-              className="h-16 w-auto object-contain" // object-contain prevents distortion
-              priority // Loads logo immediately
+            <Image
+              src={logo}
+              alt="Sydney Removalist Logo"
+              width={250}
+              height={75}
+              className="h-12 md:h-16 w-auto object-contain"
+              priority
             />
           </Link>
 
@@ -92,9 +92,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-primary-foreground p-2"
+            className="md:hidden text-primary-foreground p-2 touch-manipulation active:bg-white/10 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,41 +111,50 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <Link href="/" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+          <div className="md:hidden mt-4 pb-4 space-y-1">
+            <Link href="/" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Home
             </Link>
-            <Link href="/about" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/about" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               About
             </Link>
-            <Link href="/services" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/services" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Services
             </Link>
-            <Link href="/locations" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/locations" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Locations
             </Link>
-            <Link href="/pricing" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/pricing" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Pricing
             </Link>
-            <Link href="/contact" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/contact" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Contact
             </Link>
-            <Link href="/blog" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+            <Link href="/blog" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
               Blog
             </Link>
             {isAdmin && (
-              <Link href="/admin" className="block py-2 text-primary-foreground hover:text-accent transition-colors" onClick={() => setIsOpen(false)}>
+              <Link href="/admin" className="block py-3 px-2 text-primary-foreground hover:text-accent hover:bg-white/5 rounded-md transition-colors touch-manipulation" onClick={() => setIsOpen(false)}>
                 Admin
               </Link>
             )}
-            <QuoteModal>
-              <button 
-                className="block w-full mt-4 bg-accent text-accent-foreground px-6 py-2 rounded-md font-semibold text-center hover:bg-accent/90 transition-colors"
-                onClick={() => setIsOpen(false)} // Close menu when clicking button
+
+            <div className="pt-4 space-y-2">
+              <a
+                href={CONTACT_INFO.phoneHref}
+                className="block w-full bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-secondary/90 transition-colors touch-manipulation"
               >
-                Get Free Quote
-              </button>
-            </QuoteModal>
+                Call Now
+              </a>
+              <QuoteModal>
+                <button
+                  className="block w-full bg-accent text-accent-foreground px-6 py-3 rounded-md font-semibold text-center hover:bg-accent/90 transition-colors touch-manipulation"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Free Quote
+                </button>
+              </QuoteModal>
+            </div>
           </div>
         )}
       </nav>

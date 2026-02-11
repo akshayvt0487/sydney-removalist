@@ -45,8 +45,8 @@ const HeroSection = ({
   }, [backgroundImage, showQuoteForm]);
   
   return (
-    <section 
-      className="relative min-h-[500px] py-12 md:py-16 flex items-center justify-center overflow-hidden"
+    <section
+      className="relative min-h-[600px] md:min-h-[500px] py-8 md:py-12 lg:py-16 flex items-center justify-center overflow-hidden"
     >
       {/* Parallax Background Image */}
       {bgImageSrc && (
@@ -113,10 +113,10 @@ const HeroSection = ({
               </div>
             )}
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
               {title}
             </h1>
-            <p className={`text-xl md:text-2xl mb-8 text-white/90 max-w-3xl ${showQuoteForm ? 'mx-0' : 'mx-auto'}`}>
+            <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl ${showQuoteForm ? 'mx-0' : 'mx-auto'}`}>
               {subtitle}
             </p>
 
@@ -133,42 +133,42 @@ const HeroSection = ({
             )}
 
             {showCTA && (
-              <div className="space-y-6">
-                <div className="flex flex-wrap gap-4">
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center">
                   <QuoteModal>
-                    <button className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-xl text-lg hover:shadow-2xl">
-                      <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 active:scale-95 transition-all duration-300 md:hover:scale-105 shadow-xl text-base md:text-lg hover:shadow-2xl touch-manipulation">
+                      <svg className="w-5 h-5 md:w-6 md:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                       Get Free Quote
                     </button>
                   </QuoteModal>
-                  <a 
+                  <a
                     href={CONTACT_INFO.phoneHref}
-                    className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-xl text-lg hover:shadow-2xl"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-primary font-bold rounded-lg hover:bg-white/90 active:scale-95 transition-all duration-300 md:hover:scale-105 shadow-xl text-base md:text-lg hover:shadow-2xl touch-manipulation"
                   >
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 md:w-6 md:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call {CONTACT_INFO.phone}
                   </a>
                 </div>
 
-                <div className="flex items-center gap-8 text-white/90">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 md:gap-8 text-white/90 text-sm md:text-base justify-center">
                   <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="font-medium">Free quotes</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="font-medium">No hidden fees</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="font-medium">Available 7 days</span>

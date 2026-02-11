@@ -133,3 +133,89 @@
   color: hsl(var(--secondary));
   font-weight: 600;
 }
+
+/* ===== MOBILE RESPONSIVENESS FIXES ===== */
+@layer utilities {
+  /* Touch-friendly tap targets (minimum 44x44px) */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent text from being too small on mobile */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* Prevents iOS zoom on input focus */
+    }
+
+    /* Ensure inputs are at least 16px to prevent zoom */
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Better mobile spacing */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Reduce excessive padding on mobile */
+    section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* Smooth scrolling for mobile */
+  @supports (scroll-behavior: smooth) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Fix viewport height on mobile (iOS Safari) */
+  .min-h-screen-mobile {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Better button active states for mobile */
+  @media (hover: none) {
+    button:active, a:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
