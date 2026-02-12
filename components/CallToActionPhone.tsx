@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import phoneContactScreen from '@/assets/phone-contact-screen.jpg';
+import phoneContactScreen from '@/assets/mobile.jpeg';
 import QuoteModal from './QuoteModal';
 import { CONTACT_INFO } from '@/data/contact';
 
