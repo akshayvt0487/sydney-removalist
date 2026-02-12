@@ -3,6 +3,7 @@ import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import ContactForm from '@/components/ContactForm';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { CONTACT_INFO } from '@/data/contact';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
@@ -188,6 +189,8 @@ export default function ContactPage() {
         </section>
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
       </main>
     </>
   );

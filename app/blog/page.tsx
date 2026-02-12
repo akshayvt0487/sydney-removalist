@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import CTASection from '@/components/CTASection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
@@ -205,6 +206,8 @@ export default function Blog() {
         </section>
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
 
         <CTASection />
       </main>

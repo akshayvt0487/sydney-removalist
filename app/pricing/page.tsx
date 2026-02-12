@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import PricingTable from '@/components/PricingTable';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import QuoteModal from '@/components/QuoteModal';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
@@ -193,6 +194,8 @@ export default function PricingPage() {
         </section>
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
 
         <CTASection />
       </main>

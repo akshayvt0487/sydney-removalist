@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import ServicesQuickAccess from '@/components/ServicesQuickAccess';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import CTASection from '@/components/CTASection';
 import ServiceWhyChoose from '@/components/ServiceWhyChoose';
 import ServiceCoverage from '@/components/ServiceCoverage';
@@ -153,7 +154,9 @@ export default async function ServiceDetailPage({ params }: Props) {
         <FAQAccordion items={service.faq} />
         
         <HowItWorksSteps />
-        
+
+        <TrustindexReviews />
+
         <CTASection />
       </main>
     </>

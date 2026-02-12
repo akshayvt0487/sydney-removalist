@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from 'next/image';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import CTASection from '@/components/CTASection';
 import Link from 'next/link';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -170,6 +171,8 @@ export default async function BlogSinglePage({ params }: Props) {
       </section>
 
       <HowItWorksSteps />
+
+      <TrustindexReviews />
     </>
   );
 }

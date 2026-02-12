@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import CTASection from '@/components/CTASection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateOrganizationSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
@@ -250,6 +251,8 @@ export default function About() {
         </section>
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
 
         <CTASection />
       </main>

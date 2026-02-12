@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import CTASection from '@/components/CTASection';
 import LocationMap from '@/components/LocationMap';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -259,6 +260,8 @@ export default function LocationsPage() {
         <LocationMap locationName="Sydney" />
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
 
         <CTASection />
       </main>

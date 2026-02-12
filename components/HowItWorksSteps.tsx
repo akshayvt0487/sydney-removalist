@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Assets
-import stepQuote from '@/assets/removalist/01.webp';
-import stepBooking from '@/assets/removalist/05.webp';
+import stepQuote from '@/assets/removalist/022.webp';
+import stepBooking from '@/assets/removalist/024.webp';
 import stepMoving from '@/assets/removalist/08.webp';
 
 const HowItWorksSteps = () => {

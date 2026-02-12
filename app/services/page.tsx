@@ -4,6 +4,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import ServicesQuickAccess from '@/components/ServicesQuickAccess';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CTASection from '@/components/CTASection';
+import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 import { services } from '@/data/services';
@@ -194,6 +195,8 @@ export default function ServicesPage() {
         </section>
 
         <HowItWorksSteps />
+
+        <TrustindexReviews />
 
         <CTASection />
       </main>

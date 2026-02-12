@@ -105,7 +105,7 @@ const HeroSection = ({
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"  />
                     </svg>
                   ))}
                 </div>
@@ -133,8 +133,8 @@ const HeroSection = ({
             )}
 
             {showCTA && (
-              <div className="space-y-4 md:space-y-6">
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center">
+              <div className="space-y-4 md:space-y-6 ">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 ">
                   <QuoteModal>
                     <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 active:scale-95 transition-all duration-300 md:hover:scale-105 shadow-xl text-base md:text-lg hover:shadow-2xl touch-manipulation">
                       <svg className="w-5 h-5 md:w-6 md:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@ const HeroSection = ({
                   </a>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 md:gap-8 text-white/90 text-sm md:text-base justify-center">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 md:gap-8 text-white/90 text-sm md:text-base ">
                   <div className="flex items-center gap-2">
                     <svg className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
