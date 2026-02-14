@@ -1,25 +1,42 @@
 import QuoteModal from './QuoteModal';
 import { CONTACT_INFO } from '@/data/contact';
-import { Clock, CreditCard, Dumbbell } from 'lucide-react';
+import { Clock, Shield, Dumbbell } from 'lucide-react';
 
 const MovingMadeEasy = () => {
+  // Left side - numbered steps
   const steps = [
     {
       number: '1',
-      title: 'Available 24 hours & 7 days',
+      title: 'Request a Free Quote',
+      description: 'Get an instant estimate for your move with no obligations or hidden fees.'
+    },
+    {
+      number: '2',
+      title: 'Schedule Your Move',
+      description: 'Choose a date and time that works best for you - we offer flexible scheduling.'
+    },
+    {
+      number: '3',
+      title: 'Relax & Let Us Handle It',
+      description: 'Our experienced team takes care of everything from packing to delivery.'
+    }
+  ];
+
+  // Right side - feature cards
+  const features = [
+    {
+      title: 'Available 24/7',
       description: 'We\'re always ready to help you move, any time of day or week that suits you best.',
       icon: <Clock className="w-8 h-8" />
     },
     {
-      number: '2',
-      title: 'Pay half upfront & rest later',
-      description: 'Flexible payment options to make your move more affordable and stress-free.',
-      icon: <CreditCard className="w-8 h-8" />
+      title: 'Fully Insured Moves',
+      description: 'Complete peace of mind with comprehensive insurance coverage for all your belongings.',
+      icon: <Shield className="w-8 h-8" />
     },
     {
-      number: '3',
-      title: 'Heavy lifting',
-      description: 'Our professional team handles all the heavy lifting so you don\'t have to.',
+      title: 'Professional Team',
+      description: 'Our trained experts handle all the heavy lifting and ensure safe transport of your items.',
       icon: <Dumbbell className="w-8 h-8" />
     }
   ];
@@ -70,9 +87,9 @@ const MovingMadeEasy = () => {
 
           {/* Right Column: Cards */}
           <div className="space-y-6 animate-fade-in-up">
-            {steps.map((item, index) => (
-              <div 
-                key={index} 
+            {features.map((item, index) => (
+              <div
+                key={index}
                 className="bg-navy text-white p-6 rounded-xl flex gap-4 items-start hover:scale-105 transition-all duration-300 hover:shadow-xl"
               >
                 <div className="flex-shrink-0 text-yellow">

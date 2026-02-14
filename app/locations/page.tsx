@@ -165,9 +165,11 @@ export default function LocationsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       <h3 className="text-2xl font-bold text-foreground">{region.name}</h3>
-                      <span className="ml-auto bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold">
-                        {region.suburbs.length} suburbs
+                      
+                        <span className="ml-auto bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold">
+                        All suburbs
                       </span>
+                      
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {region.suburbs.map((suburb) => (
