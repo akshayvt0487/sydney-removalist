@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/toaster";
@@ -105,6 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU" suppressHydrationWarning>
       <GoogleTagManager gtmId="GTM-KV4V384N" />
+      <GoogleAnalytics gaId="G-9D3WBQ0ZY5" />
       <head>
         {/* Organization and Website Schema - Global */}
         <SchemaMarkup schema={[
