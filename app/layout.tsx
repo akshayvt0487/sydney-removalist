@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'FDobe8EtgVDa05nNx5_A8WfjJ-OQ7IaFYDsiAS478AM',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
