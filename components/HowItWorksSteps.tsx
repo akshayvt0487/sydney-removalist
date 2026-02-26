@@ -9,17 +9,17 @@ import stepMoving from '@/assets/removalist/08.webp';
 const HowItWorksSteps = () => {
   const steps = [
     {
-      title: 'Get a Free Quote',
+      title: 'Get a Free Quote in 60 Seconds',
       description: 'Fill out our simple quote form or give us a call. We\'ll provide you with a transparent, competitive quote with no hidden fees.',
       image: stepQuote
     },
     {
-      title: 'Book Your Move',
+      title: 'Pick Your Date — We Work 7 Days',
       description: 'Choose your preferred date and time. We\'re flexible and work around your schedule, including weekends and holidays.',
       image: stepBooking
     },
     {
-      title: 'We Handle Everything',
+      title: 'Sit Back. We Handle Everything.',
       description: 'Our professional team arrives on time, carefully packs and loads your belongings, and delivers them safely to your new location.',
       image: stepMoving
     }
@@ -29,9 +29,9 @@ const HowItWorksSteps = () => {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">How It Works</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Your Move, Sorted in 3 Simple Steps</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Moving with us is simple and straightforward. Here's how we make it happen.
+            Moving with us is simple and straightforward. Here&apos;s how we make it happen.
           </p>
         </div>
 

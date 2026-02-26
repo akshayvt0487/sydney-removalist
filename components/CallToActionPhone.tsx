@@ -39,9 +39,7 @@ const CallToActionPhone = () => {
               Give Us a Call Today!
             </h2>
             <p className="text-white/90 mb-8 text-lg">
-              Ready to move? Our friendly team is standing by to answer your questions 
-              and provide you with a free, no-obligation quote. Call us now or request 
-              a quote online!
+              Takes 60 seconds. No obligation. No hidden fees. Just an honest price from people who care about getting your move right.
             </p>
 
             <div className="space-y-4 mb-8">

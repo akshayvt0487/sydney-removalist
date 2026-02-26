@@ -4,14 +4,12 @@ import teamMovers from '@/assets/removalist/015 copy.webp';
 
 const WhyPickUs = () => {
   const reasons = [
-    '✓ Fully licensed and insured',
-    '✓ Experienced professional movers',
-    '✓ Modern fleet of trucks',
-    '✓ Free quotes with no obligations',
-    '✓ Competitive pricing',
-    '✓ 7 days a week service',
-    '✓ Careful handling of your belongings',
-    '✓ On-time guaranteed'
+    '✓ Licensed & fully insured — your belongings are protected',
+    '✓ 15+ years experience moving Sydney homes',
+    '✓ Modern trucks with the right gear for every job',
+    '✓ We beat any written quote by 5%',
+    '✓ Every item wrapped and handled with care',
+    '✓ On-time or we make it right'
   ];
 
   return (
@@ -33,10 +31,10 @@ const WhyPickUs = () => {
 
           <div className="animate-fade-in-up order-1 md:order-2">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-4 md:mb-6 leading-tight">
-              Why pick Sydney Removalist?
+              What Makes Us Different From Every Other Removalist in Sydney
             </h2>
             <p className="text-charcoal/80 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
-              We're not just another moving company. We're your trusted partner in making your relocation smooth, efficient, and stress-free.
+              We&apos;re not just another moving company. We&apos;re your trusted partner in making your relocation smooth, efficient, and stress-free.
             </p>
 
             <div className="grid grid-cols-1 gap-2 md:gap-3 mb-6 md:mb-8">

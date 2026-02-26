@@ -18,7 +18,7 @@ const ServicesGrid = ({ limit }: { limit?: number }) => {
             <span className="text-secondary font-semibold text-sm">OUR SERVICES</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Professional Moving Solutions
+            Everything You Need for a Stress-Free Move
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive moving services tailored to your specific needs

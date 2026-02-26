@@ -7,7 +7,7 @@ const TrustBadges = () => {
         </svg>
       ),
       title: "Fully Licensed & Insured",
-      subtitle: "Complete protection for your move"
+      subtitle: "Your belongings covered from first box to last"
     },
     {
       icon: (
@@ -16,7 +16,7 @@ const TrustBadges = () => {
         </svg>
       ),
       title: "5-Star Rated",
-      subtitle: "Hundreds of happy customers"
+      subtitle: "4.9 Stars · 225+ Verified Google Reviews"
     },
     {
       icon: (
@@ -25,7 +25,7 @@ const TrustBadges = () => {
         </svg>
       ),
       title: "Best Price Guaranteed",
-      subtitle: "We'll beat any quote by 5%"
+      subtitle: "Show us a cheaper quote. We'll beat it by 5%"
     }
   ];
 

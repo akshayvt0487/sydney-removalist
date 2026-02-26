@@ -7,10 +7,10 @@ const StatsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
-            Sydney's Top Reviewed Removalist
+            225+ Sydney Families Gave Us 5 Stars. Here&apos;s Why.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Trusted by hundreds of satisfied customers across Sydney
+            We don&apos;t just move boxes. We move people through one of life&apos;s biggest transitions with care, respect, and zero stress.
           </p>
         </div>
 
@@ -48,8 +48,8 @@ const StatsSection = () => {
           <div className="space-y-6 animate-fade-in-up">
             {/* Main review card */}
             <div className="bg-yellow rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
-              <div className="text-6xl md:text-7xl font-bold text-charcoal mb-2">224</div>
-              <div className="text-xl font-semibold text-charcoal mb-4">Reviews on Google</div>
+              <div className="text-6xl md:text-7xl font-bold text-charcoal mb-2">225+</div>
+              <div className="text-xl font-semibold text-charcoal mb-4">Verified Reviews</div>
               <div className="flex items-center justify-center gap-2 text-charcoal/80">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -57,7 +57,7 @@ const StatsSection = () => {
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                 </svg>
-                <span className="text-sm font-medium">Verified Reviews</span>
+                <span className="text-sm font-medium">4.9 Google Rating</span>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ const StatsSection = () => {
                     </div>
                   </div>
                   <div className="text-3xl font-bold mb-1">100%</div>
-                  <div className="text-sm text-white/90">Satisfaction</div>
+                  <div className="text-sm text-white/90">Satisfaction Guaranteed</div>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ const StatsSection = () => {
                     </div>
                   </div>
                   <div className="text-3xl font-bold mb-1">24/7</div>
-                  <div className="text-sm text-white/90">Support</div>
+                  <div className="text-sm text-white/90">Available</div>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ const StatsSection = () => {
                     </div>
                   </div>
                   <div className="text-3xl font-bold mb-1">15+</div>
-                  <div className="text-sm text-white/90">Years of Experience</div>
+                  <div className="text-sm text-white/90">Years in Sydney</div>
                 </div>
               </div>
             </div>

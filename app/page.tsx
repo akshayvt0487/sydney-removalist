@@ -85,8 +85,8 @@ export default function Home() {
         Passing backgroundImage={heroImage.src} is correct for CSS backgrounds.
       */}
       <HeroSection
-        title="Removalists Sydney That Go the Extra Mile"
-        subtitle="Moving Made Simple, Every Step of the Way."
+        title="Sydney Removalists Who Show Up, Pack Up & Never Let You Down"
+        subtitle="No hidden fees. No damaged goods. No moving day chaos. Just reliable, professional movers who treat your belongings like their own."
         backgroundImage={heroImage.src}
         showQuoteForm={true}
       />
