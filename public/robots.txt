@@ -4,7 +4,6 @@ Disallow: /dashboard
 Disallow: /admin
 Disallow: /auth
 Disallow: /api/
-Disallow: /_next/
 Disallow: /private/
 
 User-agent: Googlebot
