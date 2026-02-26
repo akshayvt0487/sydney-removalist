@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  trailingSlash: false,
+  skipTrailingSlashRedirect: false,
+  // Ensure service pages are statically generated
+  experimental: {
+    optimizePackageImports: ['@radix-ui/react-icons'],
+  },
 };
 
 export default nextConfig;
