@@ -31,7 +31,14 @@ type Props = {
   }>;
 };
 
-// 2. Generate Metadata (Replaces your old useEffect SEO)
+// 2. Generate Static Params for SSG
+export async function generateStaticParams() {
+  return interstateDestinations.map((destination) => ({
+    slug: destination.slug,
+  }));
+}
+
+// 3. Generate Metadata (Replaces your old useEffect SEO)
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const destination = interstateDestinations.find((d) => d.slug === slug);
@@ -65,7 +72,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// 3. The Page Component
+// 4. The Page Component
 export default async function InterstateCityPage({ params }: Props) {
   const { slug } = await params;
   const destination = interstateDestinations.find((d) => d.slug === slug);

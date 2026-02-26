@@ -10,7 +10,7 @@ import LocationMap from '@/components/LocationMap';
 import NearbyLocations from '@/components/NearbyLocations';
 import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import { getSuburbDetails } from '@/data/suburbs';
+import { getSuburbDetails, regionCategories } from '@/data/suburbs';
 import { CONTACT_INFO } from '@/data/contact';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
@@ -27,7 +27,17 @@ type Props = {
   }>;
 };
 
-// 2. Generate Metadata (Replaces useEffect + createMetadata)
+// 2. Generate Static Params for SSG
+export async function generateStaticParams() {
+  return regionCategories.flatMap((region) =>
+    region.suburbs.map((suburb) => ({
+      region: region.slug,
+      suburb: suburb.slug,
+    }))
+  );
+}
+
+// 3. Generate Metadata (Replaces useEffect + createMetadata)
 // This runs on the server before the page renders = Perfect SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { suburb } = await params;
@@ -71,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// 3. The Page Component (Server Component by default)
+// 4. The Page Component (Server Component by default)
 export default async function SuburbPage({ params }: Props) {
   // Await params (Next.js 15 requirement)
   const { region, suburb } = await params;
