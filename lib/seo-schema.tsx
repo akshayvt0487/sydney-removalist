@@ -97,7 +97,7 @@ export function generateOrganizationSchema() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '224',
+      reviewCount: '225',
       bestRating: '5',
       worstRating: '1'
     },
