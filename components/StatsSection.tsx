@@ -10,7 +10,7 @@ const StatsSection = () => {
             225+ Sydney Families Gave Us 5 Stars. Here&apos;s Why.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We don&apos;t just move boxes. We move people through one of life&apos;s biggest transitions with care, respect, and zero stress.
+            We don&apos;t just move boxes. We move people through one of life&apos;s most stressful days — and we take that seriously.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ const StatsSection = () => {
                     </svg>
                   ))}
                 </div>
-                <div className="text-xs font-semibold text-charcoal">Star Rating</div>
+                <div className="text-xs font-semibold text-charcoal">Google Rating</div>
               </div>
             </div>
           </div>

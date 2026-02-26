@@ -86,7 +86,7 @@ export default function Home() {
       */}
       <HeroSection
         title="Sydney Removalists Who Show Up, Pack Up & Never Let You Down"
-        subtitle="No hidden fees. No damaged goods. No moving day chaos. Just reliable, professional movers who treat your belongings like their own."
+        subtitle="No hidden fees. No damaged goods. No moving day chaos. Just a clean, stress-free move."
         backgroundImage={heroImage.src}
         showQuoteForm={true}
       />

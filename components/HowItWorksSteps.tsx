@@ -31,7 +31,7 @@ const HowItWorksSteps = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Your Move, Sorted in 3 Simple Steps</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Moving with us is simple and straightforward. Here&apos;s how we make it happen.
+           We handle the heavy lifting so you can focus on your new start. From quote to keys — we've got every step covered.
           </p>
         </div>
 

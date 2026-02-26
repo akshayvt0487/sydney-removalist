@@ -21,7 +21,7 @@ const ServicesGrid = ({ limit }: { limit?: number }) => {
             Everything You Need for a Stress-Free Move
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive moving services tailored to your specific needs
+           Whether you're moving a studio or a 5-bedroom home, we have the team, the trucks, and the experience to handle it.
           </p>
         </div>
         

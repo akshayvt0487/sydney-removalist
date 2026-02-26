@@ -8,6 +8,8 @@ const WhyPickUs = () => {
     '✓ 15+ years experience moving Sydney homes',
     '✓ Modern trucks with the right gear for every job',
     '✓ We beat any written quote by 5%',
+    '✓ Free quotes — no obligation, no pressure',
+    '✓ Available 7 days, 6AM to 8PM',
     '✓ Every item wrapped and handled with care',
     '✓ On-time or we make it right'
   ];
@@ -34,7 +36,9 @@ const WhyPickUs = () => {
               What Makes Us Different From Every Other Removalist in Sydney
             </h2>
             <p className="text-charcoal/80 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
-              We&apos;re not just another moving company. We&apos;re your trusted partner in making your relocation smooth, efficient, and stress-free.
+              Anyone can rent a truck. We bring trained professionals, full insurance, and a promise that what we quote is what you pay.
+
+
             </p>
 
             <div className="grid grid-cols-1 gap-2 md:gap-3 mb-6 md:mb-8">
