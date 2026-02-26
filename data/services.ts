@@ -1,4 +1,4 @@
-import residentialImg from '@/assets/removalist/015 copy.webp';
+import residentialImg from '@/assets/Residential moves.webp';
 import officeImg from '@/assets/office relocation.webp';
 import packingImg from '@/assets/removalist/05.webp';
 import storageImg from '@/assets/storage-solutions.jpg';
