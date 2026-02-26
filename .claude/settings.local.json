@@ -23,7 +23,8 @@
       "Bash(while read img)",
       "Bash(do echo \"$img\")",
       "Bash(done)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(npx next build)"
     ]
   }
 }

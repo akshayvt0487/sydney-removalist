@@ -97,7 +97,7 @@ export function generateOrganizationSchema() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '500',
+      reviewCount: '224',
       bestRating: '5',
       worstRating: '1'
     },
@@ -253,7 +253,7 @@ export function generateLocalBusinessSchema() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '500'
+      reviewCount: '224'
     }
   };
 }

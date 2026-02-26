@@ -79,7 +79,7 @@ export default function About() {
             { value: '15+', label: 'Years Experience' },
             { value: '10K+', label: 'Happy Moves' },
             { value: '98%', label: 'Satisfaction' },
-            { value: '500+', label: '5-Star Reviews' }
+            { value: '224', label: '5-Star Reviews' }
           ]}
         />
         
@@ -100,7 +100,7 @@ export default function About() {
                 <div className="text-lg text-primary-foreground">Customer Satisfaction</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-accent mb-2">500+</div>
+                <div className="text-5xl font-bold text-accent mb-2">224</div>
                 <div className="text-lg text-primary-foreground">5-Star Reviews</div>
               </div>
             </div>

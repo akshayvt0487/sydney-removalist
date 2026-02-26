@@ -74,7 +74,7 @@ export const testimonials: Testimonial[] = [
 
 export const reviewStats: ReviewStats = {
   averageRating: 4.9,
-  totalReviews: 207,
+  totalReviews: 224,
   fiveStarPercentage: 96,
   recommendationRate: 98
 };

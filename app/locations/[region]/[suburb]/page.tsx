@@ -115,7 +115,7 @@ export default async function SuburbPage({ params }: Props) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '207'
+      reviewCount: '224'
     },
     areaServed: {
       '@type': 'City',

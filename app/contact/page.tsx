@@ -159,7 +159,7 @@ export default function ContactPage() {
                   <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
                 </div>
                 <div className="bg-card p-6 rounded-lg text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">500+</div>
+                  <div className="text-4xl font-bold text-secondary mb-2">224</div>
                   <div className="text-sm text-muted-foreground">5-Star Reviews</div>
                 </div>
               </div>

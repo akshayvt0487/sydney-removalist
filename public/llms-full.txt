@@ -605,7 +605,7 @@
 
 ### Customer Satisfaction Metrics
 **Overall Rating**: 5 stars (average across review platforms)
-**Total Reviews**: 500+ verified reviews
+**Total Reviews**: 224 verified reviews
 **Repeat Customer Rate**: 35%
 **Referral Rate**: 40%
 **On-Time Performance**: 98%
@@ -796,7 +796,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "500"
+    "reviewCount": "224"
   }
 }
 ```

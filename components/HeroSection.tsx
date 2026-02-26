@@ -109,7 +109,7 @@ const HeroSection = ({
                     </svg>
                   ))}
                 </div>
-                <span className="text-primary font-semibold text-sm">4.9 Rating • 207 Reviews</span>
+                <span className="text-primary font-semibold text-sm">4.9 Rating • 224 Reviews</span>
               </div>
             )}
 
