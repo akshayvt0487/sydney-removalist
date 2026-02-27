@@ -261,15 +261,21 @@ const QuoteFormOverlay = ({ onSuccess }: QuoteFormOverlayProps) => {
           </div>
           <div>
             <Label htmlFor="moveTime" className="text-sm font-medium text-white">
-              Time <span className="text-red-400">*</span>
+              Preferred Time <span className="text-red-400">*</span>
             </Label>
-            <Input
+            <select
               id="moveTime"
-              type="time"
               value={formData.moveTime}
               onChange={handleInputChange('moveTime')}
-              className={`mt-1 bg-white text-charcoal border-none h-10 ${errors.moveTime ? 'ring-2 ring-red-400' : ''}`}
-            />
+              className={`w-full mt-1 px-3 h-10 rounded-md bg-white text-charcoal border-none text-sm ${errors.moveTime ? 'ring-2 ring-red-400' : ''}`}
+            >
+              <option value="">Select a time slot</option>
+              <option value="Early Morning (7am - 9am)">Early Morning (7am - 9am)</option>
+              <option value="Morning (9am - 12pm)">Morning (9am - 12pm)</option>
+              <option value="Afternoon (12pm - 3pm)">Afternoon (12pm - 3pm)</option>
+              <option value="Late Afternoon (3pm - 5pm)">Late Afternoon (3pm - 5pm)</option>
+              <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
+            </select>
             <ErrorMessage message={errors.moveTime} />
           </div>
         </div>

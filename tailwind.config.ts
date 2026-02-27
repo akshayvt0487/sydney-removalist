@@ -20,8 +20,10 @@ const config: Config = {
         },
         extend: {
             fontFamily: {
-                // This forces Tailwind to use the Next.js loaded font variable first
-                sans: ["var(--font-poppins)", "Poppins", "system-ui", "sans-serif"],
+                // Inter for all text - body, headings, everything
+                // Multiple weights provide visual hierarchy without multiple fonts
+                sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+                heading: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
             },
             colors: {
                 border: "hsl(var(--border))",

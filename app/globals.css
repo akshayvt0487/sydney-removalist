@@ -78,10 +78,30 @@
     @apply border-border;
   }
 
-  /* --- FIX 1: RESTORE BOLD HEADINGS --- */
-  /* Tailwind removes bold by default. This forces it back. */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+  /* --- TYPOGRAPHY HIERARCHY --- */
+  /* Using Inter exclusively with weight & size for visual hierarchy */
+  h1 {
+    @apply font-extrabold text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply font-bold text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply font-bold text-xl md:text-2xl;
+  }
+
+  h5, h6 {
+    @apply font-semibold text-lg;
+  }
+
+  p {
+    @apply font-normal text-base leading-relaxed;
   }
 
   html {
@@ -92,10 +112,11 @@
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
-    /* --- FIX 2: MAKE TEXT CRISP --- */
-    /* This makes fonts look cleaner and matches non-Tailwind rendering */
+    font-weight: 400;
+    /* Text rendering optimization for screen readability */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 

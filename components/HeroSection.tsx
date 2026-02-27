@@ -113,7 +113,7 @@ const HeroSection = ({
               </div>
             )}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
               {title}
             </h1>
             <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl ${showQuoteForm ? 'mx-0' : 'mx-auto'}`}>
