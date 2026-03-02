@@ -239,8 +239,9 @@ Before considering indexing complete, verify:
 https://www.sydneyremovalist.com.au           # Should load
 https://www.sydneyremovalist.com.au/robots.txt # Should show content
 https://www.sydneyremovalist.com.au/sitemap.xml # Should show XML
-https://maps.google.com/ping?sitemap=https://www.sydneyremovalist.com.au/robots.txt # Notify Google of sitemap
 ```
+
+**Note:** Use Google Search Console to submit the sitemap (more reliable than ping URLs)
 
 **Step 2: Check Vercel Status**
 - Visit: https://vercel.com/dashboard

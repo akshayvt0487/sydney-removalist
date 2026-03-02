@@ -25,29 +25,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!service) return { title: "Service Not Found" };
 
+  const enhancedDescription = `${service.shortDescription} Over 225+ reviews, 15+ years experience in Sydney. Fully insured, professional team, competitive rates.`;
+
   return {
-    title: `${service.title} Sydney | Professional ${service.title} Services`,
-    description: service.shortDescription,
-    keywords: [service.title.toLowerCase(), `${service.title.toLowerCase()} sydney`, "removalist services"],
+    title: `${service.title} Sydney | Sydney Removalist | Professional Moving Services`,
+    description: enhancedDescription,
+    keywords: [service.title.toLowerCase(), `${service.title.toLowerCase()} sydney`, "removalist services", "professional moving"],
     alternates: {
       canonical: `/services/${slug}`,
     },
     openGraph: {
-      title: `${service.title} Sydney | Professional Services`,
-      description: service.shortDescription,
+      title: `${service.title} Sydney | Sydney Removalist`,
+      description: enhancedDescription,
       type: "website",
       url: `/services/${slug}`,
       images: [{
-        url: '/og-services.jpg',
-        width: 1200,
-        height: 630,
-        alt: `${service.title} Services in Sydney`
+        url: 'https://www.sydneyremovalist.com.au/logo.png',
+        width: 600,
+        height: 60,
+        alt: `Sydney Removalist - Professional Moving Services`
       }]
     },
     twitter: {
-      card: "summary_large_image",
-      title: `${service.title} Sydney`,
-      description: service.shortDescription
+      card: "summary",
+      title: `${service.title} Sydney | Sydney Removalist`,
+      description: enhancedDescription
     }
   };
 }

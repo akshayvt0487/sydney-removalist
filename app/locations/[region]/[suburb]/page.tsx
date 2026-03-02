@@ -37,6 +37,17 @@ export async function generateStaticParams() {
   );
 }
 
+// Custom descriptions for major suburbs
+const customDescriptions: Record<string, string> = {
+  'rosebery': 'Professional removalist in Rosebery. Expert inner-city apartment moves. Fast, reliable, fully insured. Free quote available now.',
+  'north-sydney': 'Removalist in North Sydney. Expert North Shore moving services. Commercial & residential, competitive rates, same-day quotes.',
+  'parramatta': 'Removalist services in Parramatta. West Sydney moves with experienced team. Residential & business relocations, fully insured.',
+  'manly': 'Removalist to Manly and Northern Beaches. Expert beach suburb moves. Careful packing, experienced team, fully insured.',
+  'bondi': 'Removalist in Bondi, Eastern Suburbs. Professional apartment moves. Inner-city specialist, fully insured, same-day quotes.',
+  'chatswood': 'Removalist in Chatswood, North Shore. Professional moves for the northern suburbs. Experienced team, fully insured, free quotes.',
+  'marrickville': 'Removalist in Marrickville, Inner West. Specialist inner-city moves. Careful handling, experienced team, fully insured service.',
+};
+
 // 3. Generate Metadata (Replaces useEffect + createMetadata)
 // This runs on the server before the page renders = Perfect SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -49,9 +60,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const customDescription = customDescriptions[suburb]
+    || `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance. Get your free quote today!`;
+
   return {
-    title: `Removalist ${suburbDetails.name} | Professional Moving Services ${suburbDetails.region}`,
-    description: `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance. Get your free quote today!`,
+    title: `Removalist in ${suburbDetails.name} | Sydney Removalist | Professional Moving`,
+    description: customDescription,
     keywords: [
       `removalist ${suburbDetails.name.toLowerCase()}`,
       `movers ${suburbDetails.name.toLowerCase()}`,
@@ -63,14 +77,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/locations/${suburbDetails.regionSlug}/${suburb}`,
     },
     openGraph: {
-      title: `Removalist ${suburbDetails.name} | Sydney Removalist`,
+      title: `Removalist in ${suburbDetails.name} | Sydney Removalist`,
       description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
       type: "website",
       images: [{
-        url: '/og-locations.jpg',
-        width: 1200,
-        height: 630,
-        alt: `Removalist Services in ${suburbDetails.name}`
+        url: `${COMPANY_INFO.url}/logo.png`,
+        width: 600,
+        height: 60,
+        alt: `Sydney Removalist - Professional Moving Services`
       }]
     },
     twitter: {

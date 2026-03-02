@@ -125,15 +125,22 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Get recipient emails from environment variable (comma-separated list)
     // Example: "email1@example.com,email2@example.com,email3@example.com"
-    const notificationEmailsEnv = Deno.env.get("NOTIFICATION_EMAILS") || Deno.env.get("NOTIFICATION_EMAIL") || "akshay@dsigns.com.au";
+    const notificationEmailsEnv = Deno.env.get("NOTIFICATION_EMAILS") || Deno.env.get("NOTIFICATION_EMAIL") || "info@nationalremovalist.com";
     const recipientEmails = notificationEmailsEnv.split(',').map(email => email.trim()).filter(email => email.length > 0);
+
+    // Get BCC emails from environment variable (comma-separated list)
+    const bccEmailsEnv = Deno.env.get("BCC_EMAILS") || "akshay@dsigns.com.au,basheer@dsigns.com.au";
+    const bccEmails = bccEmailsEnv.split(',').map(email => email.trim()).filter(email => email.length > 0);
+
     const fromEmail = Deno.env.get("FROM_EMAIL") || "Sydney Removalist <onboarding@resend.dev>";
 
     console.log(`Sending email to: ${recipientEmails.join(', ')}`);
+    console.log(`BCC: ${bccEmails.join(', ')}`);
 
     const emailResponse = await resend.emails.send({
       from: fromEmail,
       to: recipientEmails,
+      bcc: bccEmails,
       subject: emailSubject,
       html: emailHtml,
     });

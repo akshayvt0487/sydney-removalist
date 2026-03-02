@@ -6,7 +6,7 @@ export const COMPANY_INFO = {
   legalName: 'Sydney Removalist Pty Ltd',
   url: 'https://www.sydneyremovalist.com.au',
   logo: 'https://www.sydneyremovalist.com.au/logo.png',
-  description: 'Professional removalist services in Sydney. Trusted moving company with 15+ years experience, serving all Sydney suburbs and interstate moves.',
+  description: 'Professional removalist services in Sydney with 225+ customer reviews. 15+ years experience moving families and businesses. Trusted by thousands across all Sydney suburbs and interstate. Get a free quote today.',
   phone: '+61 1300 237 808',
   email: 'info@sydneyremovalist.com.au',
   address: {
