@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     template: `%s | ${COMPANY_INFO.name}`
   },
   description: COMPANY_INFO.description,
-  canonical: COMPANY_INFO.url,
   keywords: [
     'removalists sydney',
     'sydney removalist',
