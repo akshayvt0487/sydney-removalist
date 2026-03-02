@@ -20,16 +20,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : COMPANY_INFO.url
-  ),
+  metadataBase: new URL(COMPANY_INFO.url), // Always use production URL for proper canonical URLs
   title: {
     default: `${COMPANY_INFO.name} | Professional Moving Services Sydney`,
     template: `%s | ${COMPANY_INFO.name}`
   },
   description: COMPANY_INFO.description,
+  canonical: COMPANY_INFO.url,
   keywords: [
     'removalists sydney',
     'sydney removalist',
@@ -65,35 +62,36 @@ export const metadata: Metadata = {
     description: COMPANY_INFO.description,
     images: [
       {
-        url: '/og-home.jpg',
-        width: 1200,
-        height: 630,
-        alt: COMPANY_INFO.name
+        url: `${COMPANY_INFO.url}/logo.png`, // Use logo as fallback
+        width: 600,
+        height: 60,
+        alt: COMPANY_INFO.name,
+        type: 'image/png'
       }
     ]
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: `${COMPANY_INFO.name} | Professional Moving Services`,
     description: COMPANY_INFO.description,
     creator: '@sydneyremovalist',
-    images: ['/og-home.jpg']
+    site: '@sydneyremovalist'
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'noimageindex': false,
     },
   },
   verification: {
     google: 'FDobe8EtgVDa05nNx5_A8WfjJ-OQ7IaFYDsiAS478AM',
-    // yandex: 'your-yandex-verification-code',
-    // bing: 'your-bing-verification-code',
   },
 };
 
@@ -107,6 +105,9 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-KV4V384N" />
       <GoogleAnalytics gaId="G-9D3WBQ0ZY5" />
       <head>
+        {/* Canonical URL - Critical for SEO */}
+        <link rel="canonical" href={COMPANY_INFO.url} />
+        
         {/* Organization and Website Schema - Global */}
         <SchemaMarkup schema={[
           generateOrganizationSchema(),
