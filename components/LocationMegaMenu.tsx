@@ -89,8 +89,8 @@ const LocationMegaMenu = () => {
             </div>
 
             {/* Right content - Suburbs grid */}
-            <div className="col-span-3 p-6 bg-background">
-              <h3 className="text-lg font-bold mb-4 text-foreground">
+            <div className="col-span-3 p-6 bg-background max-h-[500px] overflow-y-auto">
+              <h3 className="text-lg font-bold mb-4 text-foreground sticky top-0 bg-background z-10 pb-2">
                 {activeRegionData?.name} Suburbs
               </h3>
               <div className="grid grid-cols-3 gap-3">
