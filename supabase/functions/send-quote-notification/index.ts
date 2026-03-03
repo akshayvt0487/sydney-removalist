@@ -132,7 +132,7 @@ const handler = async (req: Request): Promise<Response> => {
     const bccEmailsEnv = Deno.env.get("BCC_EMAILS") || "akshay@dsigns.com.au,basheer@dsigns.com.au";
     const bccEmails = bccEmailsEnv.split(',').map(email => email.trim()).filter(email => email.length > 0);
 
-    const fromEmail = Deno.env.get("FROM_EMAIL") || "Sydney Removalist <onboarding@resend.dev>";
+    const fromEmail = Deno.env.get("FROM_EMAIL") || "Sydney Removalist <noreply@sydneyremovalist.com.au>";
 
     console.log(`Sending email to: ${recipientEmails.join(', ')}`);
     console.log(`BCC: ${bccEmails.join(', ')}`);
