@@ -33,8 +33,22 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const formData: QuoteFormData = await req.json();
     const isContactForm = formData.formType === 'contact';
-    
+
     console.log(`Received ${isContactForm ? 'contact' : 'quote'} form data:`, formData);
+
+    // Helper function to format date as DD/MM/YYYY
+    const formatDate = (dateString?: string): string => {
+      if (!dateString) return 'Not specified';
+      try {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+      } catch {
+        return dateString;
+      }
+    };
 
     let emailHtml: string;
     let emailSubject: string;
@@ -104,7 +118,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h2 style="color: #1e3a5f; margin-top: 0;">Schedule</h2>
-            <p><strong>Date:</strong> ${formData.movingDate || 'Not specified'}</p>
+            <p><strong>Date:</strong> ${formatDate(formData.movingDate)}</p>
             <p><strong>Preferred Time:</strong> ${formData.movingTime || 'Not specified'}</p>
           </div>
           

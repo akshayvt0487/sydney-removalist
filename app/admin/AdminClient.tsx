@@ -145,7 +145,7 @@ export default function AdminClient() {
     const csvRows = [
       headers.join(','),
       ...dataToExport.map(sub => [
-        format(new Date(sub.created_at!), 'yyyy-MM-dd HH:mm:ss'),
+        format(new Date(sub.created_at!), 'dd/MM/yyyy HH:mm:ss'),
         sub.form_type || 'quote',
         `"${sub.full_name}"`,
         sub.email,
@@ -167,7 +167,7 @@ export default function AdminClient() {
     const url = URL.createObjectURL(blob);
 
     link.setAttribute('href', url);
-    link.setAttribute('download', `form-submissions-${format(new Date(), 'yyyy-MM-dd')}.csv`);
+    link.setAttribute('download', `form-submissions-${format(new Date(), 'dd-MM-yyyy')}.csv`);
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -292,7 +292,7 @@ export default function AdminClient() {
                       </div>
                       <CardTitle className="text-xl">{submission.full_name}</CardTitle>
                       <CardDescription>
-                        Submitted {format(new Date(submission.created_at!), 'PPpp')}
+                        Submitted {format(new Date(submission.created_at!), 'dd/MM/yyyy h:mm a')}
                       </CardDescription>
                     </div>
                     <div className="flex gap-2">
