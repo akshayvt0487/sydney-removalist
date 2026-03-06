@@ -38,7 +38,7 @@ const NearbyLocations = ({ currentSuburbSlug, regionSlug }: NearbyLocationsProps
             {nearbySuburbs.map((suburb) => (
               <Link
                 key={suburb.slug}
-                href={`/locations/${regionSlug}/${suburb.slug}`}
+                href={`/${regionSlug}/${suburb.slug}`}
                 className="group relative block px-6 py-5 bg-gradient-to-br from-card to-card/80 border-2 border-border rounded-xl text-center hover:border-secondary hover:shadow-xl transition-all hover:-translate-y-1 overflow-hidden w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(20%-0.8rem)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/0 to-secondary/0 group-hover:from-secondary/5 group-hover:to-accent/5 transition-all" />

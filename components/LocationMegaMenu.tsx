@@ -97,7 +97,7 @@ const LocationMegaMenu = () => {
                 {activeRegionData?.suburbs.map((suburb) => (
                   <Link
                     key={suburb.slug}
-                    href={`/locations/${activeRegionData.slug}/${suburb.slug}`}
+                    href={`/${activeRegionData.slug}/${suburb.slug}`}
                     onClick={() => setIsOpen(false)}
                     className="flex items-start gap-2 p-2 rounded hover:bg-muted transition-colors group"
                   >

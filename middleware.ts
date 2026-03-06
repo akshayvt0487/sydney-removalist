@@ -2,6 +2,17 @@ import { updateSession } from '@/lib/supabase/middleware'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
+  // Redirect /locations/[region]/[suburb] to /[region]/[suburb]
+  // 301 permanent redirect for SEO
+  if (pathname.startsWith('/locations/') && pathname !== '/locations') {
+    const newPath = pathname.replace('/locations/', '/');
+    const url = request.nextUrl.clone();
+    url.pathname = newPath;
+    return NextResponse.redirect(url, 301);
+  }
+
   // Update session for all requests
   const response = await updateSession(request)
 
@@ -9,8 +20,6 @@ export async function middleware(request: NextRequest) {
   const protectedRoutes = ['/admin', '/dashboard']
   const authRoutes = ['/auth']
   const publicAuthRoutes = ['/auth/access-denied'] // Auth routes that should be accessible even with a session
-
-  const { pathname } = request.nextUrl
 
   // Get the supabase session from cookies
   const sessionCookie = request.cookies.get('sb-zbqzjtbjdepgwmnbskbu-auth-token')

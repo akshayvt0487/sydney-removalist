@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Location pages (suburbs)
   const locationPages = regionCategories.flatMap((region) =>
     region.suburbs.map((suburb) => ({
-      url: `${baseUrl}/locations/${region.slug}/${suburb.slug}`,
+      url: `${baseUrl}/${region.slug}/${suburb.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
