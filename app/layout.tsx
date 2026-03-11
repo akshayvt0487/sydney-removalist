@@ -104,8 +104,8 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-KV4V384N" />
       <GoogleAnalytics gaId="G-9D3WBQ0ZY5" />
       <head>
-        {/* Canonical URL - Critical for SEO */}
-        <link rel="canonical" href={COMPANY_INFO.url} />
+        {/* DO NOT set canonical here - each page sets its own via metadata.alternates.canonical */}
+        {/* Setting it globally would override all page-specific canonicals */}
         
         {/* Organization and Website Schema - Global */}
         <SchemaMarkup schema={[
