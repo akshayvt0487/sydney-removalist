@@ -1,25 +1,8 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
-import { notFound, redirect } from 'next/navigation';
-import HeroSection from '@/components/HeroSection';
-import ServicesQuickAccess from '@/components/ServicesQuickAccess';
-import HowItWorksSteps from '@/components/HowItWorksSteps';
-import CTASection from '@/components/CTASection';
-import QuoteModal from '@/components/QuoteModal';
-import LocationMap from '@/components/LocationMap';
-import NearbyLocations from '@/components/NearbyLocations';
-import TrustindexReviews from '@/components/TrustindexReviews';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import { getSuburbDetails, regionCategories } from '@/data/suburbs';
-import { CONTACT_INFO } from '@/data/contact';
-import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
+import { redirect } from 'next/navigation';
+import { getSuburbDetails } from '@/data/suburbs';
 
-// Images - Next.js handles imports automatically
-import removalistHero from '@/assets/removalist/02.webp';
-import movingBoxes from '@/assets/removalist/05.webp';
-import movingTruckLoading from '@/assets/removalist/08.webp';
-
-// 1. Define the Params Type (Next.js 15 requires params to be a Promise)
+// Define the Params Type
 type Props = {
   params: Promise<{
     region: string;
@@ -27,177 +10,41 @@ type Props = {
   }>;
 };
 
-// 2. Generate Static Params for SSG
-export async function generateStaticParams() {
-  return regionCategories.flatMap((region) =>
-    region.suburbs.map((suburb) => ({
-      region: region.slug,
-      suburb: suburb.slug,
-    }))
-  );
-}
-
-// Custom descriptions for major suburbs
-const customDescriptions: Record<string, string> = {
-  'rosebery': 'Professional removalist in Rosebery. Expert inner-city apartment moves. Fast, reliable, fully insured. Free quote available now.',
-  'north-sydney': 'Removalist in North Sydney. Expert North Shore moving services. Commercial & residential, competitive rates, same-day quotes.',
-  'parramatta': 'Removalist services in Parramatta. West Sydney moves with experienced team. Residential & business relocations, fully insured.',
-  'manly': 'Removalist to Manly and Northern Beaches. Expert beach suburb moves. Careful packing, experienced team, fully insured.',
-  'bondi': 'Removalist in Bondi, Eastern Suburbs. Professional apartment moves. Inner-city specialist, fully insured, same-day quotes.',
-  'chatswood': 'Removalist in Chatswood, North Shore. Professional moves for the northern suburbs. Experienced team, fully insured, free quotes.',
-  'marrickville': 'Removalist in Marrickville, Inner West. Specialist inner-city moves. Careful handling, experienced team, fully insured service.',
-};
-
-// 3. Generate Metadata (Replaces useEffect + createMetadata)
-// This runs on the server before the page renders = Perfect SEO
+// This creates a redirect page to the canonical URL
+// Google sees this as a 301 redirect to /{region}/{suburb}
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { suburb } = await params;
   const suburbDetails = getSuburbDetails(suburb);
 
   if (!suburbDetails) {
-    return {
-      title: 'Location Not Found',
-    };
+    return { title: 'Redirecting...' };
   }
-
-  const customDescription = customDescriptions[suburb]
-    || `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance. Get your free quote today!`;
 
   return {
     title: `Removalist in ${suburbDetails.name} | Sydney Removalist | Professional Moving`,
-    description: customDescription,
-    keywords: [
-      `removalist ${suburbDetails.name.toLowerCase()}`,
-      `movers ${suburbDetails.name.toLowerCase()}`,
-      `${suburbDetails.name.toLowerCase()} removalists`,
-      `moving services ${suburbDetails.region.toLowerCase()}`,
-      "local removalists"
-    ],
-    alternates: {
-      canonical: `/locations/${suburbDetails.regionSlug}/${suburb}`,
-    },
-    openGraph: {
-      title: `Removalist in ${suburbDetails.name} | Sydney Removalist`,
-      description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
-      type: "website",
-      images: [{
-        url: `${COMPANY_INFO.url}/logo.png`,
-        width: 600,
-        height: 60,
-        alt: `Sydney Removalist - Professional Moving Services`
-      }]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `Removalist ${suburbDetails.name}`,
-      description: `Professional moving services in ${suburbDetails.name}. Get your free quote today!`
-    }
+    description: `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services.`,
   };
 }
 
-// 4. The Page Component (Server Component by default)
-export default async function SuburbPage({ params }: Props) {
-  // Await params (Next.js 15 requirement)
+// Redirect all /locations/[region]/[suburb] to /[region]/[suburb]
+// This sends a 307 (temporary) redirect which Google treats appropriately
+export default async function LocationsRedirectPage({ params }: Props) {
   const { region, suburb } = await params;
-  
   const suburbDetails = getSuburbDetails(suburb);
 
-  // Validation / Redirect logic
+  // Validate the suburb exists
   if (!suburbDetails) {
-    return notFound(); // Returns the 404 page
+    redirect('/locations'); // Redirect to main locations page if invalid
   }
 
+  // Validate region matches
   if (suburbDetails.regionSlug !== region) {
-    redirect('/locations'); // Server-side redirect
+    redirect('/locations');
   }
 
-  // Breadcrumb schema
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: COMPANY_INFO.url },
-    { name: 'Locations', url: `${COMPANY_INFO.url}/locations` },
-    { name: suburbDetails.region, url: `${COMPANY_INFO.url}/locations#${suburbDetails.regionSlug}` },
-    { name: suburbDetails.name, url: `${COMPANY_INFO.url}/locations/${region}/${suburb}` }
-  ]);
-
-  // LocalBusiness schema for specific suburb
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${COMPANY_INFO.url}/locations/${region}/${suburb}#localbusiness`,
-    name: `Sydney Removalist - ${suburbDetails.name}`,
-    image: `${COMPANY_INFO.url}/og-locations.jpg`,
-    telephone: COMPANY_INFO.phone,
-    email: COMPANY_INFO.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: suburbDetails.name,
-      addressRegion: 'NSW',
-      addressCountry: 'AU'
-    },
-    url: `${COMPANY_INFO.url}/locations/${region}/${suburb}`,
-    priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '225'
-    },
-    areaServed: {
-      '@type': 'City',
-      name: suburbDetails.name
-    }
-  };
-
-  // Service schema for the suburb
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': `${COMPANY_INFO.url}/locations/${region}/${suburb}#service`,
-    name: `Removalist Services in ${suburbDetails.name}`,
-    description: `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance.`,
-    provider: {
-      '@id': `${COMPANY_INFO.url}/#organization`
-    },
-    serviceType: 'Moving and Relocation',
-    areaServed: {
-      '@type': 'Place',
-      name: suburbDetails.name
-    }
-  };
-
-  // NOTE: Navbar and Footer are removed from here because they should
-  // exist in your app/layout.tsx file. If they aren't there, add them back.
-
-  return (
-    <>
-      {/* Schema Markup */}
-      <SchemaMarkup schema={[breadcrumbSchema, localBusinessSchema, serviceSchema]} />
-
-      <main>
-      <HeroSection
-        title={`Removalist ${suburbDetails.name}`}
-        subtitle={`Professional moving services in ${suburbDetails.name}, ${suburbDetails.region}`}
-        backgroundImage={removalistHero.src} 
-        showCTA={false}
-        breadcrumbs={[
-          { label: 'Locations', path: '/locations' },
-          { label: suburbDetails.region, path: `/locations#${suburbDetails.regionSlug}` },
-          { label: suburbDetails.name, path: `/locations/${region}/${suburb}` }
-        ]}
-        stats={[
-          { value: '15+', label: 'Years Experience' },
-          { value: 'Free', label: 'Quotes' },
-          { value: '7 Days', label: 'Available' },
-          { value: '100%', label: 'Insured' }
-        ]}
-      />
-
-      {/* Service Overview */}
-      <section className="py-16 bg-background relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+  // Redirect to the canonical URL at /[region]/[suburb]
+  redirect(`/${region}/${suburb}`);
+}
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
