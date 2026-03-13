@@ -114,14 +114,8 @@ export function applyMetadata(metadata: ReturnType<typeof createMetadata>) {
     setMetaTag('robots', 'noindex, nofollow');
   }
 
-  // Canonical URL
-  let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-  if (!canonicalLink) {
-    canonicalLink = document.createElement('link');
-    canonicalLink.rel = 'canonical';
-    document.head.appendChild(canonicalLink);
-  }
-  canonicalLink.href = metadata.canonicalUrl;
+  // NOTE: Canonical URL is handled by Next.js metadata API (alternates.canonical)
+  // Do NOT set canonical here to avoid duplicate canonical tags
 
   // OpenGraph meta tags
   setMetaTag('og:title', metadata.openGraph.title, true);
