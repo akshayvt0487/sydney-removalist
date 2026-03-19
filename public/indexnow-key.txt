@@ -1,0 +1,4 @@
+<!-- IndexNow API Key -->
+<!-- Generate your key at https://www.bing.com/indexnow -->
+<!-- Replace this file with your actual IndexNow key -->
+YOUR_INDEXNOW_KEY_HERE

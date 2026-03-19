@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
 const ServiceCoverage = () => {
-  const coverageAreas = [
-    { name: 'Sydney CBD', icon: '🏙️' },
-    { name: 'Western Sydney', icon: '🏘️' },
-    { name: 'Eastern Suburbs', icon: '🌊' },
-    { name: 'Northern Beaches', icon: '🏖️' },
-    { name: 'Inner West', icon: '🏡' },
-    { name: 'South Sydney', icon: '🌳' },
-    { name: 'North Shore', icon: '🌉' },
-    { name: 'Hills District', icon: '⛰️' },
+  // Featured suburbs with actual page links for Google to crawl
+  const featuredSuburbs = [
+    { name: 'Bondi', slug: 'bondi', regionSlug: 'eastern-suburbs', region: 'Eastern Suburbs' },
+    { name: 'Manly', slug: 'manly', regionSlug: 'northern-beaches', region: 'Northern Beaches' },
+    { name: 'Parramatta', slug: 'parramatta', regionSlug: 'western-sydney', region: 'Western Sydney' },
+    { name: 'Chatswood', slug: 'chatswood', regionSlug: 'north-shore', region: 'North Shore' },
+    { name: 'Marrickville', slug: 'marrickville', regionSlug: 'inner-west', region: 'Inner West' },
+    { name: 'Rosebery', slug: 'rosebery', regionSlug: 'south-sydney', region: 'South Sydney' },
+    { name: 'Penrith', slug: 'penrith', regionSlug: 'western-sydney', region: 'Western Sydney' },
+    { name: 'Castle Hill', slug: 'castle-hill', regionSlug: 'hills-district', region: 'Hills District' },
   ];
 
   return (
@@ -18,22 +19,24 @@ const ServiceCoverage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Service Coverage Areas
+              Service Coverage - Popular Suburbs
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We provide professional moving services across all Sydney metropolitan areas and beyond.
+              Professional removalist services across Sydney's most requested areas. Servicing 105+ suburbs.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {coverageAreas.map((area, index) => (
-              <div 
-                key={index}
-                className="bg-background p-6 rounded-lg text-center hover:shadow-lg transition-all duration-300 border border-border"
+            {featuredSuburbs.map((suburb, index) => (
+              <Link
+                key={suburb.slug}
+                href={`/${suburb.regionSlug}/${suburb.slug}`}
+                className="bg-background p-6 rounded-lg text-center hover:shadow-lg transition-all duration-300 border border-border hover:border-primary group"
               >
-                <div className="text-4xl mb-3">{area.icon}</div>
-                <h3 className="font-semibold text-foreground">{area.name}</h3>
-              </div>
+                <div className="text-2xl mb-2 font-bold text-primary">📍</div>
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{suburb.name}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{suburb.region}</p>
+              </Link>
             ))}
           </div>
 

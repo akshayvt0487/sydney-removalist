@@ -6,88 +6,99 @@ import { blogPosts } from '@/data/blogs';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.sydneyremovalist.com.au';
 
+  // Use a stable date for content pages (not new Date() which changes every build)
+  // This tells Google these pages are stable and don't need constant re-crawling
+  const stableDate = new Date('2024-01-15').toISOString();
+
   // Static pages
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
+      lastModified: stableDate,
+      changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: stableDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      lastModified: stableDate,
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      lastModified: stableDate,
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/interstate`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      lastModified: stableDate,
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: stableDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/contact`,
+      lastModified: stableDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
+      lastModified: stableDate,
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
   ];
 
-  // Service pages
+  // Service pages - High priority for conversion
   const servicePages = services.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date(),
+    lastModified: stableDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: 0.85,
   }));
 
-  // Location pages (suburbs)
+  // Location pages (suburbs) - High priority for local SEO
+  // Priority varies: major suburbs get 0.8, others get 0.7
   const locationPages = regionCategories.flatMap((region) =>
-    region.suburbs.map((suburb) => ({
-      url: `${baseUrl}/${region.slug}/${suburb.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }))
+    region.suburbs.map((suburb) => {
+      // Major suburbs that should be prioritized
+      const majorSuburbs = ['bondi', 'manly', 'parramatta', 'chatswood', 'north-sydney', 'rosebery', 'marrickville'];
+      const isMajor = majorSuburbs.includes(suburb.slug);
+
+      return {
+        url: `${baseUrl}/${region.slug}/${suburb.slug}`,
+        lastModified: stableDate,
+        changeFrequency: 'monthly' as const,
+        priority: isMajor ? 0.8 : 0.65,
+      };
+    })
   );
 
-  // Interstate pages
+  // Interstate pages - High priority
   const interstatePages = interstateDestinations.map((destination) => ({
     url: `${baseUrl}/interstate/${destination.slug}`,
-    lastModified: new Date(),
+    lastModified: stableDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
-  // Blog pages
+  // Blog pages - Keep actual publish dates
   const blogPages = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.publishDate),
+    lastModified: new Date(post.publishDate).toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));

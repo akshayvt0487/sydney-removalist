@@ -1,26 +1,33 @@
 import Link from 'next/link';
-// Make sure you have this file created (I'll ask for it next if you don't!)
-import { locations } from '@/data/locations';
 
 const AreasWeService = () => {
-  // We just take the first 6 locations to display
-  const featuredAreas = locations.slice(0, 6);
+  // Feature major suburbs that Google should crawl first
+  // These are direct links to actual pages, not anchor links
+  const featuredSuburbs = [
+    { name: 'Bondi', slug: 'bondi', regionSlug: 'eastern-suburbs', region: 'Eastern Suburbs' },
+    { name: 'Parramatta', slug: 'parramatta', regionSlug: 'western-sydney', region: 'Western Sydney' },
+    { name: 'Manly', slug: 'manly', regionSlug: 'northern-beaches', region: 'Northern Beaches' },
+    { name: 'Chatswood', slug: 'chatswood', regionSlug: 'north-shore', region: 'North Shore' },
+    { name: 'Marrickville', slug: 'marrickville', regionSlug: 'inner-west', region: 'Inner West' },
+    { name: 'Rosebery', slug: 'rosebery', regionSlug: 'south-sydney', region: 'South Sydney' },
+  ];
 
   return (
     <section className="py-16 bg-primary text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Areas We Service</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Popular Service Areas</h2>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Servicing all of Sydney and across NSW with reliable removalist services
+            Professional removalist services across Sydney's most popular suburbs
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {featuredAreas.map((area, index) => (
-            <div 
-              key={index} 
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/20 animate-fade-in-up hover:scale-105 hover:shadow-xl" 
+          {featuredSuburbs.map((suburb, index) => (
+            <Link
+              key={suburb.slug}
+              href={`/${suburb.regionSlug}/${suburb.slug}`}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/20 animate-fade-in-up hover:scale-105 hover:shadow-xl block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-3 mb-3">
@@ -30,29 +37,31 @@ const AreasWeService = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">{area.name}</h3>
+                <div>
+                  <h3 className="text-xl font-bold">{suburb.name}</h3>
+                  <p className="text-white/60 text-sm">{suburb.region}</p>
+                </div>
               </div>
-              <p className="text-white/70 mb-4">{area.description}</p>
-              
-              <Link 
-                href={`/locations#${area.slug}`} 
-                className="text-accent hover:text-accent/80 font-semibold inline-flex items-center gap-2 group"
-              >
-                View Details
+              <p className="text-white/70 mb-4">
+                Professional removalist services in {suburb.name}. Get your free quote today.
+              </p>
+
+              <span className="text-accent hover:text-accent/80 font-semibold inline-flex items-center gap-2 group">
+                View Service Details
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </Link>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Link 
-            href="/locations" 
+          <Link
+            href="/locations"
             className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors"
           >
-            View All Service Areas
+            View All 105+ Service Areas
           </Link>
         </div>
       </div>

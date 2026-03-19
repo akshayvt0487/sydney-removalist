@@ -20,9 +20,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Googlebot',
         allow: '/',
         disallow: ['/dashboard', '/admin', '/auth', '/api/'],
+        // Hint to Google: crawl important pages more frequently
+        crawlDelay: 0,
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: [
+      `${baseUrl}/sitemap.xml`,
+      `${baseUrl}/sitemap-html`, // Add HTML sitemap for discoverability
+    ],
     host: baseUrl,
   };
 }

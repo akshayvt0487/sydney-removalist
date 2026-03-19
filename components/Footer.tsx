@@ -75,6 +75,11 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link href="/sitemap-html" className="text-sm opacity-90 hover:text-accent transition-colors">
+                  Sitemap
+                </Link>
+              </li>
             </ul>
           </div>
 
