@@ -7,16 +7,21 @@ const TrustindexReviews = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     // Check if script already exists in this container to prevent duplicates
     const existingScript = containerRef.current.querySelector('script[src*="trustindex.io"]');
     if (existingScript) return;
+
+    // Disable TrustIndex schema injection (we don't need Product schema)
+    (window as any).TrustindexDisableSchema = true;
 
     // Create and append script to the container (not body)
     const script = document.createElement('script');
     script.src = 'https://cdn.trustindex.io/loader.js?eb23df3595a7201f18960935362';
     script.defer = true;
     script.async = true;
+    // Add data attribute to disable schema
+    script.setAttribute('data-disable-schema', 'true');
     containerRef.current.appendChild(script);
   }, []);
 
