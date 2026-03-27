@@ -63,9 +63,6 @@ export default function InterstateIndexPage() {
           name: `Sydney to ${dest.name} Removalists`,
           description: `Professional interstate moving from Sydney to ${dest.name}. ${dest.distance} journey with experienced team.`,
           url: `${COMPANY_INFO.url}/interstate/${dest.slug}`,
-          provider: {
-            '@id': `${COMPANY_INFO.url}/#organization`
-          },
           serviceType: 'Interstate Moving',
           areaServed: [
             {

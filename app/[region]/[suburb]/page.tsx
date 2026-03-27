@@ -126,9 +126,6 @@ export default async function SuburbPage({ params }: Props) {
     '@id': `${COMPANY_INFO.url}/${region}/${suburb}#service`,
     name: `Removalist Services in ${suburbDetails.name}`,
     description: `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance.`,
-    provider: {
-      '@id': `${COMPANY_INFO.url}/#organization`
-    },
     serviceType: 'Moving and Relocation',
     areaServed: {
       '@type': 'Place',

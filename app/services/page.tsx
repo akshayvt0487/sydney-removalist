@@ -69,9 +69,6 @@ export default function ServicesPage() {
           name: service.title,
           description: service.shortDescription,
           url: `${COMPANY_INFO.url}/services/${service.slug}`,
-          provider: {
-            '@id': `${COMPANY_INFO.url}/#organization`
-          },
           serviceType: 'Moving and Relocation',
           areaServed: {
             '@type': 'City',

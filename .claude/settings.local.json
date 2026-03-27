@@ -27,7 +27,8 @@
       "Bash(npx next build)",
       "Bash(npx tsx:*)",
       "Bash(git reset:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git rm:*)"
     ]
   }
 }

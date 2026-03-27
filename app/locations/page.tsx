@@ -55,9 +55,6 @@ export default function LocationsPage() {
     '@id': `${COMPANY_INFO.url}/locations#service`,
     name: 'Professional Removalist Services Across Sydney',
     description: 'Sydney Removalist serves 64+ suburbs across Greater Sydney and interstate routes.',
-    provider: {
-      '@id': `${COMPANY_INFO.url}/#organization`
-    },
     serviceType: 'Moving and Relocation',
     areaServed: [
       {

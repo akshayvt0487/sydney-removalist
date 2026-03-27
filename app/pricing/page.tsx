@@ -54,9 +54,6 @@ export default function PricingPage() {
     '@id': `${COMPANY_INFO.url}/pricing#service`,
     name: 'Professional Moving Services',
     description: 'Competitive removalist pricing with no hidden fees and price match guarantee.',
-    provider: {
-      '@id': `${COMPANY_INFO.url}/#organization`
-    },
     areaServed: {
       '@type': 'City',
       name: 'Sydney',
