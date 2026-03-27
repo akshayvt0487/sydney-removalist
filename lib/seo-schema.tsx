@@ -51,7 +51,7 @@ export const AUTHOR_INFO = {
 export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'MovingCompany',
+    '@type': 'Organization',
     '@id': `${COMPANY_INFO.url}/#organization`,
     name: COMPANY_INFO.name,
     legalName: COMPANY_INFO.legalName,
