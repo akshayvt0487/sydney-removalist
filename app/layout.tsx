@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { generateOrganizationSchema, generateWebsiteSchema, COMPANY_INFO } from "@/lib/seo-schema";
+import { generateOrganizationSchema, COMPANY_INFO } from "@/lib/seo-schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -106,12 +106,9 @@ export default function RootLayout({
       <head>
         {/* DO NOT set canonical here - each page sets its own via metadata.alternates.canonical */}
         {/* Setting it globally would override all page-specific canonicals */}
-        
-        {/* Organization and Website Schema - Global */}
-        <SchemaMarkup schema={[
-          generateOrganizationSchema(),
-          generateWebsiteSchema()
-        ]} />
+
+        {/* Organization Schema - Global */}
+        <SchemaMarkup schema={generateOrganizationSchema()} />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Providers>

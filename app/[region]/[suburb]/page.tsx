@@ -119,34 +119,6 @@ export default async function SuburbPage({ params }: Props) {
     { name: suburbDetails.name, url: `${COMPANY_INFO.url}/${region}/${suburb}` }
   ]);
 
-  // LocalBusiness schema for specific suburb
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${COMPANY_INFO.url}/${region}/${suburb}#localbusiness`,
-    name: `Sydney Removalist - ${suburbDetails.name}`,
-    image: `${COMPANY_INFO.url}/og-locations.jpg`,
-    telephone: COMPANY_INFO.phone,
-    email: COMPANY_INFO.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: suburbDetails.name,
-      addressRegion: 'NSW',
-      addressCountry: 'AU'
-    },
-    url: `${COMPANY_INFO.url}/${region}/${suburb}`,
-    priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '225'
-    },
-    areaServed: {
-      '@type': 'City',
-      name: suburbDetails.name
-    }
-  };
-
   // Service schema for the suburb
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -170,7 +142,7 @@ export default async function SuburbPage({ params }: Props) {
   return (
     <>
       {/* Schema Markup */}
-      <SchemaMarkup schema={[breadcrumbSchema, localBusinessSchema, serviceSchema]} />
+      <SchemaMarkup schema={[breadcrumbSchema, serviceSchema]} />
 
       <main>
       <HeroSection

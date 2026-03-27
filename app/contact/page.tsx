@@ -6,7 +6,7 @@ import HowItWorksSteps from '@/components/HowItWorksSteps';
 import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { CONTACT_INFO } from '@/data/contact';
-import { generateLocalBusinessSchema, generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
+import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 import packingService from '@/assets/removalist/05.webp';
 
 export const metadata: Metadata = {
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  // Local Business schema with contact information
-  const localBusinessSchema = generateLocalBusinessSchema();
-
   // Breadcrumb schema
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: COMPANY_INFO.url },
@@ -54,9 +51,6 @@ export default function ContactPage() {
     name: 'Contact Sydney Removalist',
     description: 'Contact Sydney Removalist for a free moving quote. Call us 7 days a week, email us, or fill out our contact form.',
     inLanguage: 'en-AU',
-    isPartOf: {
-      '@id': `${COMPANY_INFO.url}/#website`
-    },
     mainEntity: {
       '@type': 'ContactPoint',
       telephone: COMPANY_INFO.phone,
@@ -76,7 +70,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Schema Markup */}
-      <SchemaMarkup schema={[localBusinessSchema, breadcrumbSchema, contactPageSchema]} />
+      <SchemaMarkup schema={[breadcrumbSchema, contactPageSchema]} />
 
       <main>
         <HeroSection

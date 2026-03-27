@@ -16,7 +16,7 @@ import WhyPickUs from '@/components/WhyPickUs';
 
 // SEO Components
 import SchemaMarkup from '@/components/SchemaMarkup';
-import { generateLocalBusinessSchema, generateFAQSchema, generateEnhancedMetadata } from '@/lib/seo-schema';
+import { generateFAQSchema, generateEnhancedMetadata } from '@/lib/seo-schema';
 
 // Assets - Next.js handles these as static objects
 import heroImage from '@/assets/removalist/018.webp';
@@ -76,10 +76,7 @@ export default function Home() {
   return (
     <>
       {/* JSON-LD Schema Markup for SEO */}
-      <SchemaMarkup schema={[
-        generateLocalBusinessSchema(),
-        generateFAQSchema(faqs)
-      ]} />
+      <SchemaMarkup schema={generateFAQSchema(faqs)} />
 
       {/* HeroSection is the most important for LCP (Largest Contentful Paint).
         Passing backgroundImage={heroImage.src} is correct for CSS backgrounds.
