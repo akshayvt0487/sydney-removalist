@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!destination) return { title: 'Route Not Found' };
 
   return {
-    title: `${destination.name} | Interstate Removalists Sydney to ${destination.to}`,
-    description: `Interstate removalists ${destination.from} to ${destination.to}. ${destination.distance} with insurance & door-to-door service. Free quote!`,
+    title: `Sydney to ${destination.to} Removalists | ${destination.name}`,
+    description: `Sydney to ${destination.to} removalists. ${destination.distance} with insurance & door-to-door service. Free quote!`,
     keywords: [
       `sydney to ${destination.to.toLowerCase()} removalists`,
       `interstate removalists ${destination.to.toLowerCase()}`,

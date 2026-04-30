@@ -17,7 +17,7 @@ import movingBoxes from '@/assets/removalist/05.webp';
 // 1. Static Metadata
 export const metadata: Metadata = {
   title: "Moving Tips & Guides | Sydney Removalist Blog",
-  description: "Expert moving tips, pricing guides, and advice from Sydney's trusted removalists. Learn how to plan your move, save money, and reduce stress.",
+  description: "Expert moving tips, pricing guides, and advice from Sydney's trusted removalists. Plan your move, save money, and reduce stress.",
   keywords: ["moving tips", "removalist blog", "sydney moving guide", "packing tips", "moving cost guide"],
   alternates: {
     canonical: "/blog",

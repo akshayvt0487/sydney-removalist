@@ -62,10 +62,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const customDescription = customDescriptions[suburb]
-    || `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Trusted moving services with experienced team, competitive rates, and full insurance. Get your free quote today!`;
+    || `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Experienced team, competitive rates, fully insured. Free quote!`;
 
   return {
-    title: `Removalist in ${suburbDetails.name} | Sydney Removalist | Professional Moving`,
+    title: `Removalist ${suburbDetails.name} | Sydney Removalist`,
     description: customDescription,
     keywords: [
       `removalist ${suburbDetails.name.toLowerCase()}`,

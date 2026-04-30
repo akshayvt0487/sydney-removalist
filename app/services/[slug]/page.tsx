@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const enhancedDescription = `${service.shortDescription} Over 225+ reviews, 15+ years experience in Sydney. Fully insured, professional team, competitive rates.`;
 
   return {
-    title: `${service.title} Sydney | Sydney Removalist | Professional Moving Services`,
+    title: `${service.title} Sydney | Sydney Removalist`,
     description: enhancedDescription,
     keywords: [service.title.toLowerCase(), `${service.title.toLowerCase()} sydney`, "removalist services", "professional moving"],
     alternates: {
