@@ -6,6 +6,7 @@ import CTASection from '@/components/CTASection';
 import TrustindexReviews from '@/components/TrustindexReviews';
 import QuoteModal from '@/components/QuoteModal';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import FAQAccordion from '@/components/FAQAccordion';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
 // Assets
@@ -165,31 +166,26 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center text-foreground">Pricing FAQs</h2>
-              <div className="space-y-4">
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2 text-foreground">How is the pricing calculated?</h3>
-                  <p className="text-muted-foreground">Our pricing is based on half-hour (30-minute) increments that include the truck, fuel, equipment, and professional removalists. Rates vary based on home size and truck capacity. Contact us for a personalized quote.</p>
-                </div>
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2 text-foreground">Are there any additional charges?</h3>
-                  <p className="text-muted-foreground">The only additional charges are for optional services like packing materials, storage, or specialty items. We'll discuss all options upfront so there are no surprises.</p>
-                </div>
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2 text-foreground">Do you offer discounts?</h3>
-                  <p className="text-muted-foreground">Yes! We offer discounts for weekday moves, seniors, students, and repeat customers. Contact us to learn more about current promotions.</p>
-                </div>
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2 text-foreground">What payment methods do you accept?</h3>
-                  <p className="text-muted-foreground">We accept cash, credit cards, debit cards, and bank transfers. Payment is due upon completion of the move.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FAQAccordion
+          items={[
+            {
+              question: 'How is the pricing calculated?',
+              answer: 'Our pricing is based on half-hour (30-minute) increments that include the truck, fuel, equipment, and professional removalists. Rates vary based on home size and truck capacity. Contact us for a personalized quote.'
+            },
+            {
+              question: 'Are there any additional charges?',
+              answer: 'The only additional charges are for optional services like packing materials, storage, or specialty items. We\'ll discuss all options upfront so there are no surprises.'
+            },
+            {
+              question: 'Do you offer discounts?',
+              answer: 'Yes! We offer discounts for weekday moves, seniors, students, and repeat customers. Contact us to learn more about current promotions.'
+            },
+            {
+              question: 'What payment methods do you accept?',
+              answer: 'We accept cash, credit cards, debit cards, and bank transfers. Payment is due upon completion of the move.'
+            }
+          ]}
+        />
 
         <HowItWorksSteps />
 

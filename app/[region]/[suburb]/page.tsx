@@ -10,6 +10,7 @@ import LocationMap from '@/components/LocationMap';
 import NearbyLocations from '@/components/NearbyLocations';
 import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import FAQAccordion from '@/components/FAQAccordion';
 import { getSuburbDetails, regionCategories } from '@/data/suburbs';
 import { CONTACT_INFO } from '@/data/contact';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
@@ -399,40 +400,26 @@ export default async function SuburbPage({ params }: Props) {
       <TrustindexReviews />
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-foreground">
-              Frequently Asked Questions About Moving in {suburbDetails.name}
-            </h2>
-            <div className="space-y-4">
-              {[
-                {
-                  question: `How much does it cost to hire removalists in ${suburbDetails.name}?`,
-                  answer: `Our ${suburbDetails.name} removalist services start from $60 per half hour for a 1-bedroom move with 2 removalists. Prices vary based on the size of your move and distance. We provide free, no-obligation quotes tailored to your specific needs.`
-                },
-                {
-                  question: `How far in advance should I book removalists in ${suburbDetails.name}?`,
-                  answer: `We recommend booking at least 1-2 weeks in advance, especially during peak moving periods (end of month, school holidays). However, we do accommodate last-minute bookings when possible - just give us a call!`
-                },
-                {
-                  question: `Do you provide packing materials for ${suburbDetails.name} moves?`,
-                  answer: `Yes! We offer a complete range of packing materials including boxes, tape, bubble wrap, and protective covers. We also provide full packing services if you'd prefer our team to handle everything.`
-                },
-                {
-                  question: `Are your removalists in ${suburbDetails.name} insured?`,
-                  answer: `Absolutely. We are fully licensed and insured, providing comprehensive coverage for your belongings during the entire moving process. Your peace of mind is our priority.`
-                }
-              ].map((faq, index) => (
-                <div key={index} className="bg-background p-6 rounded-lg shadow-md">
-                  <h3 className="font-bold text-lg mb-3 text-foreground">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQAccordion
+        items={[
+          {
+            question: `How much does it cost to hire removalists in ${suburbDetails.name}?`,
+            answer: `Our ${suburbDetails.name} removalist services start from $60 per half hour for a 1-bedroom move with 2 removalists. Prices vary based on the size of your move and distance. We provide free, no-obligation quotes tailored to your specific needs.`
+          },
+          {
+            question: `How far in advance should I book removalists in ${suburbDetails.name}?`,
+            answer: `We recommend booking at least 1-2 weeks in advance, especially during peak moving periods (end of month, school holidays). However, we do accommodate last-minute bookings when possible - just give us a call!`
+          },
+          {
+            question: `Do you provide packing materials for ${suburbDetails.name} moves?`,
+            answer: `Yes! We offer a complete range of packing materials including boxes, tape, bubble wrap, and protective covers. We also provide full packing services if you'd prefer our team to handle everything.`
+          },
+          {
+            question: `Are your removalists in ${suburbDetails.name} insured?`,
+            answer: `Absolutely. We are fully licensed and insured, providing comprehensive coverage for your belongings during the entire moving process. Your peace of mind is our priority.`
+          }
+        ]}
+      />
 
       <LocationMap locationName={suburbDetails.name} />
 
