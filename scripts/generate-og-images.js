@@ -214,6 +214,20 @@ async function generateAllOGImages() {
       title: 'Serving All Sydney Suburbs',
       subtitle: '64+ Locations Across Greater Sydney',
       badge: 'Local Experts'
+    },
+    {
+      sourceImage: '05.webp',
+      outputName: 'og-blog.jpg',
+      title: 'Moving Tips & Guides',
+      subtitle: 'Expert Advice from Sydney Removalists',
+      badge: 'Blog'
+    },
+    {
+      sourceImage: '02.webp',
+      outputName: 'og-default.jpg',
+      title: 'Sydney Removalists',
+      subtitle: 'Professional Moving Services | 15+ Years',
+      badge: 'Trusted'
     }
   ];
 
