@@ -136,6 +136,9 @@ export default async function SuburbPage({ params }: Props) {
   // NOTE: Navbar and Footer are removed from here because they should
   // exist in your app/layout.tsx file. If they aren't there, add them back.
 
+  // Generate SEO-optimized H1
+  const seoH1 = `Removalist ${suburbDetails.name}`;
+
   return (
     <>
       {/* Schema Markup */}
@@ -143,9 +146,10 @@ export default async function SuburbPage({ params }: Props) {
 
       <main>
       <HeroSection
+        h1={seoH1}
         title={`Removalist ${suburbDetails.name}`}
         subtitle={`Professional moving services in ${suburbDetails.name}, ${suburbDetails.region}`}
-        backgroundImage={removalistHero.src} 
+        backgroundImage={removalistHero.src}
         showCTA={false}
         breadcrumbs={[
           { label: 'Locations', path: '/locations' },

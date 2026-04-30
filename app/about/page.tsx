@@ -68,6 +68,7 @@ export default function About() {
 
       <main>
         <HeroSection
+          h1="Sydney Removalist Company"
           title="About Sydney Removalist"
           subtitle="Your trusted moving partner for over 15 years"
           showCTA={false}

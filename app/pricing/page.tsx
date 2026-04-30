@@ -88,6 +88,7 @@ export default function PricingPage() {
 
       <main>
         <HeroSection
+          h1="Removalist Prices Sydney"
           title="Competitive Pricing"
           subtitle="No hidden fees. No surprises. Get your personalized quote."
           showCTA={false}

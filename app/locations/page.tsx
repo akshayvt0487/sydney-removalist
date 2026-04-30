@@ -102,6 +102,7 @@ export default function LocationsPage() {
 
       <main>
         <HeroSection
+          h1="Sydney Removalist Service Areas"
           title="Areas We Serve"
           subtitle="Professional removalist services across Greater Sydney and beyond"
           showCTA={false}

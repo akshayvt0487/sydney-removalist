@@ -87,6 +87,7 @@ export default function InterstateIndexPage() {
 
       <main>
       <HeroSection
+        h1="Interstate Removalists Sydney"
         title="Interstate Moving Services"
         subtitle="Moving beyond Sydney? We provide professional interstate removalist services to all major Australian cities."
         showCTA={false}

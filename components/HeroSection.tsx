@@ -8,7 +8,8 @@ import QuoteModal from './QuoteModal';
 import { CONTACT_INFO } from '@/data/contact'; 
 
 interface HeroSectionProps {
-  title: string;
+  h1?: string; // SEO-optimized H1 (smaller, keyword-focused)
+  title: string; // Main visual heading (H2, large and user-friendly)
   subtitle: string;
   backgroundImage?: string | any; // Updated type to accept Next.js image imports
   showCTA?: boolean;
@@ -17,14 +18,15 @@ interface HeroSectionProps {
   stats?: { value: string; label: string }[];
 }
 
-const HeroSection = ({ 
-  title, 
-  subtitle, 
-  backgroundImage, 
-  showCTA = true, 
-  showQuoteForm = false, 
+const HeroSection = ({
+  h1,
+  title,
+  subtitle,
+  backgroundImage,
+  showCTA = true,
+  showQuoteForm = false,
   breadcrumbs,
-  stats 
+  stats
 }: HeroSectionProps) => {
   const hasBackground = !!backgroundImage;
   const [scrollY, setScrollY] = useState(0);
@@ -113,9 +115,24 @@ const HeroSection = ({
               </div>
             )}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
-              {title}
-            </h1>
+            {/* SEO-optimized H1 - smaller, keyword-focused */}
+            {h1 && (
+              <h1 className="text-sm sm:text-base md:text-lg font-medium mb-3 text-white/80 uppercase tracking-wide">
+                {h1}
+              </h1>
+            )}
+
+            {/* Main visual heading - large and user-friendly */}
+            {h1 ? (
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
+                {title}
+              </h2>
+            ) : (
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
+                {title}
+              </h1>
+            )}
+
             <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-white/90 max-w-3xl ${showQuoteForm ? 'mx-0' : 'mx-auto'}`}>
               {subtitle}
             </p>

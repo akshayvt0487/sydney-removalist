@@ -103,6 +103,7 @@ export default function Blog() {
     
       <main>
         <HeroSection
+          h1="Moving Tips Sydney"
           title="Moving Tips & Guides"
           subtitle="Expert advice to make your Sydney move stress-free"
           showCTA={false}

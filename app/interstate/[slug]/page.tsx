@@ -157,12 +157,16 @@ export default async function InterstateCityPage({ params }: Props) {
     }
   ];
 
+  // Generate SEO-optimized H1
+  const seoH1 = `Sydney to ${destination.to} Removalists`;
+
   return (
     <main>
       {/* Schema Markup */}
       <SchemaMarkup schema={[breadcrumbSchema, serviceSchema]} />
-      
+
       <HeroSection
+        h1={seoH1}
         title={destination.name}
         subtitle={destination.description}
         backgroundImage={interstateMoving.src} // Next.js requires .src for imported images

@@ -28,7 +28,9 @@
       "Bash(npx tsx:*)",
       "Bash(git reset:*)",
       "Bash(cat:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git status:*)",
+      "Bash(git restore:*)"
     ]
   }
 }

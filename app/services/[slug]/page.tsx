@@ -78,11 +78,15 @@ export default async function ServiceDetailPage({ params }: Props) {
     url: `/services/${service.slug}`,
   });
 
+  // Generate SEO-optimized H1 based on service type
+  const seoH1 = `${service.title} Sydney`;
+
   return (
     <>
       <SchemaMarkup schema={serviceSchema} />
       <main>
         <HeroSection
+          h1={seoH1}
           title={service.title}
           subtitle={service.description}
           backgroundImage={heroImageSrc}

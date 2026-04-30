@@ -74,6 +74,7 @@ export default function ContactPage() {
 
       <main>
         <HeroSection
+          h1="Contact Sydney Removalists"
           title="Contact Us"
           subtitle="Get your free quote today"
           showCTA={false}

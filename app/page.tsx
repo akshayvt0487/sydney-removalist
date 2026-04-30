@@ -82,6 +82,7 @@ export default function Home() {
         Passing backgroundImage={heroImage.src} is correct for CSS backgrounds.
       */}
       <HeroSection
+        h1="Removalists Sydney"
         title="Sydney Removalists Who Show Up, Pack Up & Never Let You Down"
         subtitle="No hidden fees. No damaged goods. No moving day chaos. Just a clean, stress-free move."
         backgroundImage={heroImage.src}

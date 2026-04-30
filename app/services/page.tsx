@@ -87,6 +87,7 @@ export default function ServicesPage() {
 
       <main>
         <HeroSection
+          h1="Moving Services Sydney"
           title="Professional Moving Services"
           subtitle="Comprehensive solutions for every type of move"
           showCTA={false}
