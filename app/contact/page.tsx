@@ -11,7 +11,7 @@ import packingService from '@/assets/removalist/05.webp';
 
 export const metadata: Metadata = {
   title: "Contact Us | Get Your Free Moving Quote",
-  description: "Contact Sydney Removalist for a free moving quote. Call us 7 days a week, email us, or fill out our contact form. Fast response within 2 hours guaranteed.",
+  description: "Contact Sydney Removalist for a free quote. Call 7 days, email, or fill our form. Fast response within 2 hours guaranteed.",
   keywords: ["contact removalists", "free moving quote", "sydney removalist contact", "moving enquiry", "book removalists"],
   alternates: {
     canonical: "/contact",

@@ -3,7 +3,7 @@ import { CONTACT_INFO } from "@/data/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Sydney Removalist",
-  description: "Read our privacy policy to understand how Sydney Removalist collects, uses, and protects your personal information when you use our moving services.",
+  description: "How Sydney Removalist collects, uses & protects your personal information. Read our privacy policy for full details.",
   keywords: ["privacy policy", "data protection", "Sydney removalist", "personal information"],
   alternates: {
     canonical: "/privacy-policy",

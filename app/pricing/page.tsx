@@ -16,7 +16,7 @@ import { additionalServices } from '@/data/pricing';
 
 export const metadata: Metadata = {
   title: "Removalist Pricing Sydney | Get Your Free Moving Quote",
-  description: "Get a free removalist quote in Sydney. Competitive moving rates with no hidden fees and price match guarantee. Request your personalized moving quote today.",
+  description: "Free removalist quote Sydney. Competitive rates, no hidden fees, price match guarantee. Get your personalized moving quote today!",
   keywords: ["removalist pricing sydney", "moving costs sydney", "removalist quote", "affordable movers", "moving rates", "furniture removal prices"],
   alternates: {
     canonical: "/pricing",

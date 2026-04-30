@@ -3,7 +3,7 @@ import { CONTACT_INFO } from "@/data/contact";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions | Sydney Removalist",
-  description: "Read the terms and conditions for using Sydney Removalist services. Understand your rights and obligations when booking our professional moving services.",
+  description: "Read our terms & conditions for Sydney Removalist services. Understand your rights when booking our professional moving services.",
   keywords: ["terms and conditions", "service agreement", "Sydney removalist", "moving services"],
   alternates: {
     canonical: "/terms-and-conditions",

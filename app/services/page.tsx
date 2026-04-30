@@ -15,7 +15,7 @@ import residentialMoving from '@/assets/removalist/08.webp';
 // 1. Static SEO Metadata
 export const metadata: Metadata = {
   title: "Moving Services Sydney | Residential & Commercial Removalists",
-  description: "Complete moving services in Sydney: residential moving, office relocation, packing services, furniture assembly, storage solutions & interstate moves. 100% satisfaction guarantee.",
+  description: "Complete moving services Sydney: residential, office, packing, furniture assembly, storage & interstate. 100% satisfaction guaranteed!",
   keywords: ["moving services sydney", "residential moving", "office relocation", "packing services", "furniture assembly", "storage solutions", "interstate moves"],
   alternates: {
     canonical: "/services",

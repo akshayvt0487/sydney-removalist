@@ -14,7 +14,7 @@ import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 // 1. Generate Metadata
 export const metadata: Metadata = {
   title: "Interstate Removalists Sydney | Reliable Long Distance Moving",
-  description: "Professional interstate removalists services from Sydney to Melbourne, Brisbane, Canberra, Adelaide, Gold Coast and beyond. Get a free quote today.",
+  description: "Interstate removalists Sydney to Melbourne, Brisbane, Canberra, Adelaide, Gold Coast & beyond. Professional long distance moving. Free quote!",
   alternates: {
     canonical: "/interstate",
   },

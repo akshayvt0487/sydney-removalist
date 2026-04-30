@@ -12,7 +12,7 @@ import teamMovers from '@/assets/removalist/03.webp';
 // 1. Static Metadata for SEO
 export const metadata: Metadata = {
   title: "About Us | Sydney's Trusted Removalists Since 2008",
-  description: "Learn about Sydney Removalist - 15+ years experience, 10,000+ successful moves, and 98% customer satisfaction. Fully licensed, insured, and dedicated to stress-free moving.",
+  description: "Sydney Removalist: 15+ years, 10,000+ moves, 98% satisfaction. Fully licensed, insured & dedicated to stress-free moving. Free quote!",
   keywords: ["about sydney removalist", "sydney movers", "trusted removalists", "professional moving company", "licensed removalists sydney"],
   alternates: {
     canonical: "/about",

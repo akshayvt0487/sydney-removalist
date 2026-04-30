@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${destination.name} | Interstate Removalists Sydney to ${destination.to}`,
-    description: `Professional interstate removalists from ${destination.from} to ${destination.to}. ${destination.distance} journey with comprehensive insurance, door-to-door service. Get your free quote today!`,
+    description: `Interstate removalists ${destination.from} to ${destination.to}. ${destination.distance} with insurance & door-to-door service. Free quote!`,
     keywords: [
       `sydney to ${destination.to.toLowerCase()} removalists`,
       `interstate removalists ${destination.to.toLowerCase()}`,
