@@ -9,8 +9,17 @@ interface GoogleAddressInputProps extends React.InputHTMLAttributes<HTMLInputEle
 // Lazy load Google Maps API
 const loadGoogleMapsScript = (): Promise<void> => {
   return new Promise((resolve, reject) => {
-    if (typeof window !== "undefined" && window.google && window.google.maps) {
+    // Check if Google Maps API with Places library is already loaded
+    if (typeof window !== "undefined" && window.google?.maps?.places?.Autocomplete) {
       resolve();
+      return;
+    }
+
+    // Check if script is already being loaded
+    const existingScript = document.querySelector('script[src*="maps.googleapis.com"]');
+    if (existingScript) {
+      existingScript.addEventListener('load', () => resolve());
+      existingScript.addEventListener('error', () => reject(new Error("Failed to load Google Maps")));
       return;
     }
 
@@ -18,7 +27,17 @@ const loadGoogleMapsScript = (): Promise<void> => {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places&loading=async`;
     script.async = true;
     script.defer = true;
-    script.onload = () => resolve();
+    script.onload = () => {
+      // Wait a bit for the places library to be fully initialized
+      const checkPlacesLoaded = () => {
+        if (window.google?.maps?.places?.Autocomplete) {
+          resolve();
+        } else {
+          setTimeout(checkPlacesLoaded, 50);
+        }
+      };
+      checkPlacesLoaded();
+    };
     script.onerror = () => reject(new Error("Failed to load Google Maps"));
     document.head.appendChild(script);
   });
@@ -37,6 +56,12 @@ export default function GoogleAddressInput({ onAddressSelect, className, ...prop
 
   useEffect(() => {
     if (!isLoaded || !autoCompleteRef.current) return;
+
+    // Double-check that Google Maps API is fully loaded
+    if (!window.google?.maps?.places?.Autocomplete) {
+      console.error("Google Maps Places API not fully loaded");
+      return;
+    }
 
     const autocomplete = new window.google.maps.places.Autocomplete(autoCompleteRef.current, {
       // ❌ REMOVED: types: ["geocode"],
