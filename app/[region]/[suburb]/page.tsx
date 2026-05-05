@@ -12,6 +12,7 @@ import TrustindexReviews from '@/components/TrustindexReviews';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import FAQAccordion from '@/components/FAQAccordion';
 import { getSuburbDetails, regionCategories } from '@/data/suburbs';
+import { getSuburbSEOContent } from '@/data/suburb-seo-content';
 import { CONTACT_INFO } from '@/data/contact';
 import { generateBreadcrumbSchema, COMPANY_INFO } from '@/lib/seo-schema';
 
@@ -61,25 +62,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const customDescription = customDescriptions[suburb]
+  // Get enhanced SEO content if available
+  const seoContent = getSuburbSEOContent(suburb);
+
+  const metaDescription = seoContent?.metaDescription
+    || customDescriptions[suburb]
     || `Professional removalist in ${suburbDetails.name}, ${suburbDetails.region}. Experienced team, competitive rates, fully insured. Free quote!`;
+
+  const metaKeywords = seoContent?.keywords || [
+    `removalist ${suburbDetails.name.toLowerCase()}`,
+    `movers ${suburbDetails.name.toLowerCase()}`,
+    `${suburbDetails.name.toLowerCase()} removalists`,
+    `moving services ${suburbDetails.region.toLowerCase()}`,
+    "local removalists"
+  ];
 
   return {
     title: `Removalist ${suburbDetails.name} | Sydney Removalist`,
-    description: customDescription,
-    keywords: [
-      `removalist ${suburbDetails.name.toLowerCase()}`,
-      `movers ${suburbDetails.name.toLowerCase()}`,
-      `${suburbDetails.name.toLowerCase()} removalists`,
-      `moving services ${suburbDetails.region.toLowerCase()}`,
-      "local removalists"
-    ],
+    description: metaDescription,
+    keywords: metaKeywords,
     alternates: {
       canonical: `/${suburbDetails.regionSlug}/${suburb}`,
     },
     openGraph: {
       title: `Removalist in ${suburbDetails.name} | Sydney Removalist`,
-      description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
+      description: metaDescription,
       type: "website",
       images: [{
         url: `${COMPANY_INFO.url}/og-locations.jpg`,
@@ -91,7 +98,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: `Removalist ${suburbDetails.name}`,
-      description: `Professional moving services in ${suburbDetails.name}. Get your free quote today!`,
+      description: metaDescription,
       images: [`${COMPANY_INFO.url}/og-locations.jpg`]
     }
   };
@@ -137,6 +144,9 @@ export default async function SuburbPage({ params }: Props) {
 
   // NOTE: Navbar and Footer are removed from here because they should
   // exist in your app/layout.tsx file. If they aren't there, add them back.
+
+  // Get enhanced SEO content if available for this suburb
+  const seoContent = getSuburbSEOContent(suburb);
 
   // Generate SEO-optimized H1
   const seoH1 = `Removalist ${suburbDetails.name}`;
@@ -218,6 +228,133 @@ export default async function SuburbPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Enhanced SEO Content - Local Area Information */}
+      {seoContent && (
+        <>
+          {/* Local Area Expertise Section */}
+          <section className="py-16 bg-gradient-to-br from-muted to-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-4xl font-bold mb-8 text-foreground text-center">
+                  Your Local {suburbDetails.name} Removalists
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="bg-background rounded-xl p-8 shadow-lg border border-border/50">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-3">
+                      <span className="text-3xl">📍</span>
+                      Know {suburbDetails.name} Like the Back of Our Hand
+                    </h3>
+                    <div className="prose prose-slate max-w-none">
+                      <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                        {seoContent.intro}
+                      </p>
+                    </div>
+
+                    {seoContent.landmarks.length > 0 && (
+                      <div className="mt-6">
+                        <h4 className="font-semibold text-foreground mb-3">We service areas near:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {seoContent.landmarks.slice(0, 8).map((landmark, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-flex items-center px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium"
+                            >
+                              {landmark}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="bg-background rounded-xl p-8 shadow-lg border border-border/50">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-3">
+                      <span className="text-3xl">🚛</span>
+                      Parking & Access Information
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {seoContent.parkingInfo}
+                    </p>
+                    <div className="mt-6 bg-accent/5 rounded-lg p-4 border-l-4 border-accent">
+                      <p className="text-sm font-semibold text-accent mb-2">
+                        💡 Pro Tip
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        We handle all parking permits, building access, and loading zone bookings for {suburbDetails.name} moves.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Moving Tips Section */}
+          {seoContent.movingTips.length > 0 && (
+            <section className="py-16 bg-background">
+              <div className="container mx-auto px-4">
+                <div className="max-w-6xl mx-auto">
+                  <h2 className="text-4xl font-bold mb-4 text-foreground text-center">
+                    Essential Moving Tips for {suburbDetails.name}
+                  </h2>
+                  <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                    Our local expertise helps you prepare for a smooth, stress-free move in {suburbDetails.name}.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {seoContent.movingTips.map((tip, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-gradient-to-br from-muted to-background rounded-xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-shadow"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-primary font-bold">
+                            {idx + 1}
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {tip}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Why Choose Us for This Suburb */}
+          <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-4xl font-bold mb-6 text-foreground">
+                  Why Choose Sydney Removalist for {suburbDetails.name} Moves?
+                </h2>
+                <div className="bg-background rounded-xl p-8 shadow-2xl border border-border/50">
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                    {seoContent.whyChooseUs}
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {seoContent.localArea}
+                  </p>
+                  <div className="mt-8">
+                    <QuoteModal>
+                      <button className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold rounded-lg transition-all hover:scale-105 shadow-xl text-lg">
+                        Get Your Free {suburbDetails.name} Moving Quote
+                        <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </button>
+                    </QuoteModal>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       <ServicesQuickAccess />
 
