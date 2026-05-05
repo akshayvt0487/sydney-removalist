@@ -27,6 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const enhancedDescription = `${service.shortDescription} Over 225+ reviews, 15+ years experience in Sydney. Fully insured, professional team, competitive rates.`;
 
+  // Map service slugs to their specific OG images
+  const ogImageMap: { [key: string]: string } = {
+    'residential-moving': '/og-residential.jpg',
+    'office-relocation': '/og-office.jpg',
+    'packing-services': '/og-packing.jpg',
+    'furniture-assembly-disassembly': '/og-furniture.jpg',
+    'storage-solutions': '/og-services.jpg',
+    'interstate-moves': '/og-interstate.jpg',
+  };
+
+  const ogImage = ogImageMap[slug] || '/og-services.jpg';
+
   return {
     title: `${service.title} Sydney | Sydney Removalist`,
     description: enhancedDescription,
@@ -40,16 +52,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       url: `/services/${slug}`,
       images: [{
-        url: 'https://www.sydneyremovalist.com.au/logo.png',
-        width: 600,
-        height: 60,
-        alt: `Sydney Removalist - Professional Moving Services`
+        url: `https://www.sydneyremovalist.com.au${ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: `${service.title} - Sydney Removalist Professional Moving Services`
       }]
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${service.title} Sydney | Sydney Removalist`,
-      description: enhancedDescription
+      description: enhancedDescription,
+      images: [`https://www.sydneyremovalist.com.au${ogImage}`]
     }
   };
 }

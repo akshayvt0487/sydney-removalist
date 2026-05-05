@@ -82,16 +82,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Expert moving services in ${suburbDetails.name}, ${suburbDetails.region}. Licensed, insured, and ready to help with your move.`,
       type: "website",
       images: [{
-        url: `${COMPANY_INFO.url}/logo.png`,
-        width: 600,
-        height: 60,
-        alt: `Sydney Removalist - Professional Moving Services`
+        url: `${COMPANY_INFO.url}/og-locations.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `Removalist Services in ${suburbDetails.name} - Sydney Removalist`
       }]
     },
     twitter: {
       card: "summary_large_image",
       title: `Removalist ${suburbDetails.name}`,
-      description: `Professional moving services in ${suburbDetails.name}. Get your free quote today!`
+      description: `Professional moving services in ${suburbDetails.name}. Get your free quote today!`,
+      images: [`${COMPANY_INFO.url}/og-locations.jpg`]
     }
   };
 }

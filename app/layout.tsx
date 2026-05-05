@@ -59,11 +59,11 @@ export const metadata: Metadata = {
     description: COMPANY_INFO.description,
     images: [
       {
-        url: `${COMPANY_INFO.url}/logo.png`, // Use logo as fallback
-        width: 600,
-        height: 60,
-        alt: COMPANY_INFO.name,
-        type: 'image/png'
+        url: `${COMPANY_INFO.url}/og-default.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${COMPANY_INFO.name} - Professional Moving Services Sydney`,
+        type: 'image/jpeg'
       }
     ]
   },
