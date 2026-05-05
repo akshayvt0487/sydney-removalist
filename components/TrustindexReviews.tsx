@@ -1,12 +1,32 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const TrustindexReviews = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Lazy load TrustIndex using Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' } // Start loading 200px before component is visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad || !containerRef.current) return;
 
     // Check if script already exists in this container to prevent duplicates
     const existingScript = containerRef.current.querySelector('script[src*="trustindex.io"]');
@@ -23,7 +43,7 @@ const TrustindexReviews = () => {
     // Add data attribute to disable schema
     script.setAttribute('data-disable-schema', 'true');
     containerRef.current.appendChild(script);
-  }, []);
+  }, [shouldLoad]);
 
   return (
     <section className=" bg-background">

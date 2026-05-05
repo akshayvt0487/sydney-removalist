@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import QuoteFormOverlay from './QuoteFormOverlay';
 import QuoteModal from './QuoteModal';
@@ -16,6 +17,7 @@ interface HeroSectionProps {
   showQuoteForm?: boolean;
   breadcrumbs?: { label: string; path: string }[];
   stats?: { value: string; label: string }[];
+  priority?: boolean; // Whether this is the LCP element (homepage hero)
 }
 
 const HeroSection = ({
@@ -26,13 +28,15 @@ const HeroSection = ({
   showCTA = true,
   showQuoteForm = false,
   breadcrumbs,
-  stats
+  stats,
+  priority = false
 }: HeroSectionProps) => {
   const hasBackground = !!backgroundImage;
   const [scrollY, setScrollY] = useState(0);
-  
+
   // Helper to get image URL whether it's a string or Next.js static import
   const bgImageSrc = typeof backgroundImage === 'object' ? backgroundImage.src : backgroundImage;
+  const isStaticImport = typeof backgroundImage === 'object';
   
   useEffect(() => {
     // Only add parallax effect for inner pages with background images
@@ -50,9 +54,24 @@ const HeroSection = ({
     <section
       className="relative min-h-[600px] md:min-h-[500px] py-8 md:py-12 lg:py-16 flex items-center justify-center overflow-hidden"
     >
-      {/* Parallax Background Image */}
-      {bgImageSrc && (
-        <div 
+      {/* Optimized Background Image */}
+      {bgImageSrc && isStaticImport && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority={priority}
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
+          style={{
+            transform: !showQuoteForm ? `translateY(${scrollY * 0.5}px)` : 'none',
+            transition: 'transform 0.1s ease-out',
+          }}
+        />
+      )}
+      {bgImageSrc && !isStaticImport && (
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(${bgImageSrc})`,

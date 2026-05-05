@@ -79,14 +79,15 @@ export default function Home() {
       <SchemaMarkup schema={generateFAQSchema(faqs)} />
 
       {/* HeroSection is the most important for LCP (Largest Contentful Paint).
-        Passing backgroundImage={heroImage.src} is correct for CSS backgrounds.
+        Using Next.js Image with priority for optimal loading performance.
       */}
       <HeroSection
         h1="Removalists Sydney"
         title="Sydney Removalists Who Show Up, Pack Up & Never Let You Down"
         subtitle="No hidden fees. No damaged goods. No moving day chaos. Just a clean, stress-free move."
-        backgroundImage={heroImage.src}
+        backgroundImage={heroImage}
         showQuoteForm={true}
+        priority={true}
       />
       
       <section className="bg-background">

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -120,11 +119,7 @@ export default function RootLayout({
           </div>
         </Providers>
 
-        {/* Load Google Maps Script Globally */}
-        <Script
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places&loading=async`}
-          strategy="afterInteractive"
-        />
+        {/* Google Maps is lazy loaded by components that need it */}
       </body>
     </html>
   );

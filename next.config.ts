@@ -25,8 +25,39 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Cache Next.js static assets for 1 year (immutable)
       {
         source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      // Cache static images
+      {
+        source: '/assets/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, stale-while-revalidate=86400'
+          }
+        ]
+      },
+      // Cache OG images for 1 week
+      {
+        source: '/og-:slug.jpg',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, stale-while-revalidate=86400'
+          }
+        ]
+      },
+      // Cache logo and favicon
+      {
+        source: '/:file(logo|favicon).(png|ico|jpg|svg)',
         headers: [
           {
             key: 'Cache-Control',
@@ -40,6 +71,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Type',
             value: 'application/xml'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400'
           }
         ]
       },
@@ -49,15 +84,24 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Type',
             value: 'text/plain'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600'
           }
         ]
       }
     ];
   },
 
-  // Ensure service pages are statically generated
+  // Optimize package imports to reduce bundle size
   experimental: {
-    optimizePackageImports: ['@radix-ui/react-icons'],
+    optimizePackageImports: [
+      '@radix-ui/react-icons',
+      'recharts',
+      'lucide-react',
+      'date-fns'
+    ],
   },
 };
 
